@@ -555,3 +555,20 @@ footer {
   }
 
 }
+
+.sm-btn-block {
+  padding-top: 20px;
+}
+.sm-btn-block > a {
+  margin: 10px 5px 10px 5px;
+  display: inline;
+  width: auto;
+}
+
+@media (max-width: 480px) {
+  .sm-btn-block > a {
+    margin: 10px 5px 10px 5px;
+    display: inline-block;
+    width: 130px;
+  }
+}
