@@ -93,6 +93,23 @@ section.success {
   font-weight: 700;
 }
 
+.img-left {
+  padding: 0 20px 10px 0;
+  float: left;
+}
+
+.sm-center {
+  text-align: left;
+}
+
+.overflow {
+  overflow: auto;
+}
+
+.pad-top {
+  padding-top: 20px;
+}
+
 .portfolio-link:hover {
   text-decoration: none;
 }
@@ -555,6 +572,17 @@ footer {
     line-height: 1.5em;
     width: 90%;
     font-size: 0.825em;
+  }
+  
+  .img-left {
+    float: none;
+    margin: 0 auto;
+    padding: 0 0 10px 0;
+    display: block;
+  }
+
+  .sm-center {
+    text-align: center;
   }
 
 }
