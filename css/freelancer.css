@@ -132,6 +132,9 @@ section.success {
 }
 
 @media (max-width: 767px) {
+  .dark-blue {
+    font-size: 1.8em;
+  }
   section {
     padding: 75px 0; }
   section.first {
