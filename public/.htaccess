@@ -1,5 +1,7 @@
 Redirect 301 /license.txt /license
 Redirect 301 /LICENSE.TXT /license
+Redirect 301 /version.txt /version
+Redirect 301 /VERSION.TXT /version
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
