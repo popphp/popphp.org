@@ -1,4 +1,5 @@
 /assets/downloads/*
+/public/assets/downloads/*
 /logs
 .idea
 composer.lock
