@@ -620,6 +620,9 @@ footer {
 }
 
 @media (max-width: 576px) {
+  .pop-logo {
+    min-width: 180px;
+  }
   .one-p {
     width: 85%;
     font-size: 0.9em;
