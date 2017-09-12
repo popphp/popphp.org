@@ -147,12 +147,11 @@ abstract class AbstractController extends \Pop\Controller\AbstractController
     public function error()
     {
         $response = ['code' => 404, 'message' => 'Not Found'];
-        $view     = new View(__DIR__ . '/../../view/error.phtml', $response);
-        $view->title = 'Error: ' .  $response['code'] . ' ' . $response['message'];
-        $this->response->setHeader('Content-Type', 'text/html');
-        $this->response->setBody($view->render());
 
-        $this->response->send(404);
+        $this->prepareView('error.phtml');
+        $this->view->title    = 'Error: ' .  $response['code'] . ' ' . $response['message'];
+        $this->view->response = $response;
+        $this->send(null, 404);
         exit();
     }
 

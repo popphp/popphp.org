@@ -18,6 +18,14 @@ return [
             '/development[/]' => [
                 'controller' => 'App\Controller\IndexController',
                 'action'     => 'development'
+            ],
+            '/version[/]' => [
+                'controller' => 'App\Controller\IndexController',
+                'action'     => 'version'
+            ],
+            '/license[/]' => [
+                'controller' => 'App\Controller\IndexController',
+                'action'     => 'license'
             ]
         ],
         '*' => [

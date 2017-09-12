@@ -44,8 +44,8 @@ class Module extends \Pop\Module\Module
         $message  = $exception->getMessage();
 
         $view          = new View(__DIR__ . '/../view/exception.phtml');
-        $view->title   = $message;
-        $view->message = (substr($message, 0, 7) != 'Error: ') ? 'Error: ' . $message : $message;
+        $view->title   = 'Error';
+        $view->message = $message;
         $response->setHeader('Content-Type', 'text/html');
         $response->setBody($view->render());
 

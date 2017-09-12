@@ -83,6 +83,10 @@ hr.star-primary:after {
     min-height: 500px;
 }
 
+.error {
+    color: #f00;
+}
+
 section {
     padding: 100px 0;
 }
