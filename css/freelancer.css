@@ -622,6 +622,7 @@ footer {
 @media (max-width: 576px) {
   .one-p {
     width: 85%;
+    font-size: 0.9em;
   }
   .ml-auto {
     margin: 0 auto;
@@ -630,6 +631,9 @@ footer {
   .mr-auto {
     margin: 0 auto;
     width: 85%;
+  }
+  .ml-auto > p, .mr-auto > p {
+    font-size: 0.9em;
   }
   .portfolio-image {
     padding: 20px 0 0 0;
