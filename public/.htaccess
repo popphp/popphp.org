@@ -1,3 +1,6 @@
+Redirect 301 /popphp-php-framework-3.6.0.tar.bz2 /assets/downloads/popphp-php-framework-3.6.0.tar.bz2
+Redirect 301 /popphp-php-framework-3.6.0.tar.gz /assets/downloads/popphp-php-framework-3.6.0.tar.gz
+Redirect 301 /popphp-php-framework-3.6.0.zip /assets/downloads/popphp-php-framework-3.6.0.zip
 Redirect 301 /license.txt /license
 Redirect 301 /LICENSE.TXT /license
 Redirect 301 /version.txt /version
