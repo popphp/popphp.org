@@ -100,6 +100,15 @@ section.success {
   border-style: none;
 }
 
+.img-block {
+  display: block;
+}
+
+.one-p {
+  margin: 10px auto 35px auto;
+  width: 70%;
+}
+
 .orange {
   color: #ce5403;
 }
@@ -188,6 +197,9 @@ section.success {
 }
 
 @media (max-width: 767px) {
+  .one-p {
+    width: 75%;
+  }
   .dark-blue {
     font-size: 1.8em;
   }
@@ -608,6 +620,17 @@ footer {
 }
 
 @media (max-width: 576px) {
+  .one-p {
+    width: 85%;
+  }
+  .ml-auto {
+    margin: 0 auto;
+    width: 85%;
+  }
+  .mr-auto {
+    margin: 0 auto;
+    width: 85%;
+  }
   .portfolio-image {
     padding: 20px 0 0 0;
     height: 250px;
