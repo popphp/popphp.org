@@ -77,6 +77,17 @@ section.success {
   color: white;
   background: #ce5403; }
 
+div.code-div {
+  padding: 10px;
+  background-color: #eee;
+}
+
+code {
+  white-space: pre-wrap;
+  background-color: #eee;
+  color: #444;
+}
+
 .pop-logo {
   min-width: 280px;
   text-indent: -9999px;

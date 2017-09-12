@@ -10,7 +10,7 @@
     <meta name="author" content="Pop PHP Framework" />
     <meta name="robots" content="all" />
 
-    <title>Documentation : Pop PHP Framework : A lightweight, yet feature-rich PHP framework.</title>
+    <title>Overview : Pop PHP Framework : A lightweight, yet feature-rich PHP framework.</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -68,24 +68,55 @@
     <div class="container sub-page">
       <div class="row">
         <div class="col-md-9">
-          <h2 class="orange pad-bottom">Documentation</h2>
-          <p>The Pop PHP Framework contains a group of core components and an additional 26 components that serve as a toolkit for rapid application development. Provided in the links below are full documentation complete with examples and tutorials, as well as a straight forward API documentation for those interested in learning the framework more in depth. As the documentation outlines, the framework and each of its components are available via <a href="https://getcomposer.org/" target="_blank">Composer</a> or the standalone download links on this website.</p>
-          <p>Those that wish to contribute to any of the components or the documentation, please visit the <a href="/development.html">development page</a> to find out how to do so.</p>
+          <h2 class="orange pad-bottom">Overview</h2>
+          <p>The Pop PHP Framework provides a number of options to install as much or as little as a developer requires. It can be installed in a few of different ways:</p>
           <hr />
-          <p><strong>Full Documentation:</strong></p>
-          <ul>
-            <li><a href="http://docs.popphp.org/en/latest/" target="_blank">v3.6.0</a></li>
-            <li><a href="http://docs.popphp.org/en/v3.5.0/" target="_blank">v3.5.0</a></li>
-            <li><a href="http://docs.popphp.org/en/v3.0.0/" target="_blank">v3.0.0</a></li>
-            <li><a href="http://docs.popphp.org/en/v2.1.1/" target="_blank">v2.1.1</a></li>
-          </ul>
+          <p><strong>Full Installation:</strong></p>
+          <p>A developer can install or download the full framework, which includes the core components plus an additional 26 components to serve as a toolkit for application development. The full version can either be downloaded from one of the links on this website, or installed via <a href="https://getcomposer.org/" target="_blank">Composer</a> like this:</p>
+<div class="code-div">
+<code>$ composer create-project popphp/popphp-framework project-folder
+</code></div>
+          <p class="pad-top">Or, it can be added to a project like this:</p>
+<div class="code-div"><code>$ composer require popphp/popphp-framework
+</code></div>
+          <p class="pad-top">Or, it can be added to a project's <code>composer.json</code> file like this:</p>
+<div class="code-div"><code>{
+    "require": {
+        "popphp/popphp-framework": ">=3.6.0"
+    }
+}
+</code></div>
           <hr />
-          <p><strong>API Documentation:</strong></p>
+          <p><strong>Barebones Installation:</strong></p>
+          <p>A developer can opt to only install the barebones core components that make up the foundation of the application stack. This includes:</p>
           <ul>
-            <li><a href="http://api.popphp.org/3.6/" target="_blank">v3.6</a></li>
-            <li><a href="http://api.popphp.org/3.0/" target="_blank">v3.0</a></li>
-            <li><a href="http://api.popphp.org/2/" target="_blank">v2.0</a></li>
+            <li>The Application Object</li>
+            <li>The Router</li>
+            <li>The Service Locator</li>
+            <li>The Event Manager</li>
+            <li>The Module Manager</li>
+            <li>The Base Controller Class</li>
           </ul>
+          <p>The barebones version can be installed using one of the methods above, but by swapping out the framework repository for the core repository like this:</p>
+<div class="code-div"><code>{
+    "require": {
+        "popphp/popphp": ">=3.1.0"
+    }
+}
+</code></div>
+          <hr />
+          <p><strong>Popcorn Installation:</strong></p>
+          <p>A developer can also opt to install Popcorn, which is a web-based, micro-framework layer that can be utilized to build REST applications and APIs. It installs the same core components from the barebones installation, plus the <code>popphp/pop-http</code>, <code>popphp/pop-session</code> and <code>popphp/pop-view</code> components.</p>
+          <p>Popcorn can be installed using one of the methods above, but by using the Popcorn repository like this:</p>
+<div class="code-div"><code>{
+    "require": {
+        "popphp/popcorn": ">=3.1.0"
+     }
+}
+</code></div>
+          <hr />
+          <p><strong>Individual Components:</strong></p>
+          <p>And finally, if a developer has chosen a different framework or application stack in which to build an application, the individual components of the Pop PHP Framework play nicely with others. Please refer to the individual documentation of whichever components are required to be added to your project to get the name of the repository for those components.</p>
           <hr />
         </div>
         <div class="col-md-3">
