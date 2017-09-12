@@ -16,4 +16,14 @@
     }
   });
 
+  $(document).ready(function(){
+      var email = ['v','e','d'];
+      var host  = ['m', 'o', 'c', '.', 'e', 'v', 'i', 't', 'c', 'a', 'r', 'e', 't', 'n', 'i', 'a', 'l', 'o', 'n'];
+      email     = email.reverse();
+      host      = host.reverse();
+      $('a.email-link').each(function(i){
+          $(this).attr('href', 'mailto:' + email.join('') + '@' + host.join(''));
+      });
+  })
+
 })(jQuery); // End of use strict
