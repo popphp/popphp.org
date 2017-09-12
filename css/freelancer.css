@@ -67,6 +67,10 @@ hr.star-primary:after {
 .img-centered {
   margin: 0 auto; }
 
+.side-col {
+  min-height: 500px;
+}
+
 section {
   padding: 100px 0; }
   section h2 {
@@ -224,6 +228,9 @@ code {
 }
 
 @media (max-width: 767px) {
+  .side-col {
+    min-height: auto;
+  }
   .one-p {
     width: 75%;
   }
