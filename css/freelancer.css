@@ -77,6 +77,16 @@ section.success {
   color: white;
   background: #ce5403; }
 
+.pop-logo {
+  min-width: 280px;
+  text-indent: -9999px;
+  overflow: hidden;
+  background-image: url(../img/pop-php-logo-white.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
 .home-logo {
   margin: 0 auto 20px auto;
   padding: 0;
@@ -605,9 +615,6 @@ footer {
   .portfolio-image > h3 {
     padding: 10px 0 10px 0;
     font-size: 1.6em;
-  }
-  .portfolio-image > i {
-    font-size: 3.0em;
   }
   .portfolio-image > p {
     line-height: 1.5em;
