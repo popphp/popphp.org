@@ -104,6 +104,10 @@ section.success {
   display: block;
 }
 
+.footer-below > div > div > div > span {
+  display: inline;
+}
+
 .one-p {
   margin: 10px auto 35px auto;
   width: 70%;
@@ -664,6 +668,14 @@ footer {
     text-align: center;
   }
 
+  .footer-below > div > div > div {
+    font-size: 0.825em;
+  }
+  .footer-below > div > div > div > span {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+  }
 }
 
 .sm-btn-block {
