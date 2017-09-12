@@ -615,11 +615,16 @@ footer {
     border-style: none;
   }
   .portfolio-image {
+    margin-bottom: 4px;
     padding: 20px 0 0 0;
-    height: 263px;
+    height: 243px;
   }
   .portfolio-image > i {
     font-size: 2.5em;
+  }
+  .col-sm-4 {
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
@@ -643,7 +648,13 @@ footer {
   .ml-auto > p, .mr-auto > p {
     font-size: 0.9em;
   }
+  .col-sm-4 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   .portfolio-image {
+    margin-bottom: 30px;
     padding: 20px 0 0 0;
     height: 250px;
   }
