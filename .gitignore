@@ -1,6 +1,6 @@
 /assets/downloads/*
 /public/assets/downloads/*
 /logs
+/vendor
 .idea
 composer.lock
-vendor
