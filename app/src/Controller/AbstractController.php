@@ -149,10 +149,6 @@ abstract class AbstractController extends \Pop\Controller\AbstractController
         $response = ['code' => 404, 'message' => 'Not Found'];
         $view     = new View(__DIR__ . '/../../view/error.phtml', $response);
         $view->title = 'Error: ' .  $response['code'] . ' ' . $response['message'];
-        if ($this->application->services->isLoaded('session')) {
-            $sess = $this->application->services['session'];
-            $view->username = $sess->user->username;
-        }
         $this->response->setHeader('Content-Type', 'text/html');
         $this->response->setBody($view->render());
 

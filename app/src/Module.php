@@ -13,7 +13,7 @@ class Module extends \Pop\Module\Module
      * Module name
      * @var string
      */
-    protected $name = 'popphp.org';
+    protected $name = 'popphp';
 
     public function register(Application $application)
     {
@@ -30,6 +30,26 @@ class Module extends \Pop\Module\Module
         }
 
         return $this;
+    }
+
+    /**
+     * Custom error handler method
+     *
+     * @param  \Exception $exception
+     * @return void
+     */
+    public function error(\Exception $exception)
+    {
+        $response = new Response();
+        $message  = $exception->getMessage();
+
+        $view          = new View(__DIR__ . '/../view/exception.phtml');
+        $view->title   = $message;
+        $view->message = (substr($message, 0, 7) != 'Error: ') ? 'Error: ' . $message : $message;
+        $response->setHeader('Content-Type', 'text/html');
+        $response->setBody($view->render());
+
+        $response->send(500);
     }
 
 }
