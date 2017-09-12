@@ -1,1 +1,5 @@
 /assets/downloads/*
+/logs
+.idea
+composer.lock
+vendor
