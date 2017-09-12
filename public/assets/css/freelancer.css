@@ -9,11 +9,11 @@ body {
 }
 
 p {
-    font-size: 20px;
+    font-size: 1.0em;
 }
 
 p.small {
-    font-size: 16px;
+    font-size: 0.825em;
 }
 
 a,
@@ -246,6 +246,27 @@ code {
 
 .portfolio-image a.btn {
     margin-bottom: 10px;
+}
+
+.component-div {
+    margin: 10px;
+    padding: 0 0 15px 0;
+    min-width: calc(33% - 20px);
+    text-align: center;
+    border: solid 1px #ddd;
+    border-radius: 4px;
+}
+
+.component-div > strong {
+    margin-bottom: 15px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-bottom: solid 1px #ddd;
+    display: block;
+}
+
+.component-div > a.btn > span {
+    font-size: 0.825em;
 }
 
 .footer-below a {
@@ -790,6 +811,9 @@ fieldset[disabled] .btn-success:hover {
 }
 
 @media (max-width: 992px) {
+    .component-div {
+        min-width: calc(50% - 20px);
+    }
     div.sub-page {
         padding-top: 80px;
         padding-bottom: 50px;
@@ -852,6 +876,9 @@ fieldset[disabled] .btn-success:hover {
 }
 
 @media (max-width: 576px) {
+    .component-div {
+        min-width: calc(100% - 20px);
+    }
     .one-p {
         width: 85%;
         font-size: 0.9em;
@@ -916,7 +943,9 @@ fieldset[disabled] .btn-success:hover {
 }
 
 .sm-btn-block {
+    text-align: center;
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .sm-btn-block > a {
@@ -941,5 +970,17 @@ fieldset[disabled] .btn-success:hover {
 .btn-orange:hover {
     color: #fff;
     background-color: #ce5403;
+    border: solid 2px #ce5403;
+}
+
+.btn-orange-solid {
+    color: #fff;
+    background-color: #ce5403;
+    border: solid 2px #ce5403;
+}
+
+.btn-orange-solid:hover {
+    color: #ce5403;
+    background: transparent;
     border: solid 2px #ce5403;
 }
