@@ -87,6 +87,14 @@ hr.star-primary:after {
     color: #f00;
 }
 
+.smaller-text {
+    font-size: 0.825em;
+}
+
+.bytes {
+    font-size: 0.6em;
+}
+
 section {
     padding: 100px 0;
 }
@@ -943,6 +951,7 @@ fieldset[disabled] .btn-success:hover {
 }
 
 .sm-btn-block {
+    margin: 0 auto;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -954,7 +963,10 @@ fieldset[disabled] .btn-success:hover {
     width: auto;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
+    .sm-btn-block {
+        width: 320px;
+    }
     .sm-btn-block > a {
         margin: 10px 5px 10px 5px;
         display: inline-block;

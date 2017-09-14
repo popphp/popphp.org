@@ -177,7 +177,50 @@ abstract class AbstractController extends \Pop\Controller\AbstractController
      */
     protected function prepareView($template)
     {
+        $zip = null;
+        $tgz = null;
+        $tbz = null;
+
+        if (file_exists(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-3.6.0.zip')) {
+            $zip = $this->formatFileSize(filesize(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-3.6.0.zip'));
+        }
+        if (file_exists(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-3.6.0.tar.gz')) {
+            $tgz = $this->formatFileSize(filesize(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-3.6.0.tar.gz'));
+        }
+        if (file_exists(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-3.6.0.tar.bz2')) {
+            $tbz = $this->formatFileSize(filesize(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-3.6.0.tar.bz2'));
+        }
+
         $this->view = new View($this->viewPath . '/' . $template);
+        $this->view->zip = $zip;
+        $this->view->tgz = $tgz;
+        $this->view->tbz = $tbz;
+    }
+
+    /**
+     * Format file size
+     *
+     * @param  int $size
+     * @return string
+     */
+    protected function formatFileSize($size)
+    {
+        $bytes     = 1024;
+        $formatted = '(';
+
+        if ($size >= pow($bytes, 3)) {
+            $formatted .= round(($size / pow($bytes, 3)), 0) . 'G';
+        } else if ($size >= pow($bytes, 2)) {
+            $formatted .= round(($size / pow($bytes, 2)), 0) . 'M';
+        } else if (($size < pow($bytes, 2)) && ($size >= $bytes)) {
+            $formatted .= round(($size / $bytes), 0) . 'K';
+        } else if ($size < $bytes) {
+            $formatted .= $size;
+        }
+
+        $formatted .= ')';
+
+        return $formatted;
     }
 
 }

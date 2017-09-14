@@ -6,25 +6,25 @@
         <!-- <img class="img-fluid" src="/img/pop-php-logo-shadow.png" alt=""> //-->
         <div class="intro-text">
             <span class="skills">Version 3.6.0 Now Available</span>
-            <div class="col-lg-8 mx-auto text-center sm-btn-block">
-                <a href="https://github.com/popphp/popphp-framework" class="btn btn-lg btn-outline" target="_blank">
-                    <i class="fa fa-github"></i>
-                    GitHub
+            <div class="text-center sm-btn-block">
+                <a href="https://github.com/popphp/popphp-framework" class="btn btn-md btn-outline" target="_blank">
+                    <i class="fa fa-lg fa-github"></i>
+                    <span class="smaller-text">GitHub</span>
                 </a>
                 <a href="/assets/downloads/popphp-php-framework-3.6.0.zip" class="btn btn-lg btn-outline"
                    target="_blank" onclick="ga('send', 'event', 'file', 'download', 'Download Pop PHP v3.6 ZIP');">
                     <i class="fa fa-download"></i>
-                    zip
+                    <span class="smaller-text">zip</span><?php if (!empty($zip)): ?> <span class="bytes"><?=$zip; ?></span><?php endif; ?>
                 </a>
                 <a href="/assets/downloads/popphp-php-framework-3.6.0.tar.gz" class="btn btn-lg btn-outline"
                    target="_blank" onclick="ga('send', 'event', 'file', 'download', 'Download Pop PHP v3.6 TGZ');">
                     <i class="fa fa-download"></i>
-                    gz
+                    <span class="smaller-text">gz</span><?php if (!empty($tgz)): ?> <span class="bytes"><?=$tgz; ?></span><?php endif; ?>
                 </a>
                 <a href="/assets/downloads/popphp-php-framework-3.6.0.tar.bz2" class="btn btn-lg btn-outline"
                    target="_blank" onclick="ga('send', 'event', 'file', 'download', 'Download Pop PHP v3.6 TBZ2');">
                     <i class="fa fa-download"></i>
-                    bz2
+                    <span class="smaller-text">bz2</span><?php if (!empty($tbz)): ?> <span class="bytes"><?=$tbz; ?></span><?php endif; ?>
                 </a>
             </div>
         </div>
@@ -46,7 +46,7 @@
                             abstraction and migrations</p>
                         <p class="pad-top-alt">
                             <a href="https://github.com/popphp/pop-db" class="btn btn-sm btn-outline-secondary"
-                               target="_blank"><i class="fa fa-github"></i> GitHub</a>
+                               target="_blank"><i class="fa fa-lg fa-github"></i> GitHub</a>
                             <a href="http://docs.popphp.org/en/latest/reference/pop_db.html"
                                class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i>
                                 Docs</a>
@@ -63,7 +63,7 @@
                             uploads and HTTP clients.</p>
                         <p class="pad-top-alt">
                             <a href="https://github.com/popphp/pop-http" class="btn btn-sm btn-outline-secondary"
-                               target="_blank"><i class="fa fa-github"></i> GitHub</a>
+                               target="_blank"><i class="fa fa-lg fa-github"></i> GitHub</a>
                             <a href="http://docs.popphp.org/en/latest/reference/pop_http.html"
                                class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i>
                                 Docs</a>
@@ -80,7 +80,7 @@
                             simple.</p>
                         <p class="pad-top-alt">
                             <a href="https://github.com/popphp/pop-form" class="btn btn-sm btn-outline-secondary"
-                               target="_blank"><i class="fa fa-github"></i> GitHub</a>
+                               target="_blank"><i class="fa fa-lg fa-github"></i> GitHub</a>
                             <a href="http://docs.popphp.org/en/latest/reference/pop_form.html"
                                class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i>
                                 Docs</a>
@@ -97,7 +97,7 @@
                             PDF files.</p>
                         <p class="pad-top-alt">
                             <a href="https://github.com/popphp/pop-pdf" class="btn btn-sm btn-outline-secondary"
-                               target="_blank"><i class="fa fa-github"></i> GitHub</a>
+                               target="_blank"><i class="fa fa-lg fa-github"></i> GitHub</a>
                             <a href="http://docs.popphp.org/en/latest/reference/pop_pdf.html"
                                class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i>
                                 Docs</a>
@@ -114,7 +114,7 @@
                             image extensions.</p>
                         <p class="pad-top-alt">
                             <a href="https://github.com/popphp/pop-image" class="btn btn-sm btn-outline-secondary"
-                               target="_blank"><i class="fa fa-github"></i> GitHub</a>
+                               target="_blank"><i class="fa fa-lg fa-github"></i> GitHub</a>
                             <a href="http://docs.popphp.org/en/latest/reference/pop_image.html"
                                class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i>
                                 Docs</a>
@@ -131,7 +131,7 @@
                             via an IMAP or POP client.</p>
                         <p class="pad-top-alt">
                             <a href="https://github.com/popphp/pop-mail" class="btn btn-sm btn-outline-secondary"
-                               target="_blank"><i class="fa fa-github"></i> GitHub</a>
+                               target="_blank"><i class="fa fa-lg fa-github"></i> GitHub</a>
                             <a href="http://docs.popphp.org/en/latest/reference/pop_mail.html"
                                class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i>
                                 Docs</a>
@@ -184,7 +184,7 @@
             methods and quickly wire up a REST-based application.</p>
         <div class="col-lg-8 mx-auto text-center sm-btn-block">
             <a href="https://github.com/popphp/popcorn" class="btn btn-md btn-outline-secondary" target="_blank"><i
-                    class="fa fa-github"></i> GitHub</a>
+                    class="fa fa-lg fa-github"></i> GitHub</a>
             <a href="http://docs.popphp.org/en/latest/user_guide/popcorn.html" class="btn btn-md btn-outline-secondary"
                target="_blank"><i class="fa fa-file-text"></i> Docs</a>
             <a href="http://api.popphp.org/3.6/namespaces/Popcorn.html" class="btn btn-md btn-outline-secondary"
