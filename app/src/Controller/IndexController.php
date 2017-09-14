@@ -41,7 +41,7 @@ class IndexController extends AbstractController
 
     public function version()
     {
-        $this->send(file_get_contents(__DIR__ . '/../../view/version.txt'), 200, 'OK', ['Content-Type' => 'text/plain']);
+        $this->send($this->application->config['version'], 200, 'OK', ['Content-Type' => 'text/plain']);
     }
 
 }

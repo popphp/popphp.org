@@ -177,24 +177,27 @@ abstract class AbstractController extends \Pop\Controller\AbstractController
      */
     protected function prepareView($template)
     {
-        $zip = null;
-        $tgz = null;
-        $tbz = null;
+        $zip     = null;
+        $tgz     = null;
+        $tbz     = null;
+        $version = $this->application->config['version'];
 
-        if (file_exists(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-3.6.0.zip')) {
-            $zip = $this->formatFileSize(filesize(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-3.6.0.zip'));
+        if (file_exists(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-' . $version . '.zip')) {
+            $zip = $this->formatFileSize(filesize(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-' . $version . '.zip'));
         }
-        if (file_exists(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-3.6.0.tar.gz')) {
-            $tgz = $this->formatFileSize(filesize(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-3.6.0.tar.gz'));
+        if (file_exists(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-' . $version . '.tar.gz')) {
+            $tgz = $this->formatFileSize(filesize(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-' . $version . '.tar.gz'));
         }
-        if (file_exists(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-3.6.0.tar.bz2')) {
-            $tbz = $this->formatFileSize(filesize(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-3.6.0.tar.bz2'));
+        if (file_exists(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-' . $version . '.tar.bz2')) {
+            $tbz = $this->formatFileSize(filesize(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-' . $version . '.tar.bz2'));
         }
 
         $this->view = new View($this->viewPath . '/' . $template);
-        $this->view->zip = $zip;
-        $this->view->tgz = $tgz;
-        $this->view->tbz = $tbz;
+
+        $this->view->zip     = $zip;
+        $this->view->tgz     = $tgz;
+        $this->view->tbz     = $tbz;
+        $this->view->version = $version;
     }
 
     /**

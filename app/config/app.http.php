@@ -32,5 +32,6 @@ return [
             'controller' => 'App\Controller\IndexController',
             'action'     => 'error'
         ]
-    ]
+    ],
+    'version' => '3.6.1'
 ];
