@@ -33,5 +33,5 @@ return [
             'action'     => 'error'
         ]
     ],
-    'version' => '3.6.4'
+    'version' => '3.6.5'
 ];
