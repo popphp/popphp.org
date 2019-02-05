@@ -29,9 +29,11 @@ return [
             ]
         ],
         '*' => [
-            'controller' => 'App\Controller\IndexController',
-            'action'     => 'error'
+            '*' => [
+                'controller' => 'App\Controller\IndexController',
+                'action'     => 'error'
+            ]
         ]
     ],
-    'version' => '3.8.0'
+    'version' => '4.0.0'
 ];
