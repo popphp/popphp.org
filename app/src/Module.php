@@ -2,8 +2,8 @@
 namespace App;
 
 use Pop\Application;
-use Pop\Http\Request;
-use Pop\Http\Response;
+use Pop\Http\Server\Request;
+use Pop\Http\Server\Response;
 use Pop\View\View;
 
 class Module extends \Pop\Module\Module
@@ -46,7 +46,7 @@ class Module extends \Pop\Module\Module
         $view          = new View(__DIR__ . '/../view/exception.phtml');
         $view->title   = 'Error';
         $view->message = $message;
-        $response->setHeader('Content-Type', 'text/html');
+        $response->addHeader('Content-Type', 'text/html');
         $response->setBody($view->render());
 
         $response->send(500);

@@ -3,8 +3,8 @@
 namespace App\Controller;
 
 use Pop\Application;
-use Pop\Http\Request;
-use Pop\Http\Response;
+use Pop\Http\Server\Request;
+use Pop\Http\Server\Response;
 use Pop\View\View;
 
 abstract class AbstractController extends \Pop\Controller\AbstractController
@@ -128,7 +128,7 @@ abstract class AbstractController extends \Pop\Controller\AbstractController
         $this->response->setCode($code);
 
         if (null === $this->response->getHeader('Content-Type')) {
-            $this->response->setHeader('Content-Type', 'text/html');
+            $this->response->addHeader('Content-Type', 'text/html');
         }
 
         $this->response->setBody($body . PHP_EOL . PHP_EOL);
@@ -177,53 +177,8 @@ abstract class AbstractController extends \Pop\Controller\AbstractController
      */
     protected function prepareView($template)
     {
-        $zip     = null;
-        $tgz     = null;
-        $tbz     = null;
-        $version = $this->application->config['version'];
-
-        if (file_exists(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-' . $version . '.zip')) {
-            $zip = $this->formatFileSize(filesize(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-' . $version . '.zip'));
-        }
-        if (file_exists(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-' . $version . '.tar.gz')) {
-            $tgz = $this->formatFileSize(filesize(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-' . $version . '.tar.gz'));
-        }
-        if (file_exists(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-' . $version . '.tar.bz2')) {
-            $tbz = $this->formatFileSize(filesize(__DIR__ . '/../../../public/assets/downloads/popphp-php-framework-' . $version . '.tar.bz2'));
-        }
-
         $this->view = new View($this->viewPath . '/' . $template);
-
-        $this->view->zip     = $zip;
-        $this->view->tgz     = $tgz;
-        $this->view->tbz     = $tbz;
-        $this->view->version = $version;
-    }
-
-    /**
-     * Format file size
-     *
-     * @param  int $size
-     * @return string
-     */
-    protected function formatFileSize($size)
-    {
-        $bytes     = 1024;
-        $formatted = '(';
-
-        if ($size >= pow($bytes, 3)) {
-            $formatted .= round(($size / pow($bytes, 3)), 0) . 'G';
-        } else if ($size >= pow($bytes, 2)) {
-            $formatted .= round(($size / pow($bytes, 2)), 0) . 'M';
-        } else if (($size < pow($bytes, 2)) && ($size >= $bytes)) {
-            $formatted .= round(($size / $bytes), 0) . 'K';
-        } else if ($size < $bytes) {
-            $formatted .= $size;
-        }
-
-        $formatted .= ')';
-
-        return $formatted;
+        $this->view->version = $this->application->config['version'];
     }
 
 }
