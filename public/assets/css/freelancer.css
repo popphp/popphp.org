@@ -996,3 +996,10 @@ fieldset[disabled] .btn-success:hover {
     background: transparent;
     border: solid 2px #ce5403;
 }
+
+.changelog-btn {
+    margin: 25px auto 25px 0;
+    padding: 0;
+    display: block;
+    text-align: center;
+}
