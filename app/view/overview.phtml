@@ -13,7 +13,7 @@
             <p>The goal is so that anyone from an advanced programmer to a novice developer can install and start using the Pop PHP Framework quickly and effectively.</p>
             <hr />
             <h3 class="dark-blue pad-bottom">Requirements</h3>
-            <p>The Pop PHP Framework has been built for and tested with <strong>PHP 7.3</strong> or greater. So the only true requirement is that to have at least <strong>PHP 7.3</strong> installed in the environment.</p>
+            <p>The Pop PHP Framework has been built for and tested with <strong>PHP 8.1</strong> and is backwards compatible to <strong>7.4</strong>. So the only true requirement is that to have at least <strong>PHP 7.4</strong> installed in the environment.</p>
             <a name="installation"></a>
             <p>For more on the various additional recommended server components, settings and extensions, please review <a href="http://docs.popphp.org/en/latest/installation.html#requirements" target="_blank">the documentation</a>.</p>
             <hr />
@@ -25,6 +25,7 @@
                 <li><a href="#full">Full Installation</a></li>
                 <li><a href="#barebones">Barebones Installation</a></li>
                 <li><a href="#popcorn">Popcorn Installation</a></li>
+                <li><a href="#cli">CLI Applications</a></li>
                 <li><a href="#individual">Installing Individual Components</a></li>
             </ul>
             <hr/>
@@ -63,7 +64,7 @@
             <a name="popcorn"></a>
             <div class="code-div"><code>{
     "require": {
-        "popphp/popphp": "^3.7.0"
+        "popphp/popphp": "^3.7.2"
     }
 }</code></div>
             <p class="small-p">[ <a href="#installation"><i class="fa fa-angle-double-up"></i> Top</a> ]</p>
@@ -75,10 +76,23 @@
                 web components.</p>
             <p>Popcorn can be installed using one of the methods above, but by using the Popcorn repository like
                 this:</p>
+            <a name="cli"></a>
+            <div class="code-div"><code>{
+    "require": {
+        "popphp/popcorn": "^3.4.1"
+    }
+}</code></div>
+            <p class="small-p">[ <a href="#installation"><i class="fa fa-angle-double-up"></i> Top</a> ]</p>
+            <hr/>
+            <p><strong>CLI Applications:</strong></p>
+            <p>Installing the <code>popphp/pop-console</code> package along with the main <code>popphp/popphp</code> package
+                will provide the tools needed to build and run an application on the command line, with support for CLI
+                commands, output and colors.</p>
             <a name="individual"></a>
             <div class="code-div"><code>{
     "require": {
-        "popphp/popcorn": "^3.4.0"
+        "popphp/popphp": "^3.7.2",
+        "popphp/pop-console": "^3.2.1"
     }
 }</code></div>
             <p class="small-p">[ <a href="#installation"><i class="fa fa-angle-double-up"></i> Top</a> ]</p>
