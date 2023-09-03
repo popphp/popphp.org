@@ -11,8 +11,8 @@
     ],
     "require": {
         "php": ">=7.4.0",
-        "popphp/popcorn": "^3.4.1",
-        "popphp/pop-kettle": "^1.6.2"
+        "popphp/popcorn": "^3.4.2",
+        "popphp/pop-kettle": "^1.6.3"
     },
     "autoload" : {
         "psr-4": {
