@@ -14,31 +14,31 @@ abstract class AbstractController extends \Pop\Controller\AbstractController
      * Application object
      * @var Application
      */
-    protected $application = null;
+    protected ?Application $application = null;
 
     /**
      * Request object
-     * @var Request
+     * @var ?Request
      */
-    protected $request = null;
+    protected ?Request $request = null;
 
     /**
      * Response object
-     * @var Response
+     * @var ?Response
      */
-    protected $response = null;
+    protected ?Response $response = null;
 
     /**
      * View path
      * @var string
      */
-    protected $viewPath = __DIR__ . '/../../view';
+    protected string $viewPath = __DIR__ . '/../../view';
 
     /**
      * View object
-     * @var \Pop\View\View
+     * @var ?View
      */
-    protected $view = null;
+    protected ?View $view = null;
 
     /**
      * Constructor for the controller
@@ -59,7 +59,7 @@ abstract class AbstractController extends \Pop\Controller\AbstractController
      *
      * @return Application
      */
-    public function application()
+    public function application(): Application
     {
         return $this->application;
     }
@@ -69,7 +69,7 @@ abstract class AbstractController extends \Pop\Controller\AbstractController
      *
      * @return Request
      */
-    public function request()
+    public function request(): Request
     {
         return $this->request;
     }
@@ -79,7 +79,7 @@ abstract class AbstractController extends \Pop\Controller\AbstractController
      *
      * @return Response
      */
-    public function response()
+    public function response(): Response
     {
         return $this->response;
     }
@@ -89,7 +89,7 @@ abstract class AbstractController extends \Pop\Controller\AbstractController
      *
      * @return View
      */
-    public function view()
+    public function view(): View
     {
         return $this->view;
     }
@@ -97,9 +97,9 @@ abstract class AbstractController extends \Pop\Controller\AbstractController
     /**
      * Determine if the view object has been created
      *
-     * @return boolean
+     * @return bool
      */
-    public function hasView()
+    public function hasView(): bool
     {
         return (null !== $this->view);
     }
@@ -107,13 +107,13 @@ abstract class AbstractController extends \Pop\Controller\AbstractController
     /**
      * Send response
      *
-     * @param  string $body
-     * @param  int    $code
-     * @param  string $message
-     * @param  array  $headers
+     * @param  ?string $body
+     * @param  int     $code
+     * @param  ?string $message
+     * @param  ?array  $headers
      * @return void
      */
-    public function send($body = null, $code = 200, $message = null, array $headers = null)
+    public function send(?string $body = null, int $code = 200, ?string $message = null, ?array $headers = null): void
     {
         $this->application->trigger('app.send.pre', ['controller' => $this]);
 
@@ -144,7 +144,7 @@ abstract class AbstractController extends \Pop\Controller\AbstractController
      *
      * @return void
      */
-    public function error()
+    public function error(): void
     {
         $response = ['code' => 404, 'message' => 'Not Found'];
 
@@ -163,7 +163,7 @@ abstract class AbstractController extends \Pop\Controller\AbstractController
      * @param  string $version
      * @return void
      */
-    public function redirect($url, $code = '302', $version = '1.1')
+    public function redirect(string $url, string $code = '302', string $version = '1.1'): void
     {
         Response::redirect($url, $code, $version);
         exit();
@@ -175,7 +175,7 @@ abstract class AbstractController extends \Pop\Controller\AbstractController
      * @param  string $template
      * @return void
      */
-    protected function prepareView($template)
+    protected function prepareView(string $template): void
     {
         $this->view = new View($this->viewPath . '/' . $template);
         $this->view->version = $this->application->config['version'];

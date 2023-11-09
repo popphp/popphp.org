@@ -11,11 +11,11 @@ class Module extends \Pop\Module\Module
 
     /**
      * Module name
-     * @var string
+     * @var ?string
      */
-    protected $name = 'popphp';
+    protected ?string $name = 'popphp';
 
-    public function register(Application $application)
+    public function register(Application $application): static
     {
         parent::register($application);
 
@@ -38,7 +38,7 @@ class Module extends \Pop\Module\Module
      * @param  \Exception $exception
      * @return void
      */
-    public function error(\Exception $exception)
+    public function error(\Exception $exception): void
     {
         $response = new Response();
         $message  = $exception->getMessage();

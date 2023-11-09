@@ -17,3 +17,5 @@ try {
     $app = new Pop\Kettle\Module();
     $app->cliError($exception);
 }
+
+
