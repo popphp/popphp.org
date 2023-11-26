@@ -1,7 +1,20 @@
+@import url(../../../node_modules/highlight.js/styles/atom-one-dark.css);
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 [x-cloak] {
     display: none !important;
+}
+
+pre {
+    @apply relative mt-1
+}
+
+pre > code {
+    @apply relative p-2 rounded-lg text-sm
+}
+
+.copy-link {
+    @apply absolute top-2 right-2 pl-1 pt-1 w-8 h-8 rounded-md float-right text-gray-200 bg-gray-600 hover:text-gray-200 hover:bg-gray-900 active:bg-blue-500 dark:text-gray-200 dark:hover:text-gray-200
 }

@@ -8,6 +8,7 @@
     "css-minimizer-webpack-plugin": "^5.0.1",
     "eslint": "^8.53.0",
     "eslint-config-semistandard": "^17.0.0",
+    "highlight.js": "^11.9.0",
     "mini-css-extract-plugin": "^2.7.6",
     "postcss": "^8.4.31",
     "postcss-loader": "^7.3.3",
