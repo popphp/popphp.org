@@ -121,7 +121,7 @@ section.success {
 }
 
 .dev-link-btn {
-    @apply block w-full bg-orange-700 text-white pt-0 pb-2 pl-4 pr-4 text-center text-sm rounded hover:bg-white hover:text-orange-700 hover:border hover:border-orange-700
+    @apply block w-full h-10 bg-orange-700 text-white pt-0 pb-2 pl-4 pr-4 text-center text-sm rounded hover:bg-white hover:text-orange-700 hover:border hover:border-orange-700
 }
 
 .github-icon-white {
@@ -136,7 +136,6 @@ section.success {
     background-position: 0 0;
     background-repeat: no-repeat;
 }
-
 
 .dev-link-btn:hover > .github-icon-white {
     background-image: url(./img/github-mark-orange.png);
@@ -190,7 +189,6 @@ section.success {
     background-position: 0 0;
     background-repeat: no-repeat;
 }
-
 
 .dev-link-btn:hover > .x-icon-white {
     background-image: url(./img/x-logo-orange.png);
@@ -278,5 +276,6 @@ pre > code {
     .main-content {
         @apply pr-0
     }
+
 }
 
