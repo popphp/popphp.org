@@ -28,17 +28,79 @@
 .main-nav {
     position: relative;
     margin: 36px 0 0 0;
+    overflow: hidden;
     float: right;
 }
 
 .main-nav > li {
     padding: 0 18px 0 18px;
-    font-family: Montserrat, Arial, sans-serif;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     display: inline-block;
 }
 
 .main-nav > li > a {
     @apply text-sm text-white uppercase tracking-wide hover:text-orange-500
+}
+
+header.masthead {
+    background: #e27f46;
+}
+
+.home-logo {
+    margin: 0 auto 20px auto;
+    padding: 0;
+    background-image: url(./img/pop-php-logo-shadow.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    max-width: 100%;
+    height: 400px;
+    display: block;
+    vertical-align: middle;
+    border-style: none;
+}
+
+.font-alt {
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.star {
+    max-width: 250px;
+    margin: 25px auto 30px auto;
+    padding: 0;
+    text-align: center;
+    border-top: solid 5px;
+    border-color: #2c3e50;
+}
+
+.star-light {
+    max-width: 250px;
+    margin: 25px auto 30px auto;
+    padding: 0;
+    text-align: center;
+    border-top: solid 5px;
+    border-color: #ffff;
+}
+
+section.success {
+    color: white;
+    background-color: #ce5403;
+}
+
+.orange-back {
+    background-color: #ce5403;
+}
+
+.github-icon {
+    margin: 0 0 0.5rem 0.25rem;
+    padding: 0.25rem 0.25rem 0.4rem 2.5rem;
+    background-image: url(./img/github-mark-gray.png);
+    background-size: 25px 24px;
+    background-position: 7px 5px;
+    background-repeat: no-repeat;
+}
+
+.github-icon:hover {
+    background-image: url(./img/github-mark-white.png);
 }
 
 pre {
@@ -88,7 +150,6 @@ pre > code {
 
     .main-nav > li {
         padding: 8px 10% 20px 10%;
-        font-family: Montserrat, Arial, sans-serif;
         display: block;
     }
 
@@ -98,3 +159,24 @@ pre > code {
         height: 100%;
     }
 }
+
+@media (max-width: 768px) {
+    header.masthead {
+        padding-top: 150px;
+        padding-bottom: 70px;
+    }
+
+    .home-logo {
+        margin: 0 auto 20px auto;
+        padding: 0;
+        background-image: url(./img/pop-php-logo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        max-width: 100%;
+        height: 320px;
+        display: block;
+        vertical-align: middle;
+        border-style: none;
+    }
+}
+

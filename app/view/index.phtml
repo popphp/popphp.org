@@ -1,14 +1,14 @@
 <?php include __DIR__ . '/inc/header.phtml'; ?>
 <!-- Header -->
-<header class="masthead">
-    <div class="container">
+<header class="masthead pt-12 pb-12">
+    <div class="container text-center mx-auto">
         <div class="home-logo"></div>
-        <div class="intro-text">
-            <span class="skills">Version <?=$version; ?> Now Available</span>
+        <div class="text-center">
+            <h3 class="text-white bold text-3xl mb-4">Version <?=$version; ?> Now Available</h3>
             <div class="text-center sm-btn-block">
-                <a href="https://github.com/popphp/popphp-framework" class="btn btn-md btn-outline" target="_blank">
-                    <i class="fa fa-lg fa-github"></i>
-                    <span class="smaller-text">GitHub</span>
+                <a href="https://github.com/popphp/popphp-framework" class="pt-2 pb-2 pl-4 pr-4 inline-block text-white text-center rounded-lg border-2 border-solid border-white hover:bg-orange-700 hover:border-orange-700" target="_blank">
+                    <img class="relative mr-2 inline-block" src="/assets/img/github-mark-white.png" width="32" />
+                    <span class="relative inline-block top-0.5 text-xl">GitHub</span>
                 </a>
             </div>
         </div>
@@ -17,9 +17,13 @@
 
 <!-- Portfolio Grid Section -->
 <section id="portfolio">
-    <div class="container">
-        <h2 class="text-center dark-blue">Featured Components</h2>
-        <hr class="star-primary">
+    <div class="container mx-auto pt-20 pb-20">
+        <h2 class="text-center text-gray-700 font-alt font-bold text-5xl uppercase">Featured Components</h2>
+        <div class="star text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="pl-2 pr-2 w-12 h-8 relative inline-block mx-auto bg-white -top-5">
+                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+            </svg>
+        </div>
         <div class="row">
             <div class="col-sm-4">
                 <div class="portfolio-link">
@@ -126,55 +130,76 @@
         </div>
     </div>
 </section>
-<a name="about"></a>
 <!-- About Section -->
 <section class="success" id="about">
-    <div class="container">
-        <h2 class="text-center">About</h2>
-        <hr class="star-light">
-        <div class="row">
-            <div class="col-lg-4 ml-auto">
+    <div class="container mx-auto pt-20 pb-20">
+        <h2 class="text-center text-white font-alt font-bold text-5xl uppercase">About</h2>
+        <div class="star-light text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="pl-2 pr-2 w-12 h-8 relative inline-block mx-auto orange-back -top-5">
+                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="grid xs:grid-cols-1 md:grid-cols-2 gap-6 justify-items-center max-w-4xl mx-auto">
+            <div class="max-w-sm">
                 <p>Pop PHP is an open source, object-oriented PHP framework with humble beginnings dating back to 2009,
                     where it started as a small library of components. The first official version of Pop was released in
                     early 2012. Version 2 was release in 2014, and version <?=$version; ?> is the current live version in production.</p>
             </div>
-            <div class="col-lg-4 mr-auto">
+            <div class="max-w-sm">
                 <p>The focus of Pop is to provide a robust set of lightweight tools to assist developers with rapid
                     application development. With a relatively small learning curve, Pop aims to help developers in
                     getting the features they need into their applications so they can be up and running quickly.</p>
             </div>
-            <div class="col-lg-8 mx-auto text-center">
-                <a href="http://docs.popphp.org/" class="btn btn-lg btn-outline" target="_blank">
-                    <i class="fa fa-file-text"></i>
-                    Docs
-                </a>
-                <a href="https://api.popphp.org/5.0/" class="btn btn-lg btn-outline" target="_blank">
-                    <i class="fa fa-code"></i>
-                    API
-                </a>
-            </div>
+        </div>
+        <div class="mx-auto text-center pt-8">
+            <a href="http://docs.popphp.org/" class="pt-2 pb-2 pl-4 pr-4 mr-2 inline-block text-white text-center rounded-lg border-2 border-solid border-white hover:bg-orange-800 hover:border-orange-800" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="relative mr-1 inline-block w-6 h-6">
+                    <path fill-rule="evenodd" d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625zM7.5 15a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 017.5 15zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H8.25z" clip-rule="evenodd" />
+                    <path d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z" />
+                </svg>
+                <span class="relative inline-block top-0.5 text-xl">Docs</span>
+            </a>
+            <a href="https://api.popphp.org/5.0/" class="pt-2 pb-2 pl-4 pr-4 ml-2 inline-block text-white text-center rounded-lg border-2 border-solid border-white hover:bg-orange-800 hover:border-orange-800" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="relative mr-1 inline-block w-6 h-6">
+                    <path fill-rule="evenodd" d="M14.447 3.027a.75.75 0 01.527.92l-4.5 16.5a.75.75 0 01-1.448-.394l4.5-16.5a.75.75 0 01.921-.526zM16.72 6.22a.75.75 0 011.06 0l5.25 5.25a.75.75 0 010 1.06l-5.25 5.25a.75.75 0 11-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 010-1.06zm-9.44 0a.75.75 0 010 1.06L2.56 12l4.72 4.72a.75.75 0 11-1.06 1.06L.97 12.53a.75.75 0 010-1.06l5.25-5.25a.75.75 0 011.06 0z" clip-rule="evenodd" />
+                </svg>
+                <span class="relative inline-block top-0.5 text-xl">API</span>
+            </a>
         </div>
     </div>
 </section>
-<a name="popcorn"></a>
 <!-- Popcorn Section -->
-<section id="contact">
-    <div class="container">
-        <h3 class="dark-blue text-center">Looking for something even lighter?</h3>
-        <img class="img-centered img-block" src="/assets/img/popcorn-logo-shadow.png" width="240" height="240" alt="">
-        <p class="text-center one-p">Popcorn is available as a micro-framework layer that can be utilized to build REST
+<section id="popcorn">
+    <div class="container mx-auto pt-20 pb-20">
+        <h3 class="text-center text-gray-700 font-alt font-bold text-3xl uppercase">Looking for something even lighter?</h3>
+        <img class="mx-auto block pt-4 pb-4" src="/assets/img/popcorn-logo-shadow.png" width="240" height="240" alt="">
+        <p class="text-center max-w-3xl mx-auto">Popcorn is available as a micro-framework layer that can be utilized to build REST
             applications and APIs. It utilizes only a few of the web-based components, although any of the other
             components can be added at any time. With Popcorn, a developer can enforce routing rules based on request
             methods and quickly wire up a REST-based application.</p>
-        <div class="col-lg-8 mx-auto text-center sm-btn-block">
-            <a href="https://github.com/popphp/popcorn" class="btn btn-md btn-outline-secondary" target="_blank"><i
-                    class="fa fa-lg fa-github"></i> GitHub</a>
-            <a href="https://docs.popphp.org/getting-started/popcorn" class="btn btn-md btn-outline-secondary"
-               target="_blank"><i class="fa fa-file-text"></i> Docs</a>
-            <a href="https://api.popphp.org/5.0/packages/Popcorn.html" class="btn btn-md btn-outline-secondary"
-               target="_blank"><i class="fa fa-code"></i> API</a>
-            <a href="/overview#popcorn" class="btn btn-md btn-outline-secondary" target="_blank">Learn More <i
-                        class="fa fa-angle-double-right"></i></a>
+        <div class="mx-auto text-center pt-12 pb-8">
+            <a href="https://github.com/popphp/popcorn" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank">
+                <span class="relative inline-block top-0.5">GitHub</span>
+            </a>
+            <a href="https://docs.popphp.org/getting-started/popcorn" class="pt-1 pb-1 pl-2 pr-2 ml-1 mr-1 mb-2 inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="relative mr-1 inline-block w-6 h-6">
+                    <path fill-rule="evenodd" d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625zM7.5 15a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 017.5 15zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H8.25z" clip-rule="evenodd" />
+                    <path d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z" />
+                </svg>
+                <span class="relative inline-block top-0.5">Docs</span>
+            </a>
+            <a href="https://api.popphp.org/5.0/packages/Popcorn.html" class="pt-1 pb-1 pl-2 pr-2 ml-1 mr-1 mb-2 inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="relative mr-1 inline-block w-6 h-6">
+                    <path fill-rule="evenodd" d="M14.447 3.027a.75.75 0 01.527.92l-4.5 16.5a.75.75 0 01-1.448-.394l4.5-16.5a.75.75 0 01.921-.526zM16.72 6.22a.75.75 0 011.06 0l5.25 5.25a.75.75 0 010 1.06l-5.25 5.25a.75.75 0 11-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 010-1.06zm-9.44 0a.75.75 0 010 1.06L2.56 12l4.72 4.72a.75.75 0 11-1.06 1.06L.97 12.53a.75.75 0 010-1.06l5.25-5.25a.75.75 0 011.06 0z" clip-rule="evenodd" />
+                </svg>
+                <span class="relative inline-block top-0.5">API</span>
+            </a>
+            <a href="/overview#popcorn" class="pt-1 pb-1 pl-2 pr-2 ml-1 mb-2 inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank">
+                <span class="relative inline-block top-0.5">Learn More</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="relative ml-1 inline-block w-6 h-6">
+                    <path fill-rule="evenodd" d="M4.72 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L11.69 12 4.72 5.03a.75.75 0 010-1.06zm6 0a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06L17.69 12l-6.97-6.97a.75.75 0 010-1.06z" clip-rule="evenodd" />
+                </svg>
+            </a>
         </div>
     </div>
 </section>
