@@ -1,11 +1,11 @@
 <?php include __DIR__ . '/inc/header.phtml'; ?>
-<div id="top" class="container mx-auto pt-12 pb-12 pr-20 pl-20 max-[1280px]:pl-10 max-[1280px]:pr-10 max-[768px]:pl-0 max-[768px]:pr-0">
+<div class="container mx-auto pt-12 pb-12 pr-20 pl-20 max-[1280px]:pl-10 max-[1280px]:pr-10 max-[768px]:pl-0 max-[768px]:pr-0">
     <div class="grid grid-cols-1 lg:grid-cols-4 mx-auto">
         <div class="col-span-3 main-content">
             <h2 class="font-alt font-bold text-3xl text-orange-700 uppercase pb-8">Overview</h2>
             <p class="pb-4">The Pop PHP Framework is a lightweight, yet robust PHP framework that can be used for rapid application development. The framework itself has a base set of core components as well as numerous other additional components to facilitate many of the common features needed for a PHP application.</p>
             <p class="pb-4">The two main concepts behind the Pop PHP Framework have always been:</p>
-            <ol class="list-decimal ml-12 mb-4">
+            <ol id="top" class="list-decimal ml-12 mb-4">
                 <li class="mb-1">To be <strong>lightweight</strong> and <strong>easy to use</strong></li>
                 <li class="mb-1">To promote <strong>standards in development</strong> while maintaining a <strong>manageable learning curve</strong></li>
             </ol>
@@ -21,12 +21,13 @@
             <ul class="list-disc ml-12 mb-4">
                 <li class="mb-1"><a class="text-orange-700 hover:underline" href="#full">Full Installation</a></li>
                 <li class="mb-1"><a class="text-orange-700 hover:underline" href="#barebones">Barebones Installation</a></li>
-                <li class="mb-1"><a class="text-orange-700 hover:underline" href="#popcorn">Popcorn Installation</a></li>
+                <li class="mb-1"><a class="text-orange-700 hover:underline" href="#kettle">Kettle Installation</a></li>
+                <li class="mb-1" id="full"><a class="text-orange-700 hover:underline" href="#popcorn">Popcorn Installation</a></li>
                 <li class="mb-1"><a class="text-orange-700 hover:underline" href="#cli">CLI Applications</a></li>
                 <li class="mb-1"><a class="text-orange-700 hover:underline" href="#individual">Installing Individual Components</a></li>
             </ul>
             <hr class="mt-4 mb-4" />
-            <p id="full"><strong>Full Installation:</strong></p>
+            <p><strong>Full Installation:</strong></p>
             <p class="pt-4 pb-4">A developer can install or download the full framework, which includes the core components plus an
                 additional 27 components to serve as a toolkit for application development. The full version can either
                 be downloaded from one of the links on this website, or installed via <a href="https://getcomposer.org/" target="_blank">Composer</a>
@@ -35,18 +36,18 @@
             <p class="pt-4 pb-4">Or, it can be added to a project like this:</p>
             <pre><code class="language-bash">composer require popphp/popphp-framework</code><a href="#" title="Copy" class="copy-link" x-data="copyCode" x-on:click.prevent="copy($el)"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 relative"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z" /></svg></a></pre>
             <p class="pt-4 pb-4">Or, it can be added to a project's <code class="inline-code">composer.json</code> file like this:</p>
-            <pre><code class="language-json">{
+            <pre id="barebones"><code class="language-json">{
     "require": {
         "popphp/popphp-framework": "^<?=$version; ?>"
     }
 }</code><a href="#" title="Copy" class="copy-link" x-data="copyCode" x-on:click.prevent="copy($el)"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 relative"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z" /></svg></a></pre>
-            <p class="text-xs mt-4 mb-4">[ <a href="#installation" class="text-orange-700 hover:underline">
+            <p class="text-xs mt-4 mb-4">[ <a href="#top" class="text-orange-700 hover:underline">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 inline">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5" />
                     </svg>
             Top</a> ]</p>
             <hr class="mt-4 mb-4" />
-            <p id="barebones"><strong>Barebones Installation:</strong></p>
+            <p><strong>Barebones Installation:</strong></p>
             <p class="pt-4 pb-4">A developer can opt to only install the barebones core components that make up the foundation of the
                 application stack. This includes:</p>
             <ul class="list-disc ml-12 mb-4">
@@ -60,36 +61,60 @@
             </ul>
             <p class="pt-4 pb-4">The barebones version can be installed using one of the methods above, but by swapping out the framework
                 repository for the core repository like this:</p>
-            <pre><code class="language-json">{
+            <pre id="kettle"><code class="language-json">{
     "require": {
         "popphp/popphp": "^4.0.0"
     }
 }</code><a href="#" title="Copy" class="copy-link" x-data="copyCode" x-on:click.prevent="copy($el)"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 relative"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z" /></svg></a></pre>
-            <p class="text-xs mt-4 mb-4">[ <a href="#installation" class="text-orange-700 hover:underline">
+            <p class="text-xs mt-4 mb-4">[ <a href="#top" class="text-orange-700 hover:underline">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 inline">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5" />
                     </svg>
                     Top</a> ]</p>
             <hr class="mt-4 mb-4" />
-            <p id="popcorn"><strong>Popcorn Installation:</strong></p>
+            <p><strong>Kettle Installation:</strong></p>
+            <p class="pt-4 pb-4">Kettle is a CLI helper script that comes with Pop. It should be installed in the main
+                project folder if you create a new project or clone the repo. However, if choose to install the framework in a way
+                that the <code class="inline-code">pop-kettle</code> CLI-helper script is not available in the main project folder,
+                you can place a copy of the script from the <code class="inline-code">vendor/popphp/pop-kettle/kettle</code> location
+                in the main project folder (adjacent to the <code class="inline-code">vendor</code> folder):
+            <pre><code class="language-bash">cp vendor/popphp/pop-kettle/kettle .
+cp vendor/popphp/pop-kettle/kettle.inc.php .</code><a href="#" title="Copy" class="copy-link" x-data="copyCode" x-on:click.prevent="copy($el)"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 relative"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z" /></svg></a></pre>
+            <p class="mt-4 mb-4">Once you've copied the scripts over, you have to change the reference to the script's config file from:</p>
+            <pre><code class="language-php">$app = new Pop\Application(
+    $autoloader, include __DIR__ . '/config/app.console.php'
+);</code><a href="#" title="Copy" class="copy-link" x-data="copyCode" x-on:click.prevent="copy($el)"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 relative"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z" /></svg></a></pre>
+            <p class="mt-4 mb-4">to</p>
+            <pre><code class="language-php">$app = new Pop\Application(
+    $autoloader, include __DIR__ . '/vendor/popphp/pop-kettle/config/app.console.php'
+);</code><a href="#" title="Copy" class="copy-link" x-data="copyCode" x-on:click.prevent="copy($el)"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 relative"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z" /></svg></a></pre>
+            <p id="popcorn" class="mt-4 mb-4">and make sure the newly copied <code class="inline-code">kettle</code> script is set to execute (755)</p>
+            <pre><code class="language-bash">chmod 755 kettle</code><a href="#" title="Copy" class="copy-link" x-data="copyCode" x-on:click.prevent="copy($el)"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 relative"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z" /></svg></a></pre>
+            <p class="text-xs mt-4 mb-4">[ <a href="#top" class="text-orange-700 hover:underline">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 inline">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5" />
+                    </svg>
+                    Top</a> ]</p>
+            <hr class="mt-4 mb-4" />
+            <p><strong>Popcorn Installation:</strong></p>
             <p class="pt-4 pb-4">A developer can also choose to install Popcorn, which is a web-based, micro-framework layer that can be
                 utilized to build REST applications and APIs. It installs the same core components from the barebones
                 installation, plus the <code class="inline-code">popphp/pop-http</code>, <code class="inline-code">popphp/pop-session</code> and <code class="inline-code">popphp/pop-view</code>
                 web components.</p>
             <p class="pt-4 pb-4">Popcorn can be installed using one of the methods above, but by using the Popcorn repository like
                 this:</p>
-            <pre><code class="language-json">{
+            <pre id="cli"><code class="language-json">{
     "require": {
         "popphp/popcorn": "^4.0.0"
     }
 }</code><a href="#" title="Copy" class="copy-link" x-data="copyCode" x-on:click.prevent="copy($el)"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 relative"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z" /></svg></a></pre>
-            <p class="text-xs mt-4 mb-4">[ <a href="#installation" class="text-orange-700 hover:underline">
+            <p class="text-xs mt-4 mb-4">[ <a href="#top" class="text-orange-700 hover:underline">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 inline">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5" />
                     </svg>
                     Top</a> ]</p>
             <hr class="mt-4 mb-4" />
-            <p id="cli"><strong>CLI Applications:</strong></p>
+            <p><strong>CLI Applications:</strong></p>
             <p class="pt-4 pb-4">Installing the <code class="inline-code">popphp/pop-console</code> package along with the main <code class="inline-code">popphp/popphp</code> package
                 will provide the tools needed to build and run an application on the command line, with support for CLI
                 commands, output and colors.</p>
@@ -99,7 +124,7 @@
         "popphp/pop-console": "^4.0.0"
     }
 }</code><a href="#" title="Copy" class="copy-link" x-data="copyCode" x-on:click.prevent="copy($el)"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 relative"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z" /></svg></a></pre>
-            <p class="text-xs mt-4 mb-4">[ <a href="#installation" class="text-orange-700 hover:underline">
+            <p class="text-xs mt-4 mb-4">[ <a href="#top" class="text-orange-700 hover:underline">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 inline">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5" />
                     </svg>
@@ -110,7 +135,7 @@
                 application, the individual components of the Pop PHP Framework play nicely with others. Please refer to
                 the individual documentation of whichever components are required to be added to your project to get the
                 name of the repository for those components.</p>
-            <p class="text-xs mt-4 mb-4">[ <a href="#installation" class="text-orange-700 hover:underline">
+            <p class="text-xs mt-4 mb-4">[ <a href="#top" class="text-orange-700 hover:underline">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 inline">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5" />
                     </svg>
