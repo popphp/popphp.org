@@ -1,224 +1,188 @@
 <?php include __DIR__ . '/inc/header.phtml'; ?>
 <div id="top" class="container mx-auto pt-12 pb-12 pr-20 pl-20 max-[1280px]:pl-10 max-[1280px]:pr-10 max-[768px]:pl-0 max-[768px]:pr-0">
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mx-auto">
-        <div class="col-span-3">
-            <h2 class="orange pad-bottom">Documentation</h2>
-            <p>The Pop PHP Framework contains a group of core components and an additional 30+ components that serve as a
+    <div class="grid grid-cols-1 lg:grid-cols-4 mx-auto">
+        <div class="col-span-3 main-content">
+            <h2 class="font-alt font-bold text-3xl text-orange-700 uppercase pb-8">Documentation</h2>
+            <p class="pb-4">The Pop PHP Framework contains a group of core components and an additional 30+ components that serve as a
                 toolkit for rapid application development. Provided in the links below are full documentation complete
                 with examples and tutorials, as well as a straight forward API documentation for those interested in
                 learning the framework more in depth. As the documentation outlines, the framework and each of its
-                components are available via <a href="https://getcomposer.org/" target="_blank">Composer</a> or the
+                components are available via <a href="https://getcomposer.org/" class="text-orange-700 hover:underline" target="_blank">Composer</a> or the
                 standalone download links on this website.</p>
-            <p>Those that wish to contribute to any of the components or the documentation, please visit the <a
-                    href="/development">development page</a> to find out how to do so.</p>
-            <hr/>
-            <p><strong>Full Documentation:</strong></p>
-            <ul>
-                <li><a href="http://docs.popphp.org/" target="_blank">v<?=$version; ?></a></li>
-                <li><a href="https://pop-php-framework.readthedocs.io/en/latest/" target="_blank">Legacy</a> (<= v4.8.0)</li>
+            <p class="pb-4">Those that wish to contribute to any of the components or the documentation, please visit the <a
+                    href="/development" class="text-orange-700 hover:underline">development page</a> to find out how to do so.</p>
+            <hr class="mt-4 mb-4" />
+            <p class="pb-4"><strong>Full Documentation:</strong></p>
+            <ul class="list-disc ml-12 mb-4">
+                <li class="mb-1"><a class="text-orange-700 hover:underline" href="http://docs.popphp.org/" target="_blank">v<?=$version; ?></a></li>
+                <li class="mb-1"><a class="text-orange-700 hover:underline" href="https://pop-php-framework.readthedocs.io/en/latest/" target="_blank">Legacy</a> (<= v4.8.0)</li>
             </ul>
-            <hr/>
-            <p><strong>API Documentation:</strong></p>
-            <ul>
-                <li><a href="https://api.popphp.org/5.0/" target="_blank">v<?=$version; ?></a></li>
-                <li><a href="https://api.popphp.org/4.8/" target="_blank">v4.8.0</a></li>
-                <li><a href="https://api.popphp.org/4.0/" target="_blank">v4.0.0</a></li>
-                <li><a href="https://api.popphp.org/3.8/" target="_blank">v3.8.0</a></li>
-                <li><a href="https://api.popphp.org/3.0/" target="_blank">v3.0.0</a></li>
-                <li><a href="https://api.popphp.org/2.1/" target="_blank">v2.1.0</a></li>
+            <hr class="mt-4 mb-4" />
+            <p class="pb-4"><strong>API Documentation:</strong></p>
+            <ul class="list-disc ml-12 mb-4">
+                <li class="mb-1"><a class="text-orange-700 hover:underline" href="https://api.popphp.org/5.0/" target="_blank">v<?=$version; ?></a></li>
+                <li class="mb-1"><a class="text-orange-700 hover:underline" href="https://api.popphp.org/4.8/" target="_blank">v4.8.0</a></li>
+                <li class="mb-1"><a class="text-orange-700 hover:underline" href="https://api.popphp.org/4.7/" target="_blank">v4.7.0</a></li>
+                <li class="mb-1"><a class="text-orange-700 hover:underline" href="https://api.popphp.org/4.5/" target="_blank">v4.5.0</a></li>
+                <li class="mb-1"><a class="text-orange-700 hover:underline" href="https://api.popphp.org/4.0/" target="_blank">v4.0.0</a></li>
             </ul>
-            <hr/>
-            <p><strong>Code coverage</strong> documentation is available for review <a href="https://cc.popphp.org/" target="_blank">here</a>.</p>
-            <p>The <strong>changelog</strong> documentation is available <a href="https://docs.popphp.org/changelog" target="_blank">here</a>.</p>
-            <hr/>
-            <p><strong>Tutorial Application</strong></p>
-            <p>There is a small tutorial application, <code>popphp/popphp-tutorial</code>, available to outline the basic foundation of an application built using the Pop PHP Framework. You can get it on <a href="https://github.com/popphp/popphp-tutorial" target="_blank">GitHub</a> or view the <a href="http://docs.popphp.org/en/latest/tutorial_application/index.html" target="_blank">documentation on it here</a>.</p>
-            <hr/>
-            <div class="row">
-                <div class="component-div">
-                    <strong>popphp/popphp</strong>
-                    <a href="https://github.com/popphp/popphp" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/getting_started/index.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+            <hr class="mt-4 mb-4" />
+            <p class="pb-4"><strong>Code coverage</strong> documentation is available for review <a class="text-orange-700 hover:underline" href="https://cc.popphp.org/" target="_blank">here</a>.</p>
+            <p class="pb-4">The <strong>changelog</strong> documentation is available <a class="text-orange-700 hover:underline" href="https://docs.popphp.org/changelog" target="_blank">here</a>.</p>
+            <hr class="mt-4 mb-4" />
+            <p class="pb-4"><strong>Tutorial Application</strong></p>
+            <p class="pb-4">There is a small tutorial application, <code class="inline-code">popphp/popphp-tutorial</code>, available to outline the basic foundation of an application built using the Pop PHP Framework.
+                You can get it on <a class="text-orange-700 hover:underline" href="https://github.com/popphp/popphp-tutorial" target="_blank">GitHub</a>.</p>
+            <hr class="mt-4 mb-4" />
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/popphp</h6>
+                    <a href="https://github.com/popphp/popphp" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/popcorn</strong>
-                    <a href="https://github.com/popphp/popcorn" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/popcorn.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/popcorn</h6>
+                    <a href="https://github.com/popphp/popcorn" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-acl</strong>
-                    <a href="https://github.com/popphp/pop-acl" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_acl.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-acl</h6>
+                    <a href="https://github.com/popphp/pop-acl" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-audit</strong>
-                    <a href="https://github.com/popphp/pop-audit" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_audit.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-audit</h6>
+                    <a href="https://github.com/popphp/pop-audit" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-auth</strong>
-                    <a href="https://github.com/popphp/pop-auth" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_auth.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-auth</h6>
+                    <a href="https://github.com/popphp/pop-auth" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-cache</strong>
-                    <a href="https://github.com/popphp/pop-cache" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_cache.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-cache</h6>
+                    <a href="https://github.com/popphp/pop-cache" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-code</strong>
-                    <a href="https://github.com/popphp/pop-code" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_code.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-code</h6>
+                    <a href="https://github.com/popphp/pop-code" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-color</strong>
-                    <a href="https://github.com/popphp/pop-color" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_color.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-color</h6>
+                    <a href="https://github.com/popphp/pop-color" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-config</strong>
-                    <a href="https://github.com/popphp/pop-config" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_config.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-config</h6>
+                    <a href="https://github.com/popphp/pop-config" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-console</strong>
-                    <a href="https://github.com/popphp/pop-console" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_console.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-console</h6>
+                    <a href="https://github.com/popphp/pop-console" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-cookie</strong>
-                    <a href="https://github.com/popphp/pop-cookie" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_cookie.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-cookie</h6>
+                    <a href="https://github.com/popphp/pop-cookie" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-css</strong>
-                    <a href="https://github.com/popphp/pop-css" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_css.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-css</h6>
+                    <a href="https://github.com/popphp/pop-css" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-csv</strong>
-                    <a href="https://github.com/popphp/pop-csv" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_csv.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-csv</h6>
+                    <a href="https://github.com/popphp/pop-csv" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-db</strong>
-                    <a href="https://github.com/popphp/pop-db" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_db.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-db</h6>
+                    <a href="https://github.com/popphp/pop-db" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-debug</strong>
-                    <a href="https://github.com/popphp/pop-debug" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_debug.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-debug</h6>
+                    <a href="https://github.com/popphp/pop-debug" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-dir</strong>
-                    <a href="https://github.com/popphp/pop-dir" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_dir.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-dir</h6>
+                    <a href="https://github.com/popphp/pop-dir" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-dom</strong>
-                    <a href="https://github.com/popphp/pop-dom" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_dom.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-dom</h6>
+                    <a href="https://github.com/popphp/pop-dom" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-filter</strong>
-                    <a href="https://github.com/popphp/pop-filter" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_filter.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-filter</h6>
+                    <a href="https://github.com/popphp/pop-filter" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-form</strong>
-                    <a href="https://github.com/popphp/pop-form" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_form.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-form</h6>
+                    <a href="https://github.com/popphp/pop-form" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-ftp</strong>
-                    <a href="https://github.com/popphp/pop-ftp" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_ftp.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-ftp</h6>
+                    <a href="https://github.com/popphp/pop-ftp" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-http</strong>
-                    <a href="https://github.com/popphp/pop-http" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_http.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-http</h6>
+                    <a href="https://github.com/popphp/pop-http" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-i18n</strong>
-                    <a href="https://github.com/popphp/pop-i18n" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_i18n.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-i18n</h6>
+                    <a href="https://github.com/popphp/pop-i18n" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-image</strong>
-                    <a href="https://github.com/popphp/pop-image" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_image.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-image</h6>
+                    <a href="https://github.com/popphp/pop-image" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-kettle</strong>
-                    <a href="https://github.com/popphp/pop-kettle" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_kettle.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-kettle</h6>
+                    <a href="https://github.com/popphp/pop-kettle" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-log</strong>
-                    <a href="https://github.com/popphp/pop-log" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_log.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-log</h6>
+                    <a href="https://github.com/popphp/pop-log" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-mail</strong>
-                    <a href="https://github.com/popphp/pop-mail" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_mail.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-mail</h6>
+                    <a href="https://github.com/popphp/pop-mail" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-mime</strong>
-                    <a href="https://github.com/popphp/pop-mime" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/mime.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-mime</h6>
+                    <a href="https://github.com/popphp/pop-mime" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-nav</strong>
-                    <a href="https://github.com/popphp/pop-nav" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_nav.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-nav</h6>
+                    <a href="https://github.com/popphp/pop-nav" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-paginator</strong>
-                    <a href="https://github.com/popphp/pop-paginator" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_paginator.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-paginator</h6>
+                    <a href="https://github.com/popphp/pop-paginator" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-pdf</strong>
-                    <a href="https://github.com/popphp/pop-pdf" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_pdf.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-pdf</h6>
+                    <a href="https://github.com/popphp/pop-pdf" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-queue</strong>
-                    <a href="https://github.com/popphp/pop-queue" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_queue.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-queue</h6>
+                    <a href="https://github.com/popphp/pop-queue" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-session</strong>
-                    <a href="https://github.com/popphp/pop-session" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_session.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-session</h6>
+                    <a href="https://github.com/popphp/pop-session" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-storage</strong>
-                    <a href="https://github.com/popphp/pop-storage" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_storage.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-storage</h6>
+                    <a href="https://github.com/popphp/pop-storage" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-utils</strong>
-                    <a href="https://github.com/popphp/pop-utils" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_utils.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-utils</h6>
+                    <a href="https://github.com/popphp/pop-utils" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-validator</strong>
-                    <a href="https://github.com/popphp/pop-validator" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_validator.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-validator</h6>
+                    <a href="https://github.com/popphp/pop-validator" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
-                <div class="component-div">
-                    <strong>popphp/pop-view</strong>
-                    <a href="https://github.com/popphp/pop-view" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-lg fa-github"></i> <span>GitHub</span></a>
-                    <a href="http://docs.popphp.org/en/latest/reference/pop_view.html" class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i> <span>Docs</span></a>
+                <div class="rounded-md border border-solid border-gray-300 pb-2 text-center">
+                    <h6 class="text-sm font-bold pt-2 pb-2 mb-4 border-b border-solid border-gray-300">popphp/pop-view</h6>
+                    <a href="https://github.com/popphp/pop-view" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank"><span class="relative inline-block top-0.5">GitHub</span></a>
                 </div>
             </div>
-            <hr/>
+            <hr class="mt-4 mb-4" />
         </div>
-        <div>
+        <div class="col-span-1 mx-auto">
 <?php include __DIR__ . '/inc/side-nav.phtml'; ?>
         </div>
     </div>

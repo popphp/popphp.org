@@ -1,44 +1,45 @@
 <?php include __DIR__ . '/inc/header.phtml'; ?>
 <div id="top" class="container mx-auto pt-12 pb-12 pr-20 pl-20 max-[1280px]:pl-10 max-[1280px]:pr-10 max-[768px]:pl-0 max-[768px]:pr-0">
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mx-auto">
-        <div class="col-span-3">
-            <h2 class="orange pad-bottom">Development</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-4 mx-auto">
+        <div class="col-span-3 main-content">
+            <h2 class="font-alt font-bold text-3xl text-orange-700 uppercase pb-8">Development</h2>
             <p>Being an open source project, Pop PHP welcomes input and collaboration from the community and maintains
                 an open dialogue with the community. Pull requests or issues can be submitted to the appropriate
-                repository on <a href="https://github.com/popphp" target="_blank">Github</a>. Additional support and
-                communication is maintained on the <a href="https://discord.gg/TZjgT74U7E" target="_blank">Discord
-                server</a> and on <a href="https://x.com/popphpframework" target="_blank">Twitter</a>.</p>
-            <p>Any developers can submit issues or pull requests on GitHub under the related repository and start a
+                repository on <a class="text-orange-700 hover:underline" href="https://github.com/popphp" target="_blank">GitHub</a>. Additional support and
+                communication is maintained on the <a class="text-orange-700 hover:underline" href="https://popphp.slack.com/" target="_blank">Slack Channel</a>,
+                <a class="text-orange-700 hover:underline" href="https://discord.gg/TZjgT74U7E" target="_blank">Discord Server</a> and on <a class="text-orange-700 hover:underline" href="https://x.com/popphpframework" target="_blank">X.com</a>.</p>
+            <p class="pt-4 pb-4">Any developers can submit issues or pull requests on GitHub under the related repository and start a
                 dialogue to discuss what needs to, or should be done to the code in the repository. Or, simply email the project
                 directly by clicking the email icon below. The goal is have the overall project benefit and be improved
                 from community-driven support.</p>
-            <hr/>
+            <hr class="mt-4 mb-4" />
             <div class="sm-btn-block">
-                <a href="https://github.com/popphp" class="btn btn-md btn-orange-solid" target="_blank"><i class="fa fa-lg fa-github"></i> GitHub</a>
-                <a href="https://discord.gg/TZjgT74U7E" class="btn btn-md btn-orange-solid" target="_blank"><i class="fa fa-comments"></i> Discord</a>
-                <a href="https://x.com/popphpframework" class="btn btn-md btn-orange-solid" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
-                <a href="#" class="btn btn-md btn-orange-solid email-link" target="_blank"><i class="fa fa-envelope"></i> Email</a>
+                <a href="https://github.com/popphp" target="_blank">GitHub</a>
+                <a href="https://popphp.slack.com/" target="_blank">Slack</a>
+                <a href="https://discord.gg/TZjgT74U7E" target="_blank">Discord</a>
+                <a href="https://x.com/popphpframework" target="_blank">X.com</a>
             </div>
-            <hr/>
-            <h3>Report an Issue</h3>
-            <h4 class="no-transform font-normal">...or Request a Feature</h4>
-            <p>If you found an issue with something, or simply want to request a new or enhanced feature, first check
+            <hr class="mt-4 mb-4" />
+            <h3 class="pt-4 pb-1 text-2xl uppercase font-bold font-alt">Report an Issue</h3>
+            <h4 class="font-alt text-xl pb-2">...or Request a Feature</h4>
+            <p class="pb-4">If you found an issue with something, or simply want to request a new or enhanced feature, first check
                 the component's issue tracker to see if an issue has already been opened to address the same thing. All
                 issues are submitted and managed under the <strong>Issues</strong> tab for each respective component. Free
-                free to discuss the issue on the  <a href="https://discord.gg/TZjgT74U7E" target="_blank">Discord server</a>
+                free to discuss the issue on the <a class="text-orange-700 hover:underline" href="https://popphp.slack.com/" target="_blank">Slack Channel</a>
+                or <a class="text-orange-700 hover:underline" href="https://discord.gg/TZjgT74U7E" target="_blank">Discord server</a>
                 with others. If you're ready to submit an issue, then go ahead and do so. When submitting the issue,
                 please provide a clear and concise test case where the issue has occurred, or in the case of a feature request,
                 please provide sample code of the idea or concept.</p>
-            <hr/>
-            <h3>Contribute</h3>
-            <p>Contributions from other developers are most welcomed, and anyone can contribute in a number of ways, whether
+            <hr class="mt-4 mb-4" />
+            <h3 class="pt-4 pb-4 text-2xl uppercase font-bold font-alt">Contribute</h3>
+            <p class="pb-4">Contributions from other developers are most welcomed, and anyone can contribute in a number of ways, whether
                it's improving or patching the existing code base, adding new features or simply helping with the documentation.
-               Everything is hosted on <a href="https://github.com/popphp" target="_blank">GitHub</a>, so when you're ready
+               Everything is hosted on <a class="text-orange-700 hover:underline" href="https://github.com/popphp" target="_blank">GitHub</a>, so when you're ready
                to contribute, simply fork the component's repository and work on it locally. Commit your work and push it
                back to your forked version on GitHub. Then send a <strong>pull request</strong> for your changes to be reviewed
                and included in the master repository.</p>
         </div>
-        <div>
+        <div class="col-span-1 mx-auto">
 <?php include __DIR__ . '/inc/side-nav.phtml'; ?>
         </div>
     </div>
