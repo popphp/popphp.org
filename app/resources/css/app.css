@@ -120,6 +120,82 @@ section.success {
     background-image: url(./img/github-mark-white.png);
 }
 
+.dev-link-btn {
+    @apply block w-full bg-orange-700 text-white pt-0 pb-2 pl-4 pr-4 text-center text-sm rounded hover:bg-white hover:text-orange-700 hover:border hover:border-orange-700
+}
+
+.github-icon-white {
+    position: relative;
+    top: 7px;
+    margin: 0;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    background-image: url(./img/github-mark-white.png);
+    background-size: 25px 24px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+
+.dev-link-btn:hover > .github-icon-white {
+    background-image: url(./img/github-mark-orange.png);
+}
+
+.slack-icon-white {
+    position: relative;
+    top: 7px;
+    margin: 0;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    background-image: url(./img/slack-logo.png);
+    background-size: 25px 24px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+
+.dev-link-btn:hover > .slack-icon-white {
+    background-image: url(./img/slack-logo-orange.png);
+}
+
+.discord-icon-white {
+    position: relative;
+    top: 10px;
+    margin: 0;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    background-image: url(./img/discord-mark-white.png);
+    background-size: 25px 19px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+
+.dev-link-btn:hover > .discord-icon-white {
+    background-image: url(./img/discord-mark-orange.png);
+}
+
+.x-icon-white {
+    position: relative;
+    top: 9px;
+    margin: 0;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    background-image: url(./img/x-logo-white.png);
+    background-size: 20px 21px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+
+.dev-link-btn:hover > .x-icon-white {
+    background-image: url(./img/x-logo-orange.png);
+}
+
 pre {
     @apply relative mt-1
 }
