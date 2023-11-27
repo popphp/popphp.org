@@ -1,8 +1,7 @@
 <?php include __DIR__ . '/inc/header.phtml'; ?>
-<a name="top"></a>
-<div class="container sub-page">
-    <div class="row">
-        <div class="col-md-9">
+<div id="top" class="container mx-auto pr-20 pl-20 max-[1280px]:pl-10 max-[1280px]:pr-10 max-[768px]:pl-0 max-[768px]:pr-0">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mx-auto">
+        <div class="col-span-3">
             <h2 class="orange pad-bottom">Overview</h2>
             <p>The Pop PHP Framework is a lightweight, yet robust PHP framework that can be used for rapid application development. The framework itself has a base set of core components as well as numerous other additional components to facilitate many of the common features needed for a PHP application.</p>
             <p>The two main concepts behind the Pop PHP Framework have always been:</p>
@@ -14,13 +13,11 @@
             <hr />
             <h3 class="dark-blue pad-bottom">Requirements</h3>
             <p>The Pop PHP Framework has been built for and tested with <strong>PHP 8.1+</strong> <em>(PHP 7.4 is no longer supported.)</em></p>
-            <a name="installation"></a>
             <p>For more on the various additional recommended server components, settings and extensions, please review <a href="http://docs.popphp.org/en/latest/installation.html#requirements" target="_blank">the documentation</a>.</p>
             <hr />
-            <h3 class="dark-blue pad-bottom">Installation</h3>
+            <h3 id="installation" class="dark-blue pad-bottom">Installation</h3>
             <p>The Pop PHP Framework provides a number of options to install as much or as little as a developer
                 requires. It can be installed in a few of different ways:</p>
-            <a name="full"></a>
             <ul>
                 <li><a href="#full">Full Installation</a></li>
                 <li><a href="#barebones">Barebones Installation</a></li>
@@ -29,7 +26,7 @@
                 <li><a href="#individual">Installing Individual Components</a></li>
             </ul>
             <hr/>
-            <p><strong>Full Installation:</strong></p>
+            <p id="full"><strong>Full Installation:</strong></p>
             <p>A developer can install or download the full framework, which includes the core components plus an
                 additional 27 components to serve as a toolkit for application development. The full version can either
                 be downloaded from one of the links on this website, or installed via <a href="https://getcomposer.org/" target="_blank">Composer</a>
@@ -38,7 +35,6 @@
             <p class="pad-top">Or, it can be added to a project like this:</p>
             <pre><code class="language-bash">composer require popphp/popphp-framework</code><a href="#" title="Copy" class="copy-link" x-data="copyCode" x-on:click.prevent="copy($el)"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 relative"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z" /></svg></a></pre>
             <p class="pad-top">Or, it can be added to a project's <code>composer.json</code> file like this:</p>
-            <a name="barebones"></a>
             <pre><code class="language-json">{
     "require": {
         "popphp/popphp-framework": "^<?=$version; ?>"
@@ -46,7 +42,7 @@
 }</code><a href="#" title="Copy" class="copy-link" x-data="copyCode" x-on:click.prevent="copy($el)"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 relative"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z" /></svg></a></pre>
             <p class="small-p">[ <a href="#installation"><i class="fa fa-angle-double-up"></i> Top</a> ]</p>
             <hr/>
-            <p><strong>Barebones Installation:</strong></p>
+            <p id="barebones"><strong>Barebones Installation:</strong></p>
             <p>A developer can opt to only install the barebones core components that make up the foundation of the
                 application stack. This includes:</p>
             <ul>
@@ -60,7 +56,6 @@
             </ul>
             <p>The barebones version can be installed using one of the methods above, but by swapping out the framework
                 repository for the core repository like this:</p>
-            <a name="popcorn"></a>
             <pre><code class="language-json">{
     "require": {
         "popphp/popphp": "^4.0.0"
@@ -68,14 +63,13 @@
 }</code><a href="#" title="Copy" class="copy-link" x-data="copyCode" x-on:click.prevent="copy($el)"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 relative"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z" /></svg></a></pre>
             <p class="small-p">[ <a href="#installation"><i class="fa fa-angle-double-up"></i> Top</a> ]</p>
             <hr/>
-            <p><strong>Popcorn Installation:</strong></p>
+            <p id="popcorn"><strong>Popcorn Installation:</strong></p>
             <p>A developer can also choose to install Popcorn, which is a web-based, micro-framework layer that can be
                 utilized to build REST applications and APIs. It installs the same core components from the barebones
                 installation, plus the <code>popphp/pop-http</code>, <code>popphp/pop-session</code> and <code>popphp/pop-view</code>
                 web components.</p>
             <p>Popcorn can be installed using one of the methods above, but by using the Popcorn repository like
                 this:</p>
-            <a name="cli"></a>
             <pre><code class="language-json">{
     "require": {
         "popphp/popcorn": "^4.0.0"
@@ -83,11 +77,10 @@
 }</code><a href="#" title="Copy" class="copy-link" x-data="copyCode" x-on:click.prevent="copy($el)"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 relative"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z" /></svg></a></pre>
             <p class="small-p">[ <a href="#installation"><i class="fa fa-angle-double-up"></i> Top</a> ]</p>
             <hr/>
-            <p><strong>CLI Applications:</strong></p>
+            <p id="cli"><strong>CLI Applications:</strong></p>
             <p>Installing the <code>popphp/pop-console</code> package along with the main <code>popphp/popphp</code> package
                 will provide the tools needed to build and run an application on the command line, with support for CLI
                 commands, output and colors.</p>
-            <a name="individual"></a>
             <pre><code class="language-json">{
     "require": {
         "popphp/popphp": "^4.0.0",
@@ -96,7 +89,7 @@
 }</code><a href="#" title="Copy" class="copy-link" x-data="copyCode" x-on:click.prevent="copy($el)"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 relative"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z" /></svg></a></pre>
             <p class="small-p">[ <a href="#installation"><i class="fa fa-angle-double-up"></i> Top</a> ]</p>
             <hr/>
-            <p><strong>Installing Individual Components:</strong></p>
+            <p id="individual"><strong>Installing Individual Components:</strong></p>
             <p>And finally, if a developer has chosen a different framework or application stack in which to build an
                 application, the individual components of the Pop PHP Framework play nicely with others. Please refer to
                 the individual documentation of whichever components are required to be added to your project to get the
@@ -104,7 +97,7 @@
             <p class="small-p">[ <a href="#installation"><i class="fa fa-angle-double-up"></i> Top</a> ]</p>
             <hr/>
         </div>
-        <div class="col-md-3 side-col">
+        <div>
 <?php include __DIR__ . '/inc/side-nav.phtml'; ?>
         </div>
     </div>
