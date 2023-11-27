@@ -18,114 +18,120 @@
 <!-- Portfolio Grid Section -->
 <section id="portfolio">
     <div class="container mx-auto pt-20 pb-20">
-        <h2 class="text-center text-gray-700 font-alt font-bold text-5xl uppercase">Featured Components</h2>
+        <h2 class="text-center text-gray-700 font-alt font-bold text-3xl uppercase md:text-5xl">Featured Components</h2>
         <div class="star text-center">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="pl-2 pr-2 w-12 h-8 relative inline-block mx-auto bg-white -top-5">
                 <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
             </svg>
         </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="portfolio-link">
-                    <div class="portfolio-image">
-                        <i class="fa fa-database fa-3x light-gray"></i>
-                        <h3>pop-db</h3>
-                        <p>A robust database abstraction component with many features, including Active Record, SQL
-                            abstraction and migrations</p>
-                        <p class="pad-top-alt">
-                            <a href="https://github.com/popphp/pop-db" class="btn btn-sm btn-outline-secondary"
-                               target="_blank"><i class="fa fa-lg fa-github"></i> GitHub</a>
-                            <a href="http://docs.popphp.org/en/latest/reference/pop_db.html"
-                               class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i>
-                                Docs</a>
-                        </p>
-                    </div>
-                </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-items-center max-w-6xl mx-auto">
+            <div class="text-center text-gray-700 bg-gray-100 p-8 max-w-xl">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray" class="relative inline-block mx-auto w-16 h-16">
+                    <path d="M21 6.375c0 2.692-4.03 4.875-9 4.875S3 9.067 3 6.375 7.03 1.5 12 1.5s9 2.183 9 4.875z" />
+                    <path d="M12 12.75c2.685 0 5.19-.586 7.078-1.609a8.283 8.283 0 001.897-1.384c.016.121.025.244.025.368C21 12.817 16.97 15 12 15s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.285 8.285 0 001.897 1.384C6.809 12.164 9.315 12.75 12 12.75z" />
+                    <path d="M12 16.5c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 001.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 001.897 1.384C6.809 15.914 9.315 16.5 12 16.5z" />
+                    <path d="M12 20.25c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 001.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 001.897 1.384C6.809 19.664 9.315 20.25 12 20.25z" />
+                </svg>
+                <h3 class="text-3xl pt-2">pop-db</h3>
+                <p class="text-sm pt-4 pb-4">A robust database abstraction component with many features, including Active Record, SQL abstraction and migrations</p>
+                <a href="https://github.com/popphp/pop-db" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank">
+                    <span class="relative inline-block top-0.5">GitHub</span>
+                </a>
+                <a href="https://docs.popphp.org/user-guide/databases" class="pt-1 pb-1 pl-2 pr-2 ml-1 mr-1 mb-2 inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="relative mr-1 inline-block w-6 h-6">
+                        <path fill-rule="evenodd" d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625zM7.5 15a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 017.5 15zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H8.25z" clip-rule="evenodd" />
+                        <path d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z" />
+                    </svg>
+                    <span class="relative inline-block top-0.5">Docs</span>
+                </a>
             </div>
-            <div class="col-sm-4">
-                <div class="portfolio-link">
-                    <div class="portfolio-image">
-                        <i class="fa fa-exchange fa-3x light-gray"></i>
-                        <h3>pop-http</h3>
-                        <p>An HTTP component that includes support for handling HTTP requests and responses, file
-                            uploads and HTTP clients.</p>
-                        <p class="pad-top-alt">
-                            <a href="https://github.com/popphp/pop-http" class="btn btn-sm btn-outline-secondary"
-                               target="_blank"><i class="fa fa-lg fa-github"></i> GitHub</a>
-                            <a href="http://docs.popphp.org/en/latest/reference/pop_http.html"
-                               class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i>
-                                Docs</a>
-                        </p>
-                    </div>
-                </div>
+            <div class="text-center text-gray-700 bg-gray-100 p-8 max-w-xl">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray" class="relative inline-block mx-auto w-16 h-16">
+                    <path fill-rule="evenodd" d="M15.97 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 11-1.06-1.06l3.22-3.22H7.5a.75.75 0 010-1.5h11.69l-3.22-3.22a.75.75 0 010-1.06zm-7.94 9a.75.75 0 010 1.06l-3.22 3.22H16.5a.75.75 0 010 1.5H4.81l3.22 3.22a.75.75 0 11-1.06 1.06l-4.5-4.5a.75.75 0 010-1.06l4.5-4.5a.75.75 0 011.06 0z" clip-rule="evenodd" />
+                </svg>
+                <h3 class="text-3xl pt-2">pop-http</h3>
+                <p class="text-sm pt-4 pb-4">An HTTP component that includes support for handling HTTP requests and responses, file uploads and HTTP clients.</p>
+                <a href="https://github.com/popphp/pop-http" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank">
+                    <span class="relative inline-block top-0.5">GitHub</span>
+                </a>
+                <a href="https://docs.popphp.org/user-guide/http" class="pt-1 pb-1 pl-2 pr-2 ml-1 mr-1 mb-2 inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="relative mr-1 inline-block w-6 h-6">
+                        <path fill-rule="evenodd" d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625zM7.5 15a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 017.5 15zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H8.25z" clip-rule="evenodd" />
+                        <path d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z" />
+                    </svg>
+                    <span class="relative inline-block top-0.5">Docs</span>
+                </a>
             </div>
-            <div class="col-sm-4">
-                <div class="portfolio-link">
-                    <div class="portfolio-image">
-                        <i class="fa fa-wpforms fa-3x light-gray"></i>
-                        <h3>pop-form</h3>
-                        <p>A feature-rich HTML form component that makes creating, generating and validating HTML forms
-                            simple.</p>
-                        <p class="pad-top-alt">
-                            <a href="https://github.com/popphp/pop-form" class="btn btn-sm btn-outline-secondary"
-                               target="_blank"><i class="fa fa-lg fa-github"></i> GitHub</a>
-                            <a href="http://docs.popphp.org/en/latest/reference/pop_form.html"
-                               class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i>
-                                Docs</a>
-                        </p>
-                    </div>
-                </div>
+            <div class="text-center text-gray-700 bg-gray-100 p-8 max-w-xl">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray" class="relative inline-block mx-auto w-16 h-16">
+                    <path fill-rule="evenodd" d="M1.5 5.625c0-1.036.84-1.875 1.875-1.875h17.25c1.035 0 1.875.84 1.875 1.875v12.75c0 1.035-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 011.5 18.375V5.625zM21 9.375A.375.375 0 0020.625 9h-7.5a.375.375 0 00-.375.375v1.5c0 .207.168.375.375.375h7.5a.375.375 0 00.375-.375v-1.5zm0 3.75a.375.375 0 00-.375-.375h-7.5a.375.375 0 00-.375.375v1.5c0 .207.168.375.375.375h7.5a.375.375 0 00.375-.375v-1.5zm0 3.75a.375.375 0 00-.375-.375h-7.5a.375.375 0 00-.375.375v1.5c0 .207.168.375.375.375h7.5a.375.375 0 00.375-.375v-1.5zM10.875 18.75a.375.375 0 00.375-.375v-1.5a.375.375 0 00-.375-.375h-7.5a.375.375 0 00-.375.375v1.5c0 .207.168.375.375.375h7.5zM3.375 15h7.5a.375.375 0 00.375-.375v-1.5a.375.375 0 00-.375-.375h-7.5a.375.375 0 00-.375.375v1.5c0 .207.168.375.375.375zm0-3.75h7.5a.375.375 0 00.375-.375v-1.5A.375.375 0 0010.875 9h-7.5A.375.375 0 003 9.375v1.5c0 .207.168.375.375.375z" clip-rule="evenodd" />
+                </svg>
+                <h3 class="text-3xl pt-2">pop-form</h3>
+                <p class="text-sm pt-4 pb-4">A feature-rich HTML form component that makes creating, generating and validating HTML forms simple.</p>
+                <a href="https://github.com/popphp/pop-form" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank">
+                    <span class="relative inline-block top-0.5">GitHub</span>
+                </a>
+                <a href="https://docs.popphp.org/user-guide/forms" class="pt-1 pb-1 pl-2 pr-2 ml-1 mr-1 mb-2 inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="relative mr-1 inline-block w-6 h-6">
+                        <path fill-rule="evenodd" d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625zM7.5 15a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 017.5 15zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H8.25z" clip-rule="evenodd" />
+                        <path d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z" />
+                    </svg>
+                    <span class="relative inline-block top-0.5">Docs</span>
+                </a>
             </div>
-            <div class="col-sm-4">
-                <div class="portfolio-link">
-                    <div class="portfolio-image">
-                        <i class="fa fa-file-pdf-o fa-3x light-gray"></i>
-                        <h3>pop-pdf</h3>
-                        <p>A PDF component that can create and generate PDF files from scratch, or by importing other
-                            PDF files.</p>
-                        <p class="pad-top-alt">
-                            <a href="https://github.com/popphp/pop-pdf" class="btn btn-sm btn-outline-secondary"
-                               target="_blank"><i class="fa fa-lg fa-github"></i> GitHub</a>
-                            <a href="http://docs.popphp.org/en/latest/reference/pop_pdf.html"
-                               class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i>
-                                Docs</a>
-                        </p>
-                    </div>
-                </div>
+            <div class="text-center text-gray-700 bg-gray-100 p-8 max-w-xl">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray" class="relative inline-block mx-auto w-16 h-16">
+                    <path fill-rule="evenodd" d="M5.625 1.5H9a3.75 3.75 0 013.75 3.75v1.875c0 1.036.84 1.875 1.875 1.875H16.5a3.75 3.75 0 013.75 3.75v7.875c0 1.035-.84 1.875-1.875 1.875H5.625a1.875 1.875 0 01-1.875-1.875V3.375c0-1.036.84-1.875 1.875-1.875zM9.75 17.25a.75.75 0 00-1.5 0V18a.75.75 0 001.5 0v-.75zm2.25-3a.75.75 0 01.75.75v3a.75.75 0 01-1.5 0v-3a.75.75 0 01.75-.75zm3.75-1.5a.75.75 0 00-1.5 0V18a.75.75 0 001.5 0v-5.25z" clip-rule="evenodd" />
+                    <path d="M14.25 5.25a5.23 5.23 0 00-1.279-3.434 9.768 9.768 0 016.963 6.963A5.23 5.23 0 0016.5 7.5h-1.875a.375.375 0 01-.375-.375V5.25z" />
+                </svg>
+                <h3 class="text-3xl pt-2">pop-pdf</h3>
+                <p class="text-sm pt-4 pb-4">A PDF component that can create and generate PDF files from scratch, or by importing other PDF files.</p>
+                <a href="https://github.com/popphp/pop-pdf" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank">
+                    <span class="relative inline-block top-0.5">GitHub</span>
+                </a>
+                <a href="https://docs.popphp.org/user-guide/pdfs" class="pt-1 pb-1 pl-2 pr-2 ml-1 mr-1 mb-2 inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="relative mr-1 inline-block w-6 h-6">
+                        <path fill-rule="evenodd" d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625zM7.5 15a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 017.5 15zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H8.25z" clip-rule="evenodd" />
+                        <path d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z" />
+                    </svg>
+                    <span class="relative inline-block top-0.5">Docs</span>
+                </a>
             </div>
-            <div class="col-sm-4">
-                <div class="portfolio-link">
-                    <div class="portfolio-image">
-                        <i class="fa fa-image fa-3x light-gray"></i>
-                        <h3>pop-image</h3>
-                        <p>An image component that supports creating, editing and manipulating images via common PHP
-                            image extensions.</p>
-                        <p class="pad-top-alt">
-                            <a href="https://github.com/popphp/pop-image" class="btn btn-sm btn-outline-secondary"
-                               target="_blank"><i class="fa fa-lg fa-github"></i> GitHub</a>
-                            <a href="http://docs.popphp.org/en/latest/reference/pop_image.html"
-                               class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i>
-                                Docs</a>
-                        </p>
-                    </div>
-                </div>
+            <div class="text-center text-gray-700 bg-gray-100 p-8 max-w-xl">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray" class="relative inline-block mx-auto w-16 h-16">
+                    <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd" />
+                </svg>
+
+                <h3 class="text-3xl pt-2">pop-image</h3>
+                <p class="text-sm pt-4 pb-4">An image component that supports creating, editing and manipulating images via common PHP image extensions.</p>
+                <a href="https://github.com/popphp/pop-image" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank">
+                    <span class="relative inline-block top-0.5">GitHub</span>
+                </a>
+                <a href="https://docs.popphp.org/user-guide/images" class="pt-1 pb-1 pl-2 pr-2 ml-1 mr-1 mb-2 inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="relative mr-1 inline-block w-6 h-6">
+                        <path fill-rule="evenodd" d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625zM7.5 15a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 017.5 15zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H8.25z" clip-rule="evenodd" />
+                        <path d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z" />
+                    </svg>
+                    <span class="relative inline-block top-0.5">Docs</span>
+                </a>
             </div>
-            <div class="col-sm-4">
-                <div class="portfolio-link">
-                    <div class="portfolio-image">
-                        <i class="fa fa-envelope fa-3x light-gray"></i>
-                        <h3>pop-mail</h3>
-                        <p>A mail component that supports sending mail via SMTP and mail queues, as well receiving mail
-                            via an IMAP or POP client.</p>
-                        <p class="pad-top-alt">
-                            <a href="https://github.com/popphp/pop-mail" class="btn btn-sm btn-outline-secondary"
-                               target="_blank"><i class="fa fa-lg fa-github"></i> GitHub</a>
-                            <a href="http://docs.popphp.org/en/latest/reference/pop_mail.html"
-                               class="btn btn-sm btn-outline-secondary" target="_blank"><i class="fa fa-file-text"></i>
-                                Docs</a>
-                        </p>
-                    </div>
-                </div>
+            <div class="text-center text-gray-700 bg-gray-100 p-8 max-w-xl">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray" class="relative inline-block mx-auto w-16 h-16">
+                    <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                    <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+                </svg>
+                <h3 class="text-3xl pt-2">pop-mail</h3>
+                <p class="text-sm pt-4 pb-4">A mail component that supports sending mail via SMTP and mail queues, as well receiving mail via an IMAP or POP client.</p>
+                <a href="https://github.com/popphp/pop-mail" class="github-icon inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank">
+                    <span class="relative inline-block top-0.5">GitHub</span>
+                </a>
+                <a href="https://docs.popphp.org/user-guide/mail" class="pt-1 pb-1 pl-2 pr-2 ml-1 mr-1 mb-2 inline-block text-gray-500 text-center rounded-md border-2 border-solid border-gray-500 hover:text-white hover:bg-gray-500 hover:border-gray-500" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="relative mr-1 inline-block w-6 h-6">
+                        <path fill-rule="evenodd" d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625zM7.5 15a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 017.5 15zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H8.25z" clip-rule="evenodd" />
+                        <path d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z" />
+                    </svg>
+                    <span class="relative inline-block top-0.5">Docs</span>
+                </a>
             </div>
         </div>
     </div>
