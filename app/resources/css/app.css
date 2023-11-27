@@ -103,6 +103,23 @@ section.success {
     background-image: url(./img/github-mark-white.png);
 }
 
+.github-icon-orange {
+    position: relative;
+    top: 5px;
+    margin: 0;
+    padding: 0;
+    width: 28px;
+    height: 28px;
+    background-image: url(./img/github-mark-orange.png);
+    background-size: 28px 27px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.github-btn:hover > .github-icon-orange {
+    background-image: url(./img/github-mark-white.png);
+}
+
 pre {
     @apply relative mt-1
 }
