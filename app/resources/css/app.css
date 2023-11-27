@@ -7,6 +7,40 @@
     display: none !important;
 }
 
+.home {
+    position: relative;
+    margin: 18px 0 0 0;
+    padding: 0;
+    width: 225px;
+    height: 60px;
+    display: block;
+    float: left;
+    background-image: url(./img/pop-php-logo-white.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
+}
+
+.home > h1 {
+    @apply hidden
+}
+
+.main-nav {
+    position: relative;
+    margin: 36px 0 0 0;
+    float: right;
+}
+
+.main-nav > li {
+    padding: 0 18px 0 18px;
+    font-family: Montserrat, Arial, sans-serif;
+    display: inline-block;
+}
+
+.main-nav > li > a {
+    @apply text-sm text-white uppercase tracking-wide hover:text-orange-500
+}
+
 pre {
     @apply relative mt-1
 }
@@ -17,4 +51,50 @@ pre > code {
 
 .copy-link {
     @apply absolute top-2 right-2 pl-1 pt-1 w-8 h-8 rounded-md float-right text-gray-200 bg-gray-600 hover:text-gray-200 hover:bg-gray-900 active:bg-blue-500 dark:text-gray-200 dark:hover:text-gray-200
+}
+
+.social-nav > li {
+    padding-left: 12px;
+    padding-right: 12px;
+    display: inline;
+}
+
+.btn-social {
+    font-size: 20px;
+    line-height: 45px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+@media (max-width: 976px) {
+    .nav-icon {
+        margin-top: 30px;
+        display: inline;
+    }
+
+    .main-nav {
+        position: absolute;
+        clear: both;
+        margin: 0 auto;
+        top: 96px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        float: none;
+        background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    }
+
+    .main-nav > li {
+        padding: 8px 10% 20px 10%;
+        font-family: Montserrat, Arial, sans-serif;
+        display: block;
+    }
+
+    .main-nav > li > a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
 }

@@ -1,27 +1,30 @@
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-        <a class="navbar-brand pop-logo" href="/">Pop PHP Framework</a>
-        <a class="nav-icon hidden float-right p-1 bg-white border border-solid border-gray-200 text-gray-600 hover:text-gray-400 rounded-md dark:bg-gray-700 dark:text-gray-200 dark:border-none" href="#" x-on:click="$store.navigationOpen = !$store.navigationOpen">
+<header class="w-full h-24 bg-gray-700">
+    <div x-on:resize.window="open = (window.innerWidth <= 976) ? false : true;" x-data="{open: (window.innerWidth <= 976) ? false : true}" class="container mx-auto">
+        <a class="home" href="/"><h1>Pop PHP Framework</h1></a>
+        <a class="nav-icon hidden float-right p-1 bg-gray-600 border border-solid border-gray-500 text-gray-200 hover:text-gray-400 rounded-md" href="#" x-on:click.prevent="open = !open">
             <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
         </a>
-        <div>
-            <ul id="main-nav">
-                <li>
-                    <a href="/overview">Overview</a>
-                </li>
-                <li>
-                    <a href="/documentation">Documentation</a>
-                </li>
-                <li>
-                    <a href="/development">Development</a>
-                </li>
-                <li>
-                    <a href="/#about">About</a>
-                </li>
-            </ul>
-        </div>
+        <ul class="main-nav transition-height" x-show="open" x-cloak x-transition:enter="transition ease-in duration-200"
+            x-transition:enter-start="h-1"
+            x-transition:enter-end="h-48"
+            x-transition:leave="transition ease-out duration-200"
+            x-transition:leave-start="h-48"
+            x-transition:leave-end="h-1">
+            <li>
+                <a href="/overview">Overview</a>
+            </li>
+            <li>
+                <a href="/documentation">Documentation</a>
+            </li>
+            <li>
+                <a href="/development">Development</a>
+            </li>
+            <li>
+                <a href="/#about">About</a>
+            </li>
+        </ul>
     </div>
-</nav>
+</header>
