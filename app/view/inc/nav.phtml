@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<header class="w-full h-24 bg-gray-700">
+<header class="w-full h-24 bg-gray-700 opacity-100 sticky top-0 z-50">
     <div x-on:resize.window="open = (window.innerWidth <= 976) ? false : true;" x-data="{open: (window.innerWidth <= 976) ? false : true}" class="container mx-auto pr-20 pl-20 max-[1280px]:pl-10 max-[1280px]:pr-10 max-[768px]:pl-0 max-[768px]:pr-0"">
         <a class="home" href="/"><h1>Pop PHP Framework</h1></a>
         <a class="nav-icon hidden float-right p-1 bg-gray-600 border border-solid border-gray-500 text-gray-200 hover:text-gray-400 rounded-md" href="#" x-on:click.prevent="open = !open">
