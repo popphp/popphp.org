@@ -138,7 +138,6 @@ abstract class AbstractController extends \Pop\Controller\AbstractController
         $this->response->send(null, $headers);
     }
 
-
     /**
      * Error handler method
      *
@@ -152,6 +151,22 @@ abstract class AbstractController extends \Pop\Controller\AbstractController
         $this->view->title    = 'Error: ' .  $response['code'] . ' ' . $response['message'];
         $this->view->response = $response;
         $this->send(null, 404);
+        exit();
+    }
+
+    /**
+     * Maintenance handler method
+     *
+     * @return void
+     */
+    public function maintenance(): void
+    {
+        $response = ['code' => 503, 'message' => 'Service Unavailable'];
+
+        $this->prepareView('maintenance.phtml');
+        $this->view->title    = 'Error: ' .  $response['code'] . ' ' . $response['message'];
+        $this->view->response = $response;
+        $this->send(null, 503);
         exit();
     }
 
