@@ -35,5 +35,5 @@ return [
             ]
         ]
     ],
-    'version' => '5.1.0'
+    'version' => $_ENV['CURRENT_VERSION']
 ];
