@@ -1,8 +1,8 @@
 /logs
 /vendor
 /script
-/public/assets/app.css
-/public/assets/app.js
+/public/assets/css/app.css
+/public/assets/js/app.js
 node_modules
 composer.lock
 package-lock.json
