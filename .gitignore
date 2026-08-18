@@ -1,11 +1,9 @@
-/assets/downloads/*
-/public/assets/downloads/*
 /logs
 /vendor
-.idea
-composer.lock
 node_modules
+composer.lock
 package-lock.json
 public/assets/app.css
 public/assets/app.js
 .env
+.idea
