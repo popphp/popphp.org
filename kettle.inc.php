@@ -9,3 +9,4 @@
  * The main $autoloader and $config objects are accessible in this file.
  */
 
+$autoloader->addPsr4('App\\', __DIR__ . '/app/src');

@@ -1,6 +1,5 @@
 /logs
 /vendor
-/public
 /script
 node_modules
 composer.lock
