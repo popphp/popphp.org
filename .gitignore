@@ -1,11 +1,11 @@
 /logs
 /vendor
 /script
+/public/assets/app.css
+/public/assets/app.js
 node_modules
 composer.lock
 package-lock.json
 node_modules/
-public/assets/app.css
-public/assets/app.js
 .env
 .idea
