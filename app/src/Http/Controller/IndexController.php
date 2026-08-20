@@ -2,6 +2,8 @@
 
 namespace App\Http\Controller;
 
+use Pop\Http\Server\AcceptSpecificity;
+
 class IndexController extends AbstractController
 {
 
@@ -12,33 +14,49 @@ class IndexController extends AbstractController
      */
     public function index(): void
     {
-        $this->prepareView('index.phtml');
-        $this->view->title = 'Welcome';
-        $this->send();
+        if ($this->request->acceptsHtml(AcceptSpecificity::Loose)) {
+            $this->prepareView('index.phtml');
+            $this->view->title = 'Welcome';
+            $this->send();
+        } else {
+            $this->sendJson(200, ['message' => 'Index page']);
+        }
     }
 
     /**
      * Error action
      *
+     * @param  int     $code
+     * @param  ?string $message
      * @return void
      */
-    public function error(): void
+    public function error(int $code = 404, ?string $message = null): void
     {
-        $this->prepareView('error.phtml');
-        $this->view->title = 'Error';
-        $this->send(404);
+        if ($this->request->acceptsHtml(AcceptSpecificity::Loose)) {
+            $this->prepareView('error.phtml');
+            $this->view->title = $code . ' ' . ($message ?? \Pop\Http\Server\Response::getMessageFromCode($code));
+            $this->send($code);
+        } else {
+            parent::error($code, $message);
+        }
     }
 
     /**
      * Maintenance action
      *
+     * @param  int     $code
+     * @param  ?string $message
      * @return void
      */
-    public function maintenance(): void
+    public function maintenance(int $code = 503, ?string $message = null): void
     {
-        $this->prepareView('maintenance.phtml');
-        $this->view->title = 'Website is Down';
-        $this->send(503);
+        if ($this->request->acceptsHtml(AcceptSpecificity::Loose)) {
+            $this->prepareView('maintenance.phtml');
+            $this->view->title = 'Website is Down';
+            $this->send($code);
+        } else {
+            parent::error($code, $message);
+        }
     }
 
 }
