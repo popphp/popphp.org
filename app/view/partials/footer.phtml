@@ -11,26 +11,26 @@ $columns = [
     ],
     'Docs' => [
         ['Start here', 'https://docs.popphp.org', true],
-        ['Guides', 'https://docs.popphp.org', true],
-        ['API', 'https://docs.popphp.org', true],
+        ['API', 'https://api.popphp.org/7.x/', true],
+        ['Code Coverage', 'https://cc.popphp.org', true],
     ],
     'Community' => [
-        ['GitHub', 'https://github.com/popphp/framework', true],
+        ['GitHub', 'https://github.com/popphp/popphp', true],
         ['Discord', 'https://discord.gg/popphp', true],
-        ['X', 'https://x.com/popphp', true],
+        ['X', 'https://x.com/popphpframework', true],
     ],
 ];
 ?>
 <footer class="border-t border-line bg-panel">
-    <div class="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-10 lg:grid lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-10 lg:px-16 lg:py-16">
-        <div class="flex flex-col items-center gap-3 text-center lg:items-start lg:text-left">
-            <img src="https://media.popphp.org/img/pop-php-logo2.png" alt="Pop PHP" class="block h-[34px] w-auto lg:h-[46px]">
+    <div class="mx-auto grid max-w-7xl gap-y-8 px-5 py-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-10 lg:px-16 lg:py-16">
+        <div class="order-last flex flex-col items-center gap-3 text-center lg:order-none lg:items-start lg:text-left">
+            <img src="https://media.popphp.org/img/pop-php-logo2.png" alt="Pop PHP" class="block h-[46px] w-auto">
             <p class="text-[13.5px]/[1.6] text-muted lg:text-sm">
-                A PHP framework, since 2009.<br>
-                &copy; <?=date('Y') ?> Pop PHP Framework
+                &copy; 2009-<?=date('Y') ?> Pop PHP Framework
             </p>
         </div>
 
+        <div class="flex justify-center gap-9 min-[380px]:gap-12 sm:gap-16 lg:contents">
         <?php foreach ($columns as $heading => $items): ?>
             <div class="flex flex-col gap-2.5 text-[13.5px] text-muted lg:text-[14.5px]">
                 <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-fg lg:text-[11.5px]"><?=$heading ?></span>
@@ -39,6 +39,7 @@ $columns = [
                 <?php endforeach; ?>
             </div>
         <?php endforeach; ?>
+        </div>
     </div>
 </footer>
 </body>

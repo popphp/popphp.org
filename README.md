@@ -1,18 +1,18 @@
-# popphp.org — v7 front-end handoff
+# popphp.org — v7 front end
 
-Alpine + Tailwind implementation of the approved design. Drop these files into the
-`dev-v7` branch of `popphp/popphp.org`; paths below mirror the repo exactly.
+Alpine + Tailwind implementation of the approved design, landed on the `dev-v7` branch
+of `popphp/popphp.org`.
 
-## What lands where
+## What is where
 
 | File | Status | Notes |
 |---|---|---|
-| `app/config/app.http.php` | **replaces** existing | Adds a `get` route per page; keeps `/api[/]`, the `*` fallback and `http_options_headers` |
+| `app/config/app.http.php` | **replaced** | One plain route entry per page; keeps `/api[/]`, the `*` fallback and `http_options_headers` |
 | `app/config/components.php` | new | Component catalog for `/components` — the only file to edit when a component is added |
-| `app/src/Http/Controller/IndexController.php` | **replaces** existing | Adds `whyPop`, `features`, `components`, `getStarted`; `index`/`error`/`maintenance` keep their existing behavior |
-| `app/assets/css/app.css` | **replaces** existing | Tailwind v4 `@theme` tokens + semantic surfaces; keeps `@custom-variant dark` |
-| `app/assets/js/app.js` | **replaces** existing | Keeps the Alpine bootstrap, adds four `Alpine.data()` components |
-| `app/view/*.phtml` | new | One view per route, plus `error` and `maintenance` |
+| `app/src/Http/Controller/IndexController.php` | **replaced** | Adds `whyPop`, `features`, `components`, `getStarted`; `index`/`error`/`maintenance` keep their existing behavior |
+| `app/assets/css/app.css` | **replaced** | Tailwind v4 `@theme` tokens + semantic surfaces; keeps `@custom-variant dark` |
+| `app/assets/js/app.js` | **replaced** | Keeps the Alpine bootstrap, adds four `Alpine.data()` components |
+| `app/view/*.phtml` | new | One view per route, plus `error`, `maintenance` and `exception` |
 | `app/view/partials/*.phtml` | new | `head`, `nav`, `footer`, `install-bar`, `icon-github` |
 
 No new Composer or npm dependencies. `npm run build` output paths are unchanged.
@@ -22,6 +22,20 @@ No new Composer or npm dependencies. `npm run build` output paths are unchanged.
 Option A, as agreed: one route entry and one controller action per page. The route
 table is the sitemap. `renderPage()` in the controller is a 4-line helper —
 template, title, nav key.
+
+**No REST here.** This is a marketing site — every page is a plain `GET`, so the routes
+are declared as bare paths (`'/features[/]' => [...]`), not nested under method keys and
+not built fluently. There is nothing to `post` to, so no method-keyed route shape is
+worth the indirection:
+
+```php
+'routes' => [
+    '[/]'          => ['controller' => IndexController::class, 'action' => 'index'],
+    '/why-pop[/]'  => ['controller' => IndexController::class, 'action' => 'whyPop'],
+    // ...
+    '*'            => ['controller' => IndexController::class, 'action' => 'error'],
+],
+```
 
 `AbstractController` is untouched; views resolve from its existing `$viewPath`.
 
@@ -43,7 +57,13 @@ in the template as a **plain local** (`$page`) — not `$this->page`. Included
 partials inherit that scope, so `nav.phtml` reads `$page` directly.
 
 Variables in play: `$title` (head), `$page` (nav active state), `$components`
-(components page), `$code` (error page).
+(components page), `$code` (error page), `$code`/`$message` (exception page),
+`$installCommand` (optional override on `install-bar`).
+
+`error.phtml` is the `*` fallback route rendering through the controller.
+`exception.phtml` is different: `App\Application::httpError()` renders it directly,
+outside the controller, and assigns only `$title` and `$message` — the view defaults
+`$code` to 500.
 
 ## Theming
 
@@ -83,8 +103,10 @@ Mobile-first; `lg:` is the desktop breakpoint. The design was drawn at 390px and
    in `app/view/partials/footer.phtml` and `index.phtml`.
 2. **Docs links** all point at `https://docs.popphp.org` root; deep links once the
    docs site has stable paths.
-3. **The homepage "See it for yourself" fluent-routing sample** shows
-   `$app->get(...)->post(...)`. Confirm that still matches v7 after the recent
-   `popphp` changes.
+3. **The homepage "See it for yourself" route sample** still shows the method-keyed
+   shape (`'routes' => ['get' => [...]]`), which is not what this site's own
+   `app.http.php` does. Either swap it for the plain-path form used here, or keep it
+   as a deliberate "v7 supports REST verbs too" illustration — the bullet next to it
+   claims exactly that.
 4. **`/api[/]` still routes to `index`** — unchanged from the current branch, but
    worth deciding whether the marketing site should expose it at all.
