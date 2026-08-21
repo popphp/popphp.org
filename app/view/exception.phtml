@@ -2,15 +2,16 @@
 include __DIR__ . '/partials/head.phtml';
 include __DIR__ . '/partials/nav.phtml';
 
-$code = $code ?? 404;
+$code    = $code ?? 500;
+$message = $message ?? 'An unknown error has occurred.';
 ?>
 
 <main>
 
     <section class="mx-auto flex max-w-7xl flex-col items-center gap-5 px-5 pb-14 pt-16 text-center lg:gap-7 lg:px-16 lg:pb-30 lg:pt-33">
         <span class="eyebrow text-[13.5px] lg:text-[17px]">Error <?=$code ?></span>
-        <h1 class="font-display text-[40px]/[1.05] font-semibold tracking-[-0.035em]">This route isn't registered.</h1>
-        <p class="max-w-[52ch] text-[16.5px]/[1.6] text-muted lg:text-[19px]">The page you're after doesn't exist.</p>
+        <h1 class="font-display text-[40px]/[1.05] font-semibold tracking-[-0.035em]"><?=$message ?></h1>
+        <p class="max-w-[52ch] text-[16.5px]/[1.6] text-muted lg:text-[19px]">If the issue persists, please report it.</p>
 
         <div class="code-window w-full self-stretch text-left lg:mt-2.5 lg:w-[620px] lg:self-auto">
             <div class="code-window-bar">app/config/app.http.php</div>

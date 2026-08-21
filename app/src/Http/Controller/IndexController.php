@@ -2,7 +2,7 @@
 
 namespace App\Http\Controller;
 
-use Pop\Http\Server\AcceptSpecificity;
+use App\Exception;
 
 class IndexController extends AbstractController
 {
@@ -14,11 +14,7 @@ class IndexController extends AbstractController
      */
     public function index(): void
     {
-        if ($this->request->acceptsHtml(AcceptSpecificity::Loose)) {
-            $this->renderPage('index.phtml', 'No magic. Just PHP.', 'home');
-        } else {
-            $this->sendJson(200, ['message' => 'Index page']);
-        }
+        $this->renderPage('index.phtml', 'No magic. Just PHP.', 'home');
     }
 
     /**
@@ -74,15 +70,11 @@ class IndexController extends AbstractController
      */
     public function error(int $code = 404, ?string $message = null): void
     {
-        if ($this->request->acceptsHtml(AcceptSpecificity::Loose)) {
-            $this->prepareView('error.phtml');
-            $this->view->title = $code . ' ' . ($message ?? \Pop\Http\Server\Response::getMessageFromCode($code));
-            $this->view->page  = null;
-            $this->view->code  = $code;
-            $this->send($code);
-        } else {
-            parent::error($code, $message);
-        }
+        $this->prepareView('error.phtml');
+        $this->view->title = $code . ' ' . ($message ?? \Pop\Http\Server\Response::getMessageFromCode($code));
+        $this->view->page  = null;
+        $this->view->code  = $code;
+        $this->send($code);
     }
 
     /**
@@ -94,14 +86,10 @@ class IndexController extends AbstractController
      */
     public function maintenance(int $code = 503, ?string $message = null): void
     {
-        if ($this->request->acceptsHtml(AcceptSpecificity::Loose)) {
-            $this->prepareView('maintenance.phtml');
-            $this->view->title = 'Website is Down';
-            $this->view->page  = null;
-            $this->send($code);
-        } else {
-            parent::error($code, $message);
-        }
+        $this->prepareView('maintenance.phtml');
+        $this->view->title = 'Website is Down';
+        $this->view->page  = null;
+        $this->send($code);
     }
 
     /**
