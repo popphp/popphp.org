@@ -52,6 +52,26 @@ class IndexController extends AbstractController
     }
 
     /**
+     * Docs action
+     *
+     * @return void
+     */
+    public function docs(): void
+    {
+        $this->renderPage('docs.phtml', 'Documentation', 'docs');
+    }
+
+    /**
+     * Community action
+     *
+     * @return void
+     */
+    public function community(): void
+    {
+        $this->renderPage('community.phtml', 'Community', 'community');
+    }
+
+    /**
      * Get started action
      *
      * @return void

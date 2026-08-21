@@ -1,0 +1,155 @@
+<?php
+include __DIR__ . '/partials/head.phtml';
+include __DIR__ . '/partials/nav.phtml';
+
+$channels = [
+    [
+        'label' => 'GitHub',
+        'host'  => 'github.com/popphp',
+        'url'   => 'https://github.com/popphp',
+        'body'  => 'Every component has its own repository. Issues, pull requests and releases all live there, out in the open.',
+        'icon'  => 'icon-github.phtml',
+    ],
+    [
+        'label' => 'Discord',
+        'host'  => 'discord.gg',
+        'url'   => 'https://discord.gg/TZjgT74U7E',
+        'body'  => 'The day-to-day conversation. Ask a question, talk an approach through, or see what other people are building.',
+        'icon'  => 'icon-discord.phtml',
+    ],
+    [
+        'label' => 'X',
+        'host'  => 'x.com/popphpframework',
+        'url'   => 'https://x.com/popphpframework',
+        'body'  => 'Releases and announcements, short form. Follow along if you just want to know when something ships.',
+        'icon'  => 'icon-x.phtml',
+    ],
+];
+
+$issueSteps = [
+    'Check the component\'s issue tracker first &mdash; someone may already have opened it.',
+    'Not sure it\'s a bug? Talk it through on Discord before you file.',
+    'Open the issue under the <strong class="font-semibold text-fg">Issues</strong> tab of that component\'s repo.',
+    'Include a clear, minimal test case. For a feature, sample code of the idea.',
+];
+
+$contributeSteps = [
+    'Fork the component\'s repository on GitHub.',
+    'Work on it locally &mdash; code, tests, or documentation all count.',
+    'Commit your work and push it back to your fork.',
+    'Send a pull request. It gets reviewed, then merged.',
+];
+?>
+
+<main>
+
+    <section class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-5 pb-8 pt-12 text-center lg:gap-6 lg:px-16 lg:pb-14 lg:pt-24">
+        <span class="eyebrow text-[13.5px] lg:text-[17px]">Community</span>
+        <h1 class="font-display text-[40px]/[1.05] font-semibold tracking-[-0.035em] lg:text-[72px]/[1] lg:tracking-[-0.04em]">Built in the open.</h1>
+        <p class="max-w-[58ch] text-[16.5px]/[1.6] text-muted lg:text-[19px]/[1.65]">Pop is an open source project, and the conversation around it is open too. Anyone can file an issue, send a patch, or just ask a question.</p>
+    </section>
+
+    <!-- channels -->
+    <section class="mx-auto max-w-7xl px-5 pb-10 lg:px-16 lg:pb-20">
+        <div class="grid gap-3.5 lg:grid-cols-3 lg:gap-5">
+            <?php foreach ($channels as $channel): ?>
+                <a href="<?=$channel['url'] ?>" target="_blank" rel="noopener" class="card text-fg hover:border-pop-orange lg:p-[34px] lg:pb-[38px]">
+                    <span class="flex items-start justify-between gap-3">
+                        <span class="icon-badge h-11 w-11 lg:h-12 lg:w-12">
+                            <?php $socialIconSize = 20; include __DIR__ . '/partials/' . $channel['icon']; ?>
+                        </span>
+                        <span class="flex pt-1.5 text-muted"><?php $externalIconSize = 13; include __DIR__ . '/partials/icon-external.phtml'; ?></span>
+                    </span>
+                    <h2 class="font-display text-[21px]/[1.22] font-semibold tracking-[-0.015em] lg:text-card"><?=$channel['label'] ?></h2>
+                    <p class="text-[15.5px]/[1.6] text-muted lg:text-base/[1.65]"><?=$channel['body'] ?></p>
+                    <span class="mt-auto pt-2.5 font-mono text-[12.5px] text-pop-orange lg:text-[13px]"><?=$channel['host'] ?></span>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </section>
+
+    <!-- how to take part -->
+    <section class="mx-auto max-w-7xl px-5 pb-10 lg:px-16 lg:pb-20">
+        <div class="grid gap-3.5 lg:grid-cols-2 lg:gap-5">
+
+            <div class="card lg:p-[34px] lg:pb-[38px]">
+                <span class="icon-badge h-11 w-11 lg:h-12 lg:w-12">
+                    <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.6"></circle><path d="M12 7.8v4.8"></path><path d="M12 16.1h.01"></path></svg>
+                </span>
+                <h2 class="font-display text-[21px]/[1.22] font-semibold tracking-[-0.015em] lg:text-card">Report an issue, or request a feature</h2>
+                <p class="text-[15.5px]/[1.6] text-muted lg:text-base/[1.65]">Found something broken, or something missing? Both go to the same place &mdash; the issue tracker on the component it belongs to.</p>
+                <div class="flex flex-col gap-2.5 pt-1.5 lg:gap-3">
+                    <?php foreach ($issueSteps as $i => $step): ?>
+                        <div class="flex items-baseline gap-3 lg:gap-3.5">
+                            <span class="font-mono text-[11.5px] text-pop-orange lg:text-xs">0<?=$i + 1 ?></span>
+                            <span class="text-[14.5px]/[1.55] text-muted lg:text-[15.5px]"><?=$step ?></span>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <div class="mt-auto flex flex-wrap gap-2.5 pt-3.5">
+                    <a href="https://github.com/popphp" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-[13.5px] font-medium text-fg hover:border-pop-orange lg:text-[14.5px]">
+                        <?php $socialIconSize = 14; include __DIR__ . '/partials/icon-github.phtml'; ?>
+                        Browse the repos
+                    </a>
+                    <a href="/components" class="inline-flex items-center rounded-full border border-line px-4 py-2 text-[13.5px] font-medium text-fg hover:border-pop-orange lg:text-[14.5px]">Find the component</a>
+                </div>
+            </div>
+
+            <div class="card lg:p-[34px] lg:pb-[38px]">
+                <span class="icon-badge h-11 w-11 lg:h-12 lg:w-12">
+                    <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6.4" cy="5.6" r="2.6"></circle><circle cx="6.4" cy="18.4" r="2.6"></circle><circle cx="17.6" cy="12" r="2.6"></circle><path d="M6.4 8.2v7.6"></path><path d="M15.1 10.7 8.7 6.9"></path><path d="M15.1 13.3 8.7 17.1"></path></svg>
+                </span>
+                <h2 class="font-display text-[21px]/[1.22] font-semibold tracking-[-0.015em] lg:text-card">Contribute</h2>
+                <p class="text-[15.5px]/[1.6] text-muted lg:text-base/[1.65]">Patches, new features, better docs &mdash; it all helps, and none of it needs permission first. The workflow is the standard one.</p>
+                <div class="flex flex-col gap-2.5 pt-1.5 lg:gap-3">
+                    <?php foreach ($contributeSteps as $i => $step): ?>
+                        <div class="flex items-baseline gap-3 lg:gap-3.5">
+                            <span class="font-mono text-[11.5px] text-pop-orange lg:text-xs">0<?=$i + 1 ?></span>
+                            <span class="text-[14.5px]/[1.55] text-muted lg:text-[15.5px]"><?=$step ?></span>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <div class="mt-auto flex flex-wrap gap-2.5 pt-3.5">
+                    <a href="/docs" class="inline-flex items-center rounded-full border border-line px-4 py-2 text-[13.5px] font-medium text-fg hover:border-pop-orange lg:text-[14.5px]">Read the docs</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- open dialogue spotlight -->
+    <section class="mx-auto max-w-7xl px-5 pb-10 lg:px-16 lg:pb-24">
+        <div class="grid overflow-hidden rounded-[18px] bg-code text-[#f4f1ea] lg:grid-cols-2">
+            <div class="flex flex-col gap-3.5 p-[22px] pt-[30px] lg:gap-5 lg:p-14">
+                <span class="font-mono text-[13.5px] font-medium uppercase tracking-[0.14em] text-kw lg:text-[17px]">Open dialogue</span>
+                <h2 class="font-display text-[28px]/[1.08] font-semibold tracking-[-0.03em] lg:text-[42px]/[1.06] lg:tracking-[-0.035em]">Start the conversation.</h2>
+                <p class="text-[15.5px]/[1.65] text-[#b8b2a6] lg:text-[17.5px]/[1.7]">You don't need a finished patch to take part. Open an issue to talk about what should change, or bring it to Discord first and work out what the right fix is. The project gets better with more collaboration.</p>
+            </div>
+            <div class="flex flex-col gap-3.5 border-t border-white/10 p-[22px] pb-[26px] lg:justify-center lg:border-l lg:border-t-0 lg:p-14">
+                <?php foreach ($channels as $channel): ?>
+                    <a href="<?=$channel['url'] ?>" target="_blank" rel="noopener" class="flex items-center gap-4 rounded-xl border border-white/10 px-4 py-3.5 text-[#f4f1ea] hover:border-pop-orange lg:px-5 lg:py-4">
+                        <span class="flex shrink-0"><?php $socialIconSize = 17; include __DIR__ . '/partials/' . $channel['icon']; ?></span>
+                        <span class="flex flex-col gap-1">
+                            <span class="text-[15px] font-medium lg:text-base"><?=$channel['label'] ?></span>
+                            <span class="font-mono text-[11.5px] text-comment lg:text-xs"><?=$channel['host'] ?></span>
+                        </span>
+                        <span class="ml-auto flex shrink-0 text-comment"><?php $externalIconSize = 12; include __DIR__ . '/partials/icon-external.phtml'; ?></span>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+    <section class="border-t border-line bg-panel">
+        <div class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-5 py-11 text-center lg:gap-[26px] lg:px-16 lg:py-20">
+            <h2 class="font-display text-[28px]/[1.08] font-semibold tracking-[-0.03em] lg:text-[40px] lg:tracking-[-0.035em]">Open since 2009, still going.</h2>
+            <p class="max-w-[56ch] text-[15.5px]/[1.6] text-muted lg:text-lg/[1.65]">Pop has been developed in public for over a decade. Version 7 is the current line &mdash; a good moment to get involved.</p>
+            <div class="flex flex-col gap-2.5 self-stretch lg:flex-row lg:justify-center lg:gap-3 lg:self-auto">
+                <a href="/get-started" class="btn-primary text-center">Get started</a>
+                <a href="/docs" class="btn-secondary text-center">Read the docs</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+<?php include __DIR__ . '/partials/footer.phtml'; ?>

@@ -24,6 +24,14 @@ return [
             'controller' => 'App\Http\Controller\IndexController',
             'action'     => 'components'
         ],
+        '/docs[/]' => [
+            'controller' => 'App\\Http\\Controller\\IndexController',
+            'action'     => 'docs'
+        ],
+        '/community[/]' => [
+            'controller' => 'App\\Http\\Controller\\IndexController',
+            'action'     => 'community'
+        ],
         '/get-started[/]' => [
             'controller' => 'App\Http\Controller\IndexController',
             'action'     => 'getStarted'

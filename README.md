@@ -13,7 +13,7 @@ of `popphp/popphp.org`.
 | `app/assets/css/app.css` | **replaced** | Tailwind v4 `@theme` tokens + semantic surfaces; keeps `@custom-variant dark` |
 | `app/assets/js/app.js` | **replaced** | Keeps the Alpine bootstrap, adds four `Alpine.data()` components |
 | `app/view/*.phtml` | new | One view per route, plus `error`, `maintenance` and `exception` |
-| `app/view/partials/*.phtml` | new | `head`, `nav`, `footer`, `install-bar`, `icon-github` |
+| `app/view/partials/*.phtml` | new | `head`, `nav`, `footer`, `install-bar`, `icon-external`, `icon-github`, `icon-discord`, `icon-x` |
 
 No new Composer or npm dependencies. `npm run build` output paths are unchanged.
 
@@ -99,10 +99,15 @@ Mobile-first; `lg:` is the desktop breakpoint. The design was drawn at 390px and
 
 ## Open items
 
-1. **Discord and X URLs are placeholders** (`discord.gg/popphp`, `x.com/popphp`) —
-   in `app/view/partials/footer.phtml` and `index.phtml`.
-2. **Docs links** all point at `https://docs.popphp.org` root; deep links once the
-   docs site has stable paths.
+1. **Nav width.** With `Community` added there are five text links plus two buttons and
+   the theme toggle, so the nav swaps to the drawer at `min-[1120px]:` rather than `lg:`
+   (plus `gap-6 xl:gap-8`). A sixth link will not fit without dropping the GitHub button,
+   which the Community page now duplicates anyway.
+2. **Docs links** all point at section roots (`docs.popphp.org`, `api.popphp.org/7.x`);
+   deep links once the docs site has stable paths. `/docs` is the internal hub that
+   indexes every one of them, and every "Read the docs" CTA routes through it — the
+   one exception is `maintenance.phtml`, which still links out directly because
+   `/docs` is itself unreachable while maintenance mode is on.
 3. **The homepage "See it for yourself" route sample** still shows the method-keyed
    shape (`'routes' => ['get' => [...]]`), which is not what this site's own
    `app.http.php` does. Either swap it for the plain-path form used here, or keep it
