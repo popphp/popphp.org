@@ -26,7 +26,7 @@ return [
         'items' => [
             ['pop-http',      'Client and server functionality &mdash; requests, responses, file uploads and promises.'],
             ['pop-session',   'Session management &mdash; includes namespaces plus request-based and time-based controls.'],
-            ['pop-auth',      'Authentication and authorization, against a database or an HTTP service.'],
+            ['pop-auth',      'Authentication and authorization, modernized.'],
             ['pop-acl',       'Role-based access control &mdash; roles, resources, permissions, assertions and policies.'],
             ['pop-crypt',     'Password hashing and encryption over OpenSSL, Sodium, bcrypt and more.'],
             ['pop-cookie',    'Cookie management with a clean API.'],
