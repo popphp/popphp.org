@@ -1,0 +1,59 @@
+<?php
+include __DIR__ . '/partials/head.phtml';
+include __DIR__ . '/partials/nav.phtml';
+
+$steps = [
+    'Pull the framework down with Composer.',
+    'It offers to set your app up. Say yes.',
+    'Answer a few questions.',
+    'Serve it. Your app is live locally.',
+];
+?>
+
+<main>
+
+    <section class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-5 pb-8 pt-12 text-center lg:gap-[22px] lg:px-16 lg:pb-16 lg:pt-24">
+        <span class="eyebrow text-[13.5px] lg:text-[17px]">Get started</span>
+        <h1 class="font-display text-[40px]/[1.05] font-semibold tracking-[-0.035em] lg:text-[72px]/[1] lg:tracking-[-0.04em]">From install to running app.</h1>
+        <p class="text-[17px]/[1.55] text-muted lg:text-[21px]/[1.6]">That's it. No fuss. No mess.</p>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-5 pb-10 lg:px-16 lg:pb-22">
+        <div class="grid gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-center lg:gap-10">
+            <div class="flex flex-col gap-3.5 lg:gap-[18px]">
+                <?php foreach ($steps as $i => $step): ?>
+                    <div class="flex items-baseline gap-3 lg:gap-3.5">
+                        <span class="font-mono text-[11.5px] text-pop-orange lg:text-xs">0<?=$i + 1 ?></span>
+                        <span class="text-[15.5px]/[1.5] text-muted lg:text-[16.5px]"><?=$step ?></span>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <div x-data="copyable('composer create-project popphp/framework my-app')" class="code-window">
+                <div class="code-window-bar flex items-center justify-between">
+                    <span>terminal</span>
+                    <button type="button" @click="copy()" class="text-comment hover:text-str" x-text="copied ? 'copied' : 'copy'">copy</button>
+                </div>
+<pre class="text-xs lg:text-[15px]/[2.1]"><span class="text-[#f4f1ea]"><span class="text-pop-orange">$</span> composer create-project popphp/framework my-app</span>
+<span class="text-[#f4f1ea]"><span class="text-pop-orange">$</span> ./kettle web:serve</span></pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="border-y border-line bg-panel">
+        <div class="mx-auto max-w-7xl px-5 py-10 lg:flex lg:justify-center lg:px-16 lg:py-18">
+            <p class="max-w-[72ch] text-base/[1.65] text-muted lg:text-center lg:text-[19px]/[1.7]">
+                One command. Composer installs the framework, then offers to initialize your application &mdash; say yes and
+                <span class="font-mono text-[14.5px] text-fg lg:text-[17px]">pop:init</span> takes over from there. Once you run
+                <span class="font-mono text-[14.5px] text-fg lg:text-[17px]">./kettle web:serve</span>, your app's running locally at the URL you provided. You're good to go.
+            </p>
+        </div>
+    </section>
+
+    <section class="mx-auto flex max-w-7xl flex-col gap-2.5 px-5 py-10 lg:flex-row lg:justify-center lg:gap-3 lg:px-16 lg:py-18">
+        <a href="https://docs.popphp.org" target="_blank" rel="noopener" class="btn-primary text-center">Read the full tutorial</a>
+        <a href="https://github.com/popphp/framework" target="_blank" rel="noopener" class="btn-secondary text-center">View on GitHub</a>
+    </section>
+
+</main>
+<?php include __DIR__ . '/partials/footer.phtml'; ?>

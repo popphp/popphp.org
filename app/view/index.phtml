@@ -1,75 +1,147 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title><?=$title; ?></title>
-    <link rel="icon" href="https://www.popphp.org/assets/img/pop-php-icon.png">
-    <script>
-        (function () {
-            var stored = localStorage.getItem('theme');
-            if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.documentElement.classList.add('dark');
-            }
-        })();
-    </script>
-    <link rel="stylesheet" href="/assets/css/app.css">
-</head>
-<body class="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-900 font-sans text-slate-900 dark:text-slate-100">
-    <button type="button" id="theme-toggle" aria-label="Toggle dark mode" class="fixed top-4 right-4 inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition">
-        <svg id="theme-toggle-moon" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/>
-        </svg>
-        <svg id="theme-toggle-sun" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:none">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"/>
-        </svg>
-    </button>
-    <div class="w-full bg-pop-orange-light flex items-center justify-center py-14 px-6">
-        <img src="https://media.popphp.org/img/pop-php-logo-white.png" alt="Pop PHP" class="w-44 h-44">
-    </div>
-    <div class="flex-1 flex flex-col items-center text-center px-6 pt-10 pb-12">
-        <div class="w-full max-w-md">
-            <span class="inline-block text-xs font-bold uppercase tracking-wider text-orange-700 dark:text-orange-400 mb-3">Alpine.js + Tailwind</span>
-            <h1 class="text-5xl font-light mb-3 tracking-tight text-stone-600 dark:text-stone-300"><?=$title;?></h1>
-            <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-8">Your Pop PHP application is up and running.</p>
+<?php include __DIR__ . '/partials/head.phtml'; ?>
+<?php include __DIR__ . '/partials/nav.phtml'; ?>
 
-            <div x-data="{ count: 0 }" class="inline-flex items-center gap-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-5 py-3">
-                <span class="text-sm text-slate-500 dark:text-slate-400">Alpine is working</span>
-                <button
-                    type="button"
-                    @click="count++"
-                    class="px-3 py-1.5 text-sm font-semibold text-white bg-orange-700 rounded-md hover:bg-orange-800 transition"
-                >
-                    Count: <span x-text="count"></span>
-                </button>
+<main>
+
+    <!-- hero -->
+    <section class="mx-auto flex max-w-7xl flex-col items-center gap-5 px-5 pb-11 pt-13 text-center lg:gap-[30px] lg:px-16 lg:pb-18 lg:pt-26">
+        <span class="eyebrow text-[13.5px] lg:text-[17px]">Version 7 is out</span>
+        <h1 class="max-w-[20ch] font-display text-[40px]/[1.05] font-semibold tracking-[-0.035em] lg:text-hero">No magic. Just PHP.</h1>
+        <p class="max-w-[54ch] text-[17px]/[1.6] text-muted lg:text-xl">A framework for people who want to see what their code is doing and just lean on the power of PHP.</p>
+        <div class="w-full self-stretch pt-1 lg:w-auto lg:self-auto">
+            <?php include __DIR__ . '/partials/install-bar.phtml'; ?>
+        </div>
+    </section>
+
+    <!-- pillars -->
+    <section class="mx-auto max-w-7xl px-5 pb-11 lg:px-16 lg:pb-26">
+        <div class="grid gap-3.5 lg:grid-cols-3 lg:gap-5">
+            <div class="card lg:items-center lg:p-9 lg:text-center">
+                <span class="icon-badge lg:h-[54px] lg:w-[54px]">
+                    <svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.8 12S5.5 5.2 12 5.2 22.2 12 22.2 12 18.5 18.8 12 18.8 1.8 12 1.8 12Z"></path><circle cx="12" cy="12" r="3.1"></circle></svg>
+                </span>
+                <h2 class="font-display text-[21px]/[1.22] font-semibold tracking-[-0.015em] lg:text-[30px]/[1.1]">Transparent by design</h2>
+                <p class="text-[15.5px]/[1.6] text-muted lg:text-base/[1.65]">See exactly what your code does. Nothing happens in the dark.</p>
             </div>
 
-            <footer class="mt-10 text-sm text-slate-500 dark:text-slate-400">
-                Built with <a href="https://www.popphp.org" target="_blank" rel="noopener" class="text-orange-700 dark:text-orange-400 font-semibold hover:underline">Pop PHP</a>
-            </footer>
+            <div class="card lg:items-center lg:p-9 lg:text-center">
+                <span class="icon-badge lg:h-[54px] lg:w-[54px]">
+                    <svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z"></path></svg>
+                </span>
+                <h2 class="font-display text-[21px]/[1.22] font-semibold tracking-[-0.015em] lg:text-[30px]/[1.1]">Built for the real world</h2>
+                <p class="text-[15.5px]/[1.6] text-muted lg:text-base/[1.65]">Pop wasn't designed in the abstract. It was built solving real deployment problems under real deadlines.</p>
+            </div>
+
+            <div class="card lg:items-center lg:p-9 lg:text-center">
+                <span class="icon-badge lg:h-[54px] lg:w-[54px]">
+                    <svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="translate(24 0) scale(-1 1)"><path d="M16.2 21V3"></path><path d="M8.6 21v-9.4"></path><path d="M8.6 11.6C8.6 7.4 6.6 4.6 3 3"></path><path d="M12.4 20.4v-2.6M12.4 14.9v-2.6M12.4 9.4V6.8"></path></g></svg>
+                </span>
+                <h2 class="font-display text-[21px]/[1.22] font-semibold tracking-[-0.015em] lg:text-[30px]/[1.1]">A gentle on-ramp</h2>
+                <p class="text-[15.5px]/[1.6] text-muted lg:text-base/[1.65]">Approachable enough to pick up fast. Capable enough that you won't outgrow it in six months.</p>
+            </div>
         </div>
-    </div>
-    <script type="module" src="/assets/js/app.js"></script>
-    <script>
-        (function () {
-            var root = document.documentElement;
-            var toggle = document.getElementById('theme-toggle');
-            var moonIcon = document.getElementById('theme-toggle-moon');
-            var sunIcon = document.getElementById('theme-toggle-sun');
 
-            function syncIcons() {
-                var isDark = root.classList.contains('dark');
-                moonIcon.style.display = isDark ? 'none' : '';
-                sunIcon.style.display = isDark ? '' : 'none';
-            }
+        <div class="flex flex-col gap-2.5 pt-6 lg:flex-row lg:items-baseline lg:justify-between lg:gap-8 lg:pt-8">
+            <p class="max-w-[80ch] text-[15.5px]/[1.6] text-muted lg:text-[17.5px]/[1.6]">And it comes with a full, practical toolkit for building real applications &mdash; no assembling a dozen packages before you can ship.</p>
+            <a href="/features" class="whitespace-nowrap text-[15px] font-medium text-pop-orange lg:text-[15.5px]">See what's inside &rarr;</a>
+        </div>
+    </section>
 
-            toggle.addEventListener('click', function () {
-                root.classList.toggle('dark');
-                localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
-                syncIcons();
-            });
+    <!-- history -->
+    <section class="border-y border-line bg-panel">
+        <div class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-5 py-12 text-center lg:gap-[26px] lg:px-16 lg:py-24">
+            <h2 class="max-w-[24ch] font-display text-[31px]/[1.08] font-semibold tracking-[-0.03em] lg:text-[62px]/[1.02] lg:tracking-[-0.035em]">14+ years in production. Modernized for today.</h2>
+            <p class="max-w-[62ch] text-base/[1.6] text-muted lg:text-[18.5px]/[1.65]">Pop started in 2009, solving real deployment problems in the real world. It's been in continuous use ever since.</p>
+        </div>
+    </section>
 
-            syncIcons();
-        })();
-    </script>
-</body>
-</html>
+    <!-- see it for yourself -->
+    <section class="mx-auto max-w-7xl px-5 py-12 lg:px-16 lg:py-24">
+        <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
+            <div class="flex flex-col gap-4 lg:sticky lg:top-10 lg:self-start">
+                <h2 class="font-display text-[31px]/[1.08] font-semibold tracking-[-0.03em] lg:text-[46px]/[1.06] lg:tracking-[-0.035em]">See it for yourself</h2>
+                <p class="text-base/[1.6] text-muted lg:text-[17px]/[1.65]">A controller is a class with methods. The request and response are objects you hold. Nothing is resolved behind your back.</p>
+                <div class="flex flex-col gap-2 pt-2 font-mono text-[13px] text-muted lg:pt-3">
+                    <span><span class="text-pop-orange">&middot;</span> web or console, same app object</span>
+                    <span><span class="text-pop-orange">&middot;</span> REST verbs without a package</span>
+                    <span><span class="text-pop-orange">&middot;</span> PSR-11, PSR-14, PSR-15 compatible</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-4 lg:gap-5">
+                <div class="code-window">
+                    <div class="code-window-bar">app/config/app.http.php</div>
+<pre><span class="text-kw">return</span> [
+    <span class="text-str">'routes'</span> =&gt; [
+        <span class="text-str">'get'</span> =&gt; [
+            <span class="text-str">'[/]'</span> =&gt; [
+                <span class="text-str">'controller'</span> =&gt; <span class="text-var">'App\Http\Controller\IndexController'</span>,
+                <span class="text-str">'action'</span>     =&gt; <span class="text-var">'index'</span>
+            ],
+        ],
+        <span class="text-str">'*'</span> =&gt; [
+            <span class="text-str">'*'</span> =&gt; [
+                <span class="text-str">'controller'</span> =&gt; <span class="text-var">'App\Http\Controller\IndexController'</span>,
+                <span class="text-str">'action'</span>     =&gt; <span class="text-var">'error'</span>
+            ]
+        ]
+    ],
+];</pre>
+                </div>
+
+                <div class="code-window">
+                    <div class="code-window-bar">app/src/Http/Controller/IndexController.php</div>
+<pre><span class="text-kw">use</span> Pop\Controller\AbstractController;
+<span class="text-kw">use</span> Pop\Dispatch\HttpTrait;
+
+<span class="text-kw">class</span> <span class="text-var">IndexController</span> <span class="text-kw">extends</span> AbstractController
+{
+    <span class="text-kw">use</span> HttpTrait;
+
+    <span class="text-kw">public function</span> <span class="text-var">index</span>(): <span class="text-kw">void</span>
+    {
+        <span class="text-var">$name</span> = <span class="text-var">$this</span>-&gt;application()-&gt;getName();
+        <span class="text-var">$uri</span>  = <span class="text-var">$this</span>-&gt;request()-&gt;getUriString();
+        <span class="text-var">$this</span>-&gt;response()-&gt;setBody(
+            <span class="text-str">'Hello from '</span> . <span class="text-var">$name</span> . <span class="text-str">' at '</span> . <span class="text-var">$uri</span>
+        );
+    }
+}</pre>
+                </div>
+
+                <div class="code-window">
+                    <div class="code-window-bar">or route it fluently</div>
+<pre><span class="text-var">$app</span>-&gt;get(<span class="text-str">'/users'</span>, UsersController::<span class="text-kw">class</span>)
+    -&gt;post(<span class="text-str">'/users'</span>, UsersController::<span class="text-kw">class</span>);</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- closing band -->
+    <section class="bg-pop-orange text-white">
+        <div class="mx-auto flex max-w-7xl flex-col items-center gap-[18px] px-6 py-14 text-center lg:gap-[30px] lg:py-26">
+            <h2 class="font-display text-4xl font-semibold tracking-[-0.03em] lg:text-[70px]/[1.02] lg:tracking-[-0.04em]">Simplicity, fully loaded.</h2>
+            <p class="text-[16.5px]/[1.55] text-white/90 lg:text-[19px]/[1.6]">Come explore the toolkit.</p>
+
+            <div class="flex w-full flex-col gap-2.5 self-stretch lg:w-auto lg:flex-row lg:gap-3 lg:self-auto">
+                <a href="/get-started" class="rounded-full bg-white px-[30px] py-3.5 text-center text-[15px] font-medium text-pop-orange lg:text-[15.5px]">Get started</a>
+                <a href="https://docs.popphp.org" target="_blank" rel="noopener" class="rounded-full border border-white/55 px-[30px] py-3.5 text-center text-[15px] font-medium text-white hover:bg-white/15 lg:text-[15.5px]">Read the docs</a>
+            </div>
+
+            <div class="flex items-center gap-3 pt-1.5 lg:gap-3.5">
+                <a href="https://github.com/popphp/framework" target="_blank" rel="noopener" title="GitHub" class="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-white/35 text-white hover:bg-white/15 lg:h-[46px] lg:w-[46px]">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.55v-1.95c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .3.2.66.8.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"></path></svg>
+                </a>
+                <a href="https://discord.gg/popphp" target="_blank" rel="noopener" title="Discord" class="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-white/35 text-white hover:bg-white/15 lg:h-[46px] lg:w-[46px]">
+                    <svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor" aria-hidden="true"><path d="M20.32 5.56A18 18 0 0 0 15.9 4.2l-.3.62a13.4 13.4 0 0 1 3.9 1.24c-4.3-1.98-9.28-1.94-13.2 0a13.9 13.9 0 0 1 3.9-1.27L9.9 4.2a17.8 17.8 0 0 0-4.42 1.36C2.7 9.7 2.16 14.3 2.5 18.6a16.5 16.5 0 0 0 5.1 2.6l.85-1.47c-.9-.34-1.75-.78-2.53-1.32.2-.15.4-.3.58-.46a11.8 11.8 0 0 0 10.98 0c.2.17.39.32.6.46-.79.55-1.65 1-2.55 1.33l.86 1.46a16.4 16.4 0 0 0 5.1-2.6c.42-4.98-.44-9.54-3.17-13.04ZM8.9 15.9c-1.05 0-1.92-.96-1.92-2.14 0-1.19.85-2.15 1.92-2.15 1.08 0 1.95.97 1.93 2.15 0 1.18-.86 2.14-1.93 2.14Zm6.2 0c-1.06 0-1.92-.96-1.92-2.14 0-1.19.85-2.15 1.92-2.15 1.08 0 1.94.97 1.92 2.15 0 1.18-.85 2.14-1.92 2.14Z"></path></svg>
+                </a>
+                <a href="https://x.com/popphp" target="_blank" rel="noopener" title="X" class="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-white/35 text-white hover:bg-white/15 lg:h-[46px] lg:w-[46px]">
+                    <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.63l-5.2-6.8-5.94 6.8H1.73l7.49-8.57L1.06 2.25h6.8l4.71 6.23 5.67-6.23Zm-1.16 17.52h1.83L5.85 4.16H3.9l13.18 15.6Z"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+<?php include __DIR__ . '/partials/footer.phtml'; ?>

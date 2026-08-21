@@ -1,0 +1,108 @@
+<?php
+include __DIR__ . '/partials/head.phtml';
+include __DIR__ . '/partials/nav.phtml';
+
+$features = [
+    [
+        'span'  => 'lg:col-span-2',
+        'title' => 'API-first, out of the box',
+        'body'  => 'Build REST APIs without extra packages or configuration.',
+        'tags'  => ['popphp', 'pop-http'],
+        'icon'  => '<path d="M3.5 9h13"></path><path d="M13.3 5.8 16.7 9l-3.4 3.2"></path><path d="M20.5 15h-13"></path><path d="M10.7 11.8 7.3 15l3.4 3.2"></path>',
+    ],
+    [
+        'span'  => 'lg:col-span-2',
+        'title' => 'Not just a web framework',
+        'body'  => 'The same application wires up as a console app too &mdash; real CLI tooling, not an afterthought.',
+        'tags'  => ['pop-console'],
+        'icon'  => '<rect x="2.6" y="4.2" width="18.8" height="15.6" rx="2.4"></rect><path d="M6.8 10.2l2.6 2.3-2.6 2.3"></path><path d="M12.4 14.8h4.8"></path>',
+    ],
+    [
+        'span'  => 'lg:col-span-2',
+        'title' => 'Databases, done simply',
+        'body'  => 'Robust yet simple &mdash; enough power for real applications, without a new query language to learn.',
+        'tags'  => ['pop-db'],
+        'icon'  => '<ellipse cx="12" cy="5.8" rx="7.6" ry="2.9"></ellipse><path d="M4.4 5.8v5.5c0 1.6 3.4 2.9 7.6 2.9s7.6-1.3 7.6-2.9V5.8"></path><path d="M4.4 11.3v5.5c0 1.6 3.4 2.9 7.6 2.9s7.6-1.3 7.6-2.9v-5.5"></path>',
+    ],
+    [
+        'span'  => 'lg:col-span-3',
+        'title' => 'Real access control',
+        'body'  => 'Roles, resources, permissions and more &mdash; granular access control without reaching for another package.',
+        'tags'  => ['pop-acl'],
+        'icon'  => '<rect x="4.2" y="10.4" width="15.6" height="9.4" rx="2.4"></rect><path d="M8.2 10.4V7.6a3.8 3.8 0 0 1 7.6 0v2.8"></path><path d="M12 14.2v2"></path>',
+    ],
+    [
+        'span'  => 'lg:col-span-3',
+        'title' => 'HTML rendering that still makes sense',
+        'body'  => 'Coming back to server-side HTML? Pop never stopped doing it well. Templates, forms and navigation without extra tooling.',
+        'tags'  => ['pop-view', 'pop-form', 'pop-nav'],
+        'icon'  => '<rect x="2.6" y="4.2" width="18.8" height="15.6" rx="2.4"></rect><path d="M2.6 8.8h18.8"></path><path d="M9.2 8.8v11"></path>',
+    ],
+    [
+        'span'  => 'lg:col-span-3',
+        'title' => 'PDFs, generated in PHP',
+        'body'  => 'Create documents from scratch, or import existing ones to merge and modify. And, HTML rendering and text extraction are baked right in.',
+        'tags'  => ['pop-pdf'],
+        'icon'  => '<path d="M13.6 2.8H6.6a2.4 2.4 0 0 0-2.4 2.4v13.6a2.4 2.4 0 0 0 2.4 2.4h10.8a2.4 2.4 0 0 0 2.4-2.4V9.2Z"></path><path d="M13.6 2.8v6.4h6.2"></path><path d="M8.4 16.4h7.2"></path>',
+    ],
+    [
+        'span'  => 'lg:col-span-3',
+        'title' => 'Image processing, built in',
+        'body'  => 'Resize, crop, convert and rotate images and much more &mdash; using GD or Imagick, all through the same API.',
+        'tags'  => ['pop-image'],
+        'icon'  => '<rect x="2.8" y="4.4" width="18.4" height="15.2" rx="2.4"></rect><circle cx="8.6" cy="9.6" r="1.7"></circle><path d="M3.2 17.2l4.9-4.3a1.9 1.9 0 0 1 2.5 0l3.6 3.2"></path><path d="M12.4 15.4l2.6-2.3a1.9 1.9 0 0 1 2.5 0l3.4 3"></path>',
+    ],
+];
+?>
+
+<main>
+
+    <section class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-5 pb-8 pt-12 text-center lg:gap-6 lg:px-16 lg:pb-16 lg:pt-24">
+        <span class="eyebrow text-[13.5px] lg:text-[17px]">Features</span>
+        <h1 class="font-display text-[40px]/[1.05] font-semibold tracking-[-0.035em] lg:text-[72px]/[1] lg:tracking-[-0.04em]">What's inside:</h1>
+        <p class="max-w-[56ch] text-[16.5px]/[1.6] text-muted lg:text-[19px]/[1.65]">Pop comes with an extensive toolkit that's ready to go. Here are the highlights.</p>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-5 pb-10 lg:px-16 lg:pb-22">
+        <div class="grid gap-3.5 lg:grid-cols-6 lg:gap-5">
+            <?php foreach ($features as $feature): ?>
+                <div class="card <?=$feature['span'] ?> lg:p-[34px] lg:pb-[38px]">
+                    <span class="icon-badge h-11 w-11 lg:h-12 lg:w-12">
+                        <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><?=$feature['icon'] ?></svg>
+                    </span>
+                    <h2 class="font-display text-[21px]/[1.22] font-semibold tracking-[-0.015em] lg:text-card"><?=$feature['title'] ?></h2>
+                    <p class="text-[15.5px]/[1.6] text-muted lg:text-base/[1.65]"><?=$feature['body'] ?></p>
+                    <div class="mt-auto flex flex-wrap gap-2 pt-2.5">
+                        <?php foreach ($feature['tags'] as $tag): ?>
+                            <a href="https://github.com/popphp/<?=$tag ?>" target="_blank" rel="noopener" class="tag"><?=$tag ?></a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+
+    <!-- Kettle spotlight -->
+    <section class="mx-auto max-w-7xl px-5 pb-10 lg:px-16 lg:pb-24">
+        <div class="grid overflow-hidden rounded-[18px] bg-code text-[#f4f1ea] lg:grid-cols-2">
+            <div class="flex flex-col gap-3.5 p-[22px] pt-[30px] lg:gap-5 lg:p-14">
+                <span class="font-mono text-[13.5px] font-medium uppercase tracking-[0.14em] text-kw lg:text-[17px]">Meet Kettle</span>
+                <h2 class="font-display text-[28px]/[1.08] font-semibold tracking-[-0.03em] lg:text-[42px]/[1.06] lg:tracking-[-0.035em]">One tool, one complete workflow.</h2>
+                <p class="text-[15.5px]/[1.65] text-[#b8b2a6] lg:text-[17.5px]/[1.7]">Every Pop app ships with Kettle &mdash; a CLI companion that scaffolds your project, generates controllers, models, and views, manages your database and migrations, and spins up a dev server. It'll even set up your frontend of choice &mdash; Alpine.js, Vue, or React, with Tailwind included &mdash; right from init.</p>
+            </div>
+            <div class="border-t border-white/10 p-[22px] pb-[26px] lg:flex lg:flex-col lg:justify-center lg:border-l lg:border-t-0 lg:p-14">
+<pre class="font-mono text-[12.5px]/[2] text-str lg:text-sm"><span class="text-pop-orange">$</span> ./kettle pop:init
+<span class="text-pop-orange">$</span> ./kettle web:serve</pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="border-t border-line bg-panel">
+        <div class="mx-auto flex max-w-7xl flex-col gap-2.5 px-5 py-11 lg:flex-row lg:justify-center lg:gap-3 lg:px-16 lg:py-18">
+            <a href="/get-started" class="btn-primary text-center">Get started</a>
+            <a href="https://docs.popphp.org" target="_blank" rel="noopener" class="btn-secondary text-center">Read the docs</a>
+        </div>
+    </section>
+
+</main>
+<?php include __DIR__ . '/partials/footer.phtml'; ?>

@@ -1,0 +1,45 @@
+<?php
+/**
+ * Site footer + closing document tags.
+ */
+$columns = [
+    'Site' => [
+        ['Why Pop', '/why-pop', false],
+        ['Features', '/features', false],
+        ['Components', '/components', false],
+        ['Get started', '/get-started', false],
+    ],
+    'Docs' => [
+        ['Start here', 'https://docs.popphp.org', true],
+        ['Guides', 'https://docs.popphp.org', true],
+        ['API', 'https://docs.popphp.org', true],
+    ],
+    'Community' => [
+        ['GitHub', 'https://github.com/popphp/framework', true],
+        ['Discord', 'https://discord.gg/popphp', true],
+        ['X', 'https://x.com/popphp', true],
+    ],
+];
+?>
+<footer class="border-t border-line bg-panel">
+    <div class="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-10 lg:grid lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-10 lg:px-16 lg:py-16">
+        <div class="flex flex-col items-center gap-3 text-center lg:items-start lg:text-left">
+            <img src="https://media.popphp.org/img/pop-php-logo2.png" alt="Pop PHP" class="block h-[34px] w-auto lg:h-[46px]">
+            <p class="text-[13.5px]/[1.6] text-muted lg:text-sm">
+                A PHP framework, since 2009.<br>
+                &copy; <?=date('Y') ?> Pop PHP Framework
+            </p>
+        </div>
+
+        <?php foreach ($columns as $heading => $items): ?>
+            <div class="flex flex-col gap-2.5 text-[13.5px] text-muted lg:text-[14.5px]">
+                <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-fg lg:text-[11.5px]"><?=$heading ?></span>
+                <?php foreach ($items as [$label, $href, $external]): ?>
+                    <a href="<?=$href ?>"<?=$external ? ' target="_blank" rel="noopener"' : '' ?> class="text-muted hover:text-fg"><?=$label ?></a>
+                <?php endforeach; ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</footer>
+</body>
+</html>

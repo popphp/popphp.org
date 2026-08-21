@@ -1,0 +1,29 @@
+<?php
+/**
+ * Document head + opening body. Included at the top of every page view.
+ * Expects: $title
+ */
+?><!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?=$title ?> - Pop PHP Framework</title>
+<meta name="description" content="A framework for people who want to see what their code is doing and just lean on the power of PHP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link type="image/png" rel="shortcut icon" href="https://media.popphp.org/img/pop-php-icon.png" />
+<link rel="stylesheet" href="/assets/css/app.css">
+<script>
+    // Set the color mode before first paint. Light is the default.
+    document.documentElement.classList.remove('no-js');
+    try {
+        if (localStorage.getItem('pop-theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    } catch (e) {}
+</script>
+<script type="module" src="/assets/js/app.js"></script>
+</head>
+<body class="bg-bg text-fg font-sans">

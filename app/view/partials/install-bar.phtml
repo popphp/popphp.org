@@ -1,0 +1,16 @@
+<?php
+/**
+ * Install command bar. Set $installCommand before including, or accept the default.
+ */
+$installCommand = $installCommand ?? 'composer create-project popphp/framework my-app';
+?>
+<div x-data="copyable('<?=$installCommand ?>')" class="flex flex-col gap-3 rounded-2xl bg-code p-[18px] shadow-[0_14px_34px_rgba(23,21,15,0.18)] lg:flex-row lg:items-center lg:gap-[18px] lg:rounded-full lg:py-3.5 lg:pl-6 lg:pr-4">
+    <span class="font-mono text-[12.5px]/[1.6] text-[#f0ece3] [overflow-wrap:anywhere] lg:text-base lg:whitespace-nowrap">
+        <span class="text-pop-orange">$</span> <?=$installCommand ?>
+    </span>
+    <button type="button" @click="copy()" class="flex items-center justify-center gap-[7px] rounded-full bg-white/10 px-3.5 py-2 font-mono text-xs text-[#ded9cf] hover:bg-white/20">
+        <svg x-show="!copied" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11.5" height="11.5" rx="2.4"></rect><path d="M15 5.6A2.6 2.6 0 0 0 12.4 3H5.6A2.6 2.6 0 0 0 3 5.6v6.8A2.6 2.6 0 0 0 5.6 15"></path></svg>
+        <svg x-show="copied" x-cloak viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5 9 17l10.5-10.5"></path></svg>
+        <span x-text="copied ? 'copied' : 'copy'">copy</span>
+    </button>
+</div>

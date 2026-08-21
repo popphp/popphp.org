@@ -1,0 +1,83 @@
+<?php
+/**
+ * Site nav - desktop bar + mobile drawer.
+ * Expects: $page  (home|why-pop|features|components|get-started|null)
+ */
+$page  = $page ?? null;
+$links = [
+    'why-pop'    => ['Why Pop', '/why-pop'],
+    'features'   => ['Features', '/features'],
+    'components' => ['Components', '/components'],
+];
+?>
+<header x-data="nav" class="sticky top-0 z-40 border-b border-line bg-bg/95 backdrop-blur lg:static lg:bg-bg lg:backdrop-blur-none">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-8 px-5 py-3.5 lg:px-16 lg:py-5">
+        <a href="/" class="shrink-0" aria-label="Pop PHP home">
+            <img src="https://media.popphp.org/img/pop-php-logo2.png" alt="Pop PHP" class="block h-[34px] w-auto lg:h-[54px]">
+        </a>
+
+        <!-- desktop -->
+        <nav class="hidden items-center gap-8 lg:flex">
+            <?php foreach ($links as $key => [$label, $href]): ?>
+                <a href="<?=$href ?>" class="nav-link<?=($page == $key) ? ' nav-link-active' : '' ?>"<?=($page == $key) ? ' aria-current="page"' : '' ?>><?=$label ?></a>
+            <?php endforeach; ?>
+
+            <a href="https://docs.popphp.org" target="_blank" rel="noopener" class="nav-link gap-1">
+                Docs
+                <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 16.5 16.5 7.5"></path><path d="M9.2 7.5h7.3v7.3"></path></svg>
+            </a>
+
+            <a href="/get-started" class="rounded-full px-[18px] py-2.5 text-[14.5px] font-medium transition-opacity duration-150 hover:opacity-85 <?=($page == 'get-started') ? 'bg-pop-orange text-white' : 'bg-fg text-bg' ?>"<?=($page == 'get-started') ? ' aria-current="page"' : '' ?>>Get started</a>
+
+            <a href="https://github.com/popphp/framework" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-line px-[18px] py-2.5 pl-[15px] text-[14.5px] font-medium text-fg transition-colors duration-150 hover:border-fg hover:bg-fg hover:text-bg">
+                <?php include __DIR__ . '/icon-github.phtml'; ?>
+                GitHub
+            </a>
+
+            <button type="button" x-data="theme" @click="toggle()" aria-label="Toggle color mode" class="flex items-center rounded-full border border-line p-2 text-muted transition-colors duration-150 hover:border-pop-orange hover:text-pop-orange">
+                <svg x-show="!dark" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.6 8.6 0 1 0 11.1 11.1Z"></path></svg>
+                <svg x-show="dark" x-cloak viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.4v2.2M12 19.4v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.4 12h2.2M19.4 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"></path></svg>
+            </button>
+        </nav>
+
+        <!-- mobile controls -->
+        <div class="flex items-center gap-2 lg:hidden">
+            <button type="button" x-data="theme" @click="toggle()" aria-label="Toggle color mode" class="flex items-center rounded-full border border-line p-2.5 text-muted">
+                <svg x-show="!dark" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.6 8.6 0 1 0 11.1 11.1Z"></path></svg>
+                <svg x-show="dark" x-cloak viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.4v2.2M12 19.4v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.4 12h2.2M19.4 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"></path></svg>
+            </button>
+            <button type="button" @click="toggle()" :aria-expanded="open" aria-controls="mobile-nav" aria-label="Menu" class="flex flex-col gap-1 rounded-[10px] border border-line px-2.5 py-[11px]">
+                <span class="block h-[1.8px] w-[17px] rounded-sm bg-fg"></span>
+                <span class="block h-[1.8px] w-[17px] rounded-sm bg-fg"></span>
+                <span class="block h-[1.8px] w-[17px] rounded-sm bg-fg"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- mobile drawer -->
+    <nav id="mobile-nav" x-show="open" x-cloak x-transition.opacity class="flex flex-col px-5 pb-5 pt-1 lg:hidden">
+        <?php foreach ($links as $key => [$label, $href]): ?>
+            <?php if ($page == $key): ?>
+                <a href="<?=$href ?>" aria-current="page" class="flex items-center justify-between border-b border-line py-3.5 text-[19px] font-semibold text-fg">
+                    <?=$label ?>
+                    <span class="block h-0.5 w-[22px] rounded-sm bg-pop-orange" aria-hidden="true"></span>
+                </a>
+            <?php else: ?>
+                <a href="<?=$href ?>" class="border-b border-line py-3.5 text-[19px] text-muted"><?=$label ?></a>
+            <?php endif; ?>
+        <?php endforeach; ?>
+
+        <a href="https://docs.popphp.org" target="_blank" rel="noopener" class="flex items-center justify-between border-b border-line py-3.5 text-[19px] text-muted">
+            Docs
+            <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 16.5 16.5 7.5"></path><path d="M9.2 7.5h7.3v7.3"></path></svg>
+        </a>
+
+        <div class="flex flex-col gap-2.5 pt-4">
+            <a href="/get-started" class="rounded-full px-[18px] py-3.5 text-center text-[15px] font-medium <?=($page == 'get-started') ? 'bg-pop-orange text-white' : 'bg-fg text-bg' ?>"<?=($page == 'get-started') ? ' aria-current="page"' : '' ?>>Get started</a>
+            <a href="https://github.com/popphp/framework" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 rounded-full border border-line px-[18px] py-3.5 text-[15px] font-medium text-fg">
+                <?php include __DIR__ . '/icon-github.phtml'; ?>
+                GitHub
+            </a>
+        </div>
+    </nav>
+</header>

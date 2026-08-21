@@ -1,0 +1,70 @@
+<?php
+include __DIR__ . '/partials/head.phtml';
+include __DIR__ . '/partials/nav.phtml';
+
+$bands = $components ?? [];
+?>
+
+<main x-data="componentFilter">
+
+    <section class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-5 pb-7 pt-12 text-center lg:gap-6 lg:px-16 lg:pb-14 lg:pt-24">
+        <span class="eyebrow text-[13.5px] lg:text-[17px]">Components</span>
+        <h1 class="font-display text-[40px]/[1.05] font-semibold tracking-[-0.035em] lg:text-[72px]/[1] lg:tracking-[-0.04em]">The whole toolkit.</h1>
+        <p class="max-w-[60ch] text-[16.5px]/[1.6] text-muted lg:text-[19px]/[1.65]">They ship with the framework and work together. Every one of them also stands alone &mdash; install just the piece you need, in any project.</p>
+    </section>
+
+    <!-- band filter -->
+    <section class="mx-auto flex max-w-7xl flex-wrap justify-center gap-2 px-5 pb-7 lg:gap-2.5 lg:px-16 lg:pb-14">
+        <button type="button" @click="select('all')"
+                :class="isActive('all') ? 'border-pop-orange bg-pop-orange text-white' : 'border-line bg-panel text-fg'"
+                class="whitespace-nowrap rounded-full border px-3.5 py-2 font-mono text-[11.5px] lg:px-4 lg:py-2.5 lg:text-[13px]">All</button>
+        <?php foreach ($bands as $band): ?>
+            <button type="button" @click="select('<?=$band['key'] ?>')"
+                    :class="isActive('<?=$band['key'] ?>') ? 'border-pop-orange bg-pop-orange text-white' : 'border-line bg-panel text-fg'"
+                    class="whitespace-nowrap rounded-full border px-3.5 py-2 font-mono text-[11.5px] lg:px-4 lg:py-2.5 lg:text-[13px]"><?=$band['title'] ?></button>
+        <?php endforeach; ?>
+    </section>
+
+    <!-- bands -->
+    <section class="mx-auto flex max-w-7xl flex-col gap-8 px-5 pb-10 lg:gap-11 lg:px-16 lg:pb-22">
+        <?php foreach ($bands as $band): ?>
+            <div x-show="shows('<?=$band['key'] ?>')" class="flex flex-col gap-3 lg:gap-[18px]">
+                <div class="flex items-center gap-3 lg:gap-4">
+                    <span class="font-mono text-[11.5px] uppercase tracking-[0.13em] text-pop-orange lg:text-[12.5px] lg:tracking-[0.14em]"><?=$band['title'] ?></span>
+                    <span class="block h-px flex-1 bg-line"></span>
+                    <span class="font-mono text-[11.5px] text-muted lg:text-[12.5px]"><?=count($band['items']) ?></span>
+                </div>
+
+                <div class="grid gap-2.5 lg:grid-cols-3 lg:gap-3.5">
+                    <?php foreach ($band['items'] as [$name, $description]): ?>
+                        <a href="https://github.com/popphp/<?=$name ?>" target="_blank" rel="noopener"
+                           class="flex flex-col gap-[7px] rounded-xl border border-line bg-panel p-[18px] text-fg hover:border-pop-orange lg:gap-[9px] lg:px-[22px] lg:py-5">
+                            <span class="flex items-center justify-between gap-2.5">
+                                <span class="font-mono text-[13.5px] font-medium text-fg lg:text-[14.5px]"><?=$name ?></span>
+                                <span class="flex text-muted"><?php include __DIR__ . '/partials/icon-github.phtml'; ?></span>
+                            </span>
+                            <span class="text-[13.5px]/[1.55] text-muted lg:text-[14.5px]"><?=$description ?></span>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </section>
+
+    <!-- standalone install -->
+    <section class="border-y border-line bg-panel">
+        <div class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-5 py-11 text-center lg:gap-[26px] lg:px-16 lg:py-20">
+            <h2 class="font-display text-[28px]/[1.08] font-semibold tracking-[-0.03em] lg:text-[40px] lg:tracking-[-0.035em]">Take one, leave the rest.</h2>
+            <p class="max-w-[56ch] text-[15.5px]/[1.6] text-muted lg:text-lg/[1.65]">No framework buy-in required. Pull a single component into whatever you're already working on.</p>
+            <?php $installCommand = 'composer require popphp/pop-db'; ?>
+            <?php include __DIR__ . '/partials/install-bar.phtml'; ?>
+        </div>
+    </section>
+
+    <section class="mx-auto flex max-w-7xl flex-col gap-2.5 px-5 py-10 lg:flex-row lg:justify-center lg:gap-3 lg:px-16 lg:py-18">
+        <a href="https://docs.popphp.org" target="_blank" rel="noopener" class="btn-primary text-center">Read the docs</a>
+        <a href="/get-started" class="btn-secondary text-center">Get started</a>
+    </section>
+
+</main>
+<?php include __DIR__ . '/partials/footer.phtml'; ?>
