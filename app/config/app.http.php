@@ -32,6 +32,10 @@ return [
             'controller' => 'App\\Http\\Controller\\IndexController',
             'action'     => 'community'
         ],
+        '/code-of-conduct[/]' => [
+            'controller' => 'App\\Http\\Controller\\IndexController',
+            'action'     => 'codeOfConduct'
+        ],
         '/get-started[/]' => [
             'controller' => 'App\Http\Controller\IndexController',
             'action'     => 'getStarted'

@@ -1,0 +1,40 @@
+<?php
+/**
+ * Code of conduct. Deliberately minimal - the text is the whole page.
+ * Linked from the Community page and the footer; other Pop repos and sites
+ * point here rather than carrying their own copy.
+ */
+$principles = [
+    'Participants will be tolerant of opposing views.',
+    'Participants must ensure that their language and actions are free of personal attacks and disparaging personal remarks.',
+    'When interpreting the words and actions of others, participants should always assume good intentions.',
+    'Behaviour which can be reasonably considered harassment will not be tolerated.',
+];
+?>
+<?php include __DIR__ . '/partials/head.phtml'; ?>
+<?php include __DIR__ . '/partials/nav.phtml'; ?>
+
+<main>
+    <section class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-8 pb-8 pt-12 text-center lg:gap-6 lg:px-16 lg:pb-12 lg:pt-24">
+        <span class="eyebrow text-[13.5px] lg:text-[17px]">Community</span>
+        <h1 class="font-display text-[40px]/[1.05] font-semibold tracking-[-0.035em] lg:text-[72px]/[1] lg:tracking-[-0.04em]">Code of conduct</h1>
+        <p class="max-w-[62ch] text-[16.5px]/[1.6] text-muted lg:text-[19px]/[1.65]">
+            The Pop PHP Framework adopts its code of conduct from the Ruby code of conduct.
+            Any violations of the code of conduct may be reported to Nick Sagona
+            (<a href="mailto:nick@popphp.org" class="text-fg underline decoration-line underline-offset-4 hover:decoration-pop-orange">nick@popphp.org</a>).
+        </p>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-8 pb-16 lg:px-16 lg:pb-28">
+        <ul class="mx-auto flex max-w-[64ch] flex-col gap-3.5 lg:gap-[18px]">
+            <?php foreach ($principles as $principle): ?>
+                <li class="flex gap-3 text-[15.5px]/[1.6] text-fg lg:gap-4 lg:text-[17px]/[1.65]">
+                    <span class="shrink-0 text-pop-orange" aria-hidden="true">&middot;</span>
+                    <span><?=$principle ?></span>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </section>
+</main>
+
+<?php include __DIR__ . '/partials/footer.phtml'; ?>

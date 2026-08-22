@@ -54,6 +54,23 @@ Alpine.data('componentFilter', () => ({
 }));
 
 /**
+ * Write to the clipboard, falling back to execCommand where the async
+ * clipboard API is unavailable or blocked (http, older Safari).
+ */
+async function writeClipboard(text) {
+    try {
+        await navigator.clipboard.writeText(text);
+    } catch (e) {
+        const field = document.createElement('textarea');
+        field.value = text;
+        document.body.appendChild(field);
+        field.select();
+        document.execCommand('copy');
+        document.body.removeChild(field);
+    }
+}
+
+/**
  * Copy-to-clipboard for install commands.
  */
 Alpine.data('copyable', (text) => ({
@@ -61,16 +78,25 @@ Alpine.data('copyable', (text) => ({
     copied: false,
 
     async copy() {
-        try {
-            await navigator.clipboard.writeText(this.text);
-        } catch (e) {
-            const field = document.createElement('textarea');
-            field.value = this.text;
-            document.body.appendChild(field);
-            field.select();
-            document.execCommand('copy');
-            document.body.removeChild(field);
-        }
+        await writeClipboard(this.text);
+        this.copied = true;
+        setTimeout(() => { this.copied = false; }, 1800);
+    },
+}));
+
+/**
+ * Copy-to-clipboard for a code window. Copies the window's own <pre> text so
+ * the sample is never duplicated into an attribute; shell transcripts set a
+ * data-copy override so the prompt and output are left behind.
+ */
+Alpine.data('copyCode', () => ({
+    copied: false,
+
+    async copy() {
+        const window = this.$el.closest('.code-window');
+        const pre    = window.querySelector('pre');
+
+        await writeClipboard(window.dataset.copy ?? (pre ? pre.textContent : ''));
         this.copied = true;
         setTimeout(() => { this.copied = false; }, 1800);
     },

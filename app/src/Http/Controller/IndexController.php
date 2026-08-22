@@ -72,6 +72,16 @@ class IndexController extends AbstractController
     }
 
     /**
+     * Code of conduct action
+     *
+     * @return void
+     */
+    public function codeOfConduct(): void
+    {
+        $this->renderPage('code-of-conduct.phtml', 'Code of conduct', 'community');
+    }
+
+    /**
      * Get started action
      *
      * @return void

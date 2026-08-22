@@ -12,13 +12,13 @@ $steps = [
 
 <main>
 
-    <section class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-5 pb-8 pt-12 text-center lg:gap-[22px] lg:px-16 lg:pb-16 lg:pt-24">
+    <section class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-8 pb-8 pt-12 text-center lg:gap-[22px] lg:px-16 lg:pb-16 lg:pt-24">
         <span class="eyebrow text-[13.5px] lg:text-[17px]">Get started</span>
         <h1 class="font-display text-[40px]/[1.05] font-semibold tracking-[-0.035em] lg:text-[72px]/[1] lg:tracking-[-0.04em]">From install to running app.</h1>
         <p class="text-[17px]/[1.55] text-muted lg:text-[21px]/[1.6]">That's it. No fuss. No mess.</p>
     </section>
 
-    <section class="mx-auto max-w-7xl px-5 pb-10 lg:px-16 lg:pb-22">
+    <section class="mx-auto max-w-7xl px-8 pb-10 lg:px-16 lg:pb-22">
         <div class="grid gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-center lg:gap-10">
             <div class="flex flex-col gap-3.5 lg:gap-[18px]">
                 <?php foreach ($steps as $i => $step): ?>
@@ -32,7 +32,11 @@ $steps = [
             <div x-data="copyable('composer create-project popphp/framework my-app')" class="code-window">
                 <div class="code-window-bar flex items-center justify-between">
                     <span>terminal</span>
-                    <button type="button" @click="copy()" class="text-comment hover:text-str" x-text="copied ? 'copied' : 'copy'">copy</button>
+                    <button type="button" @click="copy()" class="flex items-center gap-[7px] text-comment transition-colors duration-150 hover:text-str">
+                        <span x-text="copied ? 'copied' : 'copy'">copy</span>
+                        <svg x-show="!copied" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11.5" height="11.5" rx="2.4"></rect><path d="M15 5.6A2.6 2.6 0 0 0 12.4 3H5.6A2.6 2.6 0 0 0 3 5.6v6.8A2.6 2.6 0 0 0 5.6 15"></path></svg>
+                        <svg x-show="copied" x-cloak viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5 9 17l10.5-10.5"></path></svg>
+                    </button>
                 </div>
 <pre class="text-xs lg:text-[15px]/[2.1]"><span class="text-[#f4f1ea]"><span class="text-pop-orange">$</span> composer create-project popphp/framework my-app</span>
 <span class="text-[#f4f1ea]"><span class="text-pop-orange">$</span> ./kettle web:serve</span></pre>
@@ -41,7 +45,7 @@ $steps = [
     </section>
 
     <section class="border-y border-line bg-panel">
-        <div class="mx-auto max-w-7xl px-5 py-10 lg:flex lg:justify-center lg:px-16 lg:py-18">
+        <div class="mx-auto max-w-7xl px-8 py-10 lg:flex lg:justify-center lg:px-16 lg:py-18">
             <p class="max-w-[72ch] text-base/[1.65] text-muted lg:text-center lg:text-[19px]/[1.7]">
                 One command. Composer installs the framework, then offers to initialize your application &mdash; say yes and
                 <span class="font-mono text-[14.5px] text-fg lg:text-[17px]">pop:init</span> takes over from there. Once you run
@@ -50,7 +54,7 @@ $steps = [
         </div>
     </section>
 
-    <section class="mx-auto flex max-w-7xl flex-col gap-2.5 px-5 py-10 lg:flex-row lg:justify-center lg:gap-3 lg:px-16 lg:py-18">
+    <section class="mx-auto flex max-w-7xl flex-col gap-2.5 px-8 py-10 lg:flex-row lg:justify-center lg:gap-3 lg:px-16 lg:py-18">
         <a href="/docs" class="btn-primary text-center">Read the docs</a>
         <a href="https://github.com/popphp/popphp" target="_blank" rel="noopener" class="btn-secondary text-center">View on GitHub</a>
     </section>

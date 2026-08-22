@@ -1,0 +1,19 @@
+<?php
+/**
+ * Copy button for a code window header. The enclosing .code-window must carry
+ * x-data="copyCode"; it copies that window's <pre> text, or its data-copy
+ * attribute when one is set.
+ *
+ * Optional: $codeFile - context label shown to the left of the icon (e.g. 'index.php', 'terminal').
+ *           Cleared on the way out so it cannot leak into the next window.
+ */
+$codeFile = $codeFile ?? null;
+?>
+<?php if ($codeFile !== null): ?>
+                        <span class="ml-auto font-mono text-[11px] text-comment/75"><?=$codeFile ?></span>
+<?php endif; ?>
+                        <button type="button" @click="copy()" aria-label="Copy code" :aria-label="copied ? 'Copied' : 'Copy code'" class="<?=($codeFile === null) ? 'ml-auto ' : '' ?>-mr-1 flex items-center rounded-md p-1.5 text-comment transition-colors duration-150 hover:bg-white/10 hover:text-[#ded9cf] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pop-orange">
+                            <svg x-show="!copied" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11.5" height="11.5" rx="2.4"></rect><path d="M15 5.6A2.6 2.6 0 0 0 12.4 3H5.6A2.6 2.6 0 0 0 3 5.6v6.8A2.6 2.6 0 0 0 5.6 15"></path></svg>
+                            <svg x-show="copied" x-cloak class="text-pop-orange" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5 9 17l10.5-10.5"></path></svg>
+                        </button>
+<?php $codeFile = null; ?>

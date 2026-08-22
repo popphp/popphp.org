@@ -59,7 +59,13 @@ partials inherit that scope, so `nav.phtml` reads `$page` directly.
 Variables in play: `$title` (head), `$description` (optional per-page meta/social
 description, head), `$page` (nav active state), `$components` (components page),
 `$code` (error page), `$code`/`$message` (exception page), `$installCommand`
-(optional override on `install-bar`).
+(optional override on `install-bar`), `$codeFile` (optional filename label on
+`copy-code`).
+
+The home page code windows are copy-to-clipboard: each carries `x-data="copyCode"`,
+and the Alpine component copies that window's `<pre>` text, or a `data-copy`
+attribute when the sample is a shell transcript whose prompt and output should not
+be copied.
 
 `head.phtml` also emits the canonical link plus the Open Graph / Twitter card tags.
 Those need absolute URLs, and `APP_URL` is a local placeholder, so the base lives in

@@ -43,14 +43,14 @@ $contributeSteps = [
 
 <main>
 
-    <section class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-5 pb-8 pt-12 text-center lg:gap-6 lg:px-16 lg:pb-14 lg:pt-24">
+    <section class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-8 pb-8 pt-12 text-center lg:gap-6 lg:px-16 lg:pb-14 lg:pt-24">
         <span class="eyebrow text-[13.5px] lg:text-[17px]">Community</span>
         <h1 class="font-display text-[40px]/[1.05] font-semibold tracking-[-0.035em] lg:text-[72px]/[1] lg:tracking-[-0.04em]">Built in the open.</h1>
         <p class="max-w-[58ch] text-[16.5px]/[1.6] text-muted lg:text-[19px]/[1.65]">Pop is an open source project, and the conversation around it is open too. Anyone can file an issue, send a patch, or just ask a question.</p>
     </section>
 
     <!-- channels -->
-    <section class="mx-auto max-w-7xl px-5 pb-10 lg:px-16 lg:pb-20">
+    <section class="mx-auto max-w-7xl px-8 pb-10 lg:px-16 lg:pb-20">
         <div class="grid gap-3.5 lg:grid-cols-3 lg:gap-5">
             <?php foreach ($channels as $channel): ?>
                 <a href="<?=$channel['url'] ?>" target="_blank" rel="noopener" class="card text-fg hover:border-pop-orange lg:p-[34px] lg:pb-[38px]">
@@ -69,7 +69,7 @@ $contributeSteps = [
     </section>
 
     <!-- how to take part -->
-    <section class="mx-auto max-w-7xl px-5 pb-10 lg:px-16 lg:pb-20">
+    <section class="mx-auto max-w-7xl px-8 pb-10 lg:px-16 lg:pb-20">
         <div class="grid gap-3.5 lg:grid-cols-2 lg:gap-5">
 
             <div class="card lg:p-[34px] lg:pb-[38px]">
@@ -111,6 +111,7 @@ $contributeSteps = [
                 </div>
                 <div class="mt-auto flex flex-wrap gap-2.5 pt-3.5">
                     <a href="/docs" class="inline-flex items-center rounded-full border border-line px-4 py-2 text-[13.5px] font-medium text-fg hover:border-pop-orange lg:text-[14.5px]">Read the docs</a>
+                    <a href="/code-of-conduct" class="inline-flex items-center rounded-full border border-line px-4 py-2 text-[13.5px] font-medium text-fg hover:border-pop-orange lg:text-[14.5px]">Code of conduct</a>
                 </div>
             </div>
 
@@ -118,12 +119,12 @@ $contributeSteps = [
     </section>
 
     <!-- open dialogue spotlight -->
-    <section class="mx-auto max-w-7xl px-5 pb-10 lg:px-16 lg:pb-24">
+    <section class="mx-auto max-w-7xl px-8 pb-10 lg:px-16 lg:pb-24">
         <div class="grid overflow-hidden rounded-[18px] bg-code text-[#f4f1ea] lg:grid-cols-2">
             <div class="flex flex-col gap-3.5 p-[22px] pt-[30px] lg:gap-5 lg:p-14">
                 <span class="font-mono text-[13.5px] font-medium uppercase tracking-[0.14em] text-kw lg:text-[17px]">Open dialogue</span>
                 <h2 class="font-display text-[28px]/[1.08] font-semibold tracking-[-0.03em] lg:text-[42px]/[1.06] lg:tracking-[-0.035em]">Start the conversation.</h2>
-                <p class="text-[15.5px]/[1.65] text-[#b8b2a6] lg:text-[17.5px]/[1.7]">You don't need a finished patch to take part. Open an issue to talk about what should change, or bring it to Discord first and work out what the right fix is. The project gets better with more collaboration.</p>
+                <p class="text-[15.5px]/[1.65] text-[#b8b2a6] lg:text-[17.5px]/[1.7]">You don't need a finished patch to take part. Open an issue to talk about what should change, or bring it to Discord first and work out what the right fix is with others. The project gets better with more collaboration.</p>
             </div>
             <div class="flex flex-col gap-3.5 border-t border-white/10 p-[22px] pb-[26px] lg:justify-center lg:border-l lg:border-t-0 lg:p-14">
                 <?php foreach ($channels as $channel): ?>
@@ -141,7 +142,7 @@ $contributeSteps = [
     </section>
 
     <section class="border-t border-line bg-panel">
-        <div class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-5 py-11 text-center lg:gap-[26px] lg:px-16 lg:py-20">
+        <div class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-8 py-11 text-center lg:gap-[26px] lg:px-16 lg:py-20">
             <h2 class="font-display text-[28px]/[1.08] font-semibold tracking-[-0.03em] lg:text-[40px] lg:tracking-[-0.035em]">Open since 2009, still going.</h2>
             <p class="max-w-[56ch] text-[15.5px]/[1.6] text-muted lg:text-lg/[1.65]">Pop has been developed in public for over a decade. Version 7 is the current line &mdash; a good moment to get involved.</p>
             <div class="flex flex-col gap-2.5 self-stretch lg:flex-row lg:justify-center lg:gap-3 lg:self-auto">
