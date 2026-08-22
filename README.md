@@ -56,9 +56,19 @@ View data is assigned on the controller (`$this->view->page = 'features'`) and r
 in the template as a **plain local** (`$page`) — not `$this->page`. Included
 partials inherit that scope, so `nav.phtml` reads `$page` directly.
 
-Variables in play: `$title` (head), `$page` (nav active state), `$components`
-(components page), `$code` (error page), `$code`/`$message` (exception page),
-`$installCommand` (optional override on `install-bar`).
+Variables in play: `$title` (head), `$description` (optional per-page meta/social
+description, head), `$page` (nav active state), `$components` (components page),
+`$code` (error page), `$code`/`$message` (exception page), `$installCommand`
+(optional override on `install-bar`).
+
+`head.phtml` also emits the canonical link plus the Open Graph / Twitter card tags.
+Those need absolute URLs, and `APP_URL` is a local placeholder, so the base lives in
+`$siteUrl` at the top of that partial. The share thumbnail is a real screenshot of the
+home page hero, hosted on the media server alongside the logo and favicon:
+`https://media.popphp.org/img/og-image.png` (2400x1260, 1.91:1 — the `og:image:width`
+and `og:image:height` tags are hard-coded to match). Regenerate and re-upload it
+whenever the hero changes, then re-scrape in the Facebook and X debuggers to bust
+their caches.
 
 `error.phtml` is the `*` fallback route rendering through the controller.
 `exception.phtml` is different: `App\Application::httpError()` renders it directly,
