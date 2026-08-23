@@ -92,6 +92,16 @@ class IndexController extends AbstractController
     }
 
     /**
+     * License action
+     *
+     * @return void
+     */
+    public function license(): void
+    {
+        $this->send(200, file_get_contents($this->viewPath . '/license.txt'), 'OK', ['Content-Type' => 'text/plain']);
+    }
+
+    /**
      * Error action
      *
      * @param  int     $code

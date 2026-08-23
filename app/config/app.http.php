@@ -40,9 +40,9 @@ return [
             'controller' => 'App\Http\Controller\IndexController',
             'action'     => 'getStarted'
         ],
-        '/api[/]' => [
+        '/license[/]' => [
             'controller' => 'App\Http\Controller\IndexController',
-            'action'     => 'index'
+            'action'     => 'license'
         ],
         '*' => [
             'controller' => 'App\Http\Controller\IndexController',
