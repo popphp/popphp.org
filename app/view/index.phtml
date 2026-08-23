@@ -73,8 +73,8 @@
             <div class="flex flex-col gap-3.5 xl:gap-5">
                 <div x-data="copyCode" class="code-window">
                     <div class="code-window-bar flex items-center gap-2.5">
-                        <span class="text-pop-orange">01</span>
-                        <span>Route by config and run the app</span>
+                        <span class="text-pop-orange">01a</span>
+                        <span>Route by config and run</span>
 <?php $codeFile = 'index.php'; include __DIR__ . '/partials/copy-code.phtml'; ?>
                     </div>
 <pre class="p-5 text-[11.5px]/[1.75] lg:p-6 lg:text-[13.5px]/[1.8]"><span class="text-var">$app</span> = <span class="text-kw">new</span> <span class="text-var">Pop\Application</span>([
@@ -99,8 +99,8 @@
 
                 <div x-data="copyCode" class="code-window xl:grow">
                     <div class="code-window-bar flex items-center gap-2.5">
-                        <span class="text-pop-orange">02</span>
-                        <span>Or, route it fluently and run the app</span>
+                        <span class="text-pop-orange">01b</span>
+                        <span>Or, route it fluently and run</span>
 <?php $codeFile = 'index.php'; include __DIR__ . '/partials/copy-code.phtml'; ?>
                     </div>
 <pre class="p-5 text-[11.5px]/[1.75] lg:p-6 lg:text-[13.5px]/[1.8]"><span class="text-var">$app</span> = <span class="text-kw">new</span> <span class="text-var">Pop\Application</span>();
@@ -114,7 +114,7 @@
             <div class="flex flex-col gap-3.5 xl:gap-5">
                 <div x-data="copyCode" class="code-window">
                     <div class="code-window-bar flex items-center gap-2.5">
-                        <span class="text-pop-orange">03</span>
+                        <span class="text-pop-orange">02</span>
                         <span>Build your dispatchable controller</span>
 <?php $codeFile = 'class'; include __DIR__ . '/partials/copy-code.phtml'; ?>
                     </div>
@@ -134,7 +134,7 @@
 
                 <div x-data="copyCode" data-copy="./kettle web:serve" class="code-window">
                     <div class="code-window-bar flex items-center gap-2.5">
-                        <span class="text-pop-orange">04</span>
+                        <span class="text-pop-orange">03</span>
                         <span>Serve it</span>
 <?php $codeFile = 'terminal'; include __DIR__ . '/partials/copy-code.phtml'; ?>
                     </div>
@@ -143,7 +143,7 @@
 
                 <div x-data="copyCode" data-copy="curl http://localhost:8000/hello/Nick" class="code-window xl:grow">
                     <div class="code-window-bar flex items-center gap-2.5">
-                        <span class="text-pop-orange">05</span>
+                        <span class="text-pop-orange">04</span>
                         <span>See it in action</span>
 <?php $codeFile = 'terminal'; include __DIR__ . '/partials/copy-code.phtml'; ?>
                     </div>
