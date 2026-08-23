@@ -36,7 +36,7 @@
 
 @layer base {
     :root {
-        --surface-bg: #faf8f4;
+        --surface-bg: #f4f0e7;
         --surface-panel: #ffffff;
         --surface-fg: #17150f;
         --surface-muted: #6d685f;
