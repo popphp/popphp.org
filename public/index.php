@@ -9,7 +9,7 @@ try {
     $app = new App\Application($autoloader, include __DIR__ . '/../app/config/app.http.php');
     $app->load();
     $app->run();
-} catch (\Exception $exception) {
+} catch (\Throwable $exception) {
     $app = new App\Application();
     $app->httpError($exception);
 }
