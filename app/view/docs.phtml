@@ -18,28 +18,28 @@ $groups = [
                 'label'  => 'Pop PHP Documentation',
                 'host'   => 'docs.popphp.org',
                 'url'    => 'https://docs.popphp.org/',
-                'body'   => 'The current handbook for v7. Start at the top and work down &mdash; application structure, routing, controllers, views, databases and the rest of the toolkit.',
+                'body'   => 'The current handbook for v7. Start at the top and work down &mdash; application structure, routing, controllers, views, databases and the rest.',
                 'status' => 'current',
             ],
             [
                 'label'  => 'Pop PHP v6 Documentation',
                 'host'   => 'docs.popphp.org/6.x',
                 'url'    => 'https://docs.popphp.org/6.x/',
-                'body'   => 'The v6 handbook, kept online for applications still running on v6.',
+                'body'   => 'The v6 (and v5) handbook, kept online for applications still running on v6 or v5. The two versions shared a close DNA.',
                 'status' => 'legacy',
             ],
             [
                 'label'  => 'Documentation Archive',
                 'host'   => 'pop-php-framework.readthedocs.io',
                 'url'    => 'https://pop-php-framework.readthedocs.io/en/latest/',
-                'body'   => 'The original manual hosted on Read the Docs. Older still, and left up for anyone maintaining a long-lived project.',
+                'body'   => 'The original manual hosted on Read the Docs. Older still, and left up for anyone maintaining a long-lived project <= v4.8.',
                 'status' => 'legacy',
             ],
         ],
     ],
     [
         'title' => 'API Reference',
-        'blurb' => 'Generated from the source. Every namespace, class, method and signature in the framework and its components.',
+        'blurb' => 'Generated from the source. Every namespace, class, method and signature in the framework.',
         'icon'  => '<path d="M9.4 17.6 4.8 13l4.6-4.6"></path><path d="M14.6 6.4 19.2 11l-4.6 4.6"></path><path d="M13.4 3.6 10.6 20.4"></path>',
         'items' => [
             [
@@ -61,6 +61,13 @@ $groups = [
                 'host'   => 'api.popphp.org/5.x',
                 'url'    => 'https://api.popphp.org/5.x/',
                 'body'   => 'The generated reference for the v5.',
+                'status' => 'legacy',
+            ],
+            [
+                'label'  => 'API Docs 4.8',
+                'host'   => 'api.popphp.org/4.8',
+                'url'    => 'https://api.popphp.org/4.8/',
+                'body'   => 'The generated reference for the v4.8.',
                 'status' => 'legacy',
             ],
         ],
@@ -95,8 +102,7 @@ $groups = [
     ],
     [
         'title' => 'Test Coverage',
-        'blurb' => 'The framework and every component are covered by their own PHPUnit suites. The reports are public.',
-        'wide'  => true,
+        'blurb' => 'The every framework component is covered by their own PHPUnit test suite.',
         'icon'  => '<path d="M9.4 3.4h5.2"></path><path d="M10.2 3.4v5.4L5.6 17a2.2 2.2 0 0 0 1.9 3.3h9a2.2 2.2 0 0 0 1.9-3.3l-4.6-8.2V3.4"></path><path d="M7.6 14.6h8.8"></path>',
         'items' => [
             [
