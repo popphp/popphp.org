@@ -141,13 +141,15 @@
 <pre class="p-5 text-[11.5px]/[1.75] lg:p-6 lg:text-[13.5px]/[1.8]"><span class="text-[#f4f1ea]"><span class="text-pop-orange">$</span> ./kettle web:serve</span></pre>
                 </div>
 
-                <div x-data="copyCode" data-copy="curl http://localhost:8000/hello/Nick" class="code-window xl:grow">
+                <div x-data="copyCode" data-copy="curl -i http://localhost:8000/hello/Nick" class="code-window xl:grow">
                     <div class="code-window-bar flex items-center gap-2.5">
                         <span class="text-pop-orange">04</span>
                         <span>See it in action</span>
 <?php $codeFile = 'terminal'; include __DIR__ . '/partials/copy-code.phtml'; ?>
                     </div>
-<pre class="p-5 text-[11.5px]/[1.75] lg:p-6 lg:text-[13.5px]/[1.8]"><span class="text-[#f4f1ea]"><span class="text-pop-orange">$</span> curl http://localhost:8000/hello/Nick</span>
+<pre class="p-5 text-[11.5px]/[1.75] lg:p-6 lg:text-[13.5px]/[1.8]"><span class="text-[#f4f1ea]"><span class="text-pop-orange">$</span> curl -i http://localhost:8000/hello/Nick</span>
+<span class="text-comment">HTTP/1.1 </span><span class="text-str">200 OK</span>
+<span class="text-comment">Host: localhost:8000</span>
 
 <span class="text-[#f4f1ea]">Hello Nick</span></pre>
                 </div>
