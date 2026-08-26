@@ -77,18 +77,18 @@
                         <span>Route by config and run</span>
 <?php $codeFile = 'index.php'; include __DIR__ . '/partials/copy-code.phtml'; ?>
                     </div>
-<pre class="p-5 text-[11.5px]/[1.75] lg:p-6 lg:text-[13.5px]/[1.8]"><span class="text-var">$app</span> = <span class="text-kw">new</span> <span class="text-var">Pop\Application</span>([
+<pre class="p-5 text-[11.5px]/[1.75] lg:p-6 lg:text-[13.5px]/[1.8]"><span class="text-var">$app</span> = <span class="text-kw">new</span> <span class="text-type">Pop\Application</span>([
     <span class="text-str">'routes'</span> =&gt; [
         <span class="text-str">'get'</span> =&gt; [
             <span class="text-str">'/hello[/:name]'</span> =&gt; [
-                <span class="text-str">'controller'</span> =&gt; <span class="text-var">IndexController</span>::<span class="text-kw">class</span>,
-                <span class="text-str">'action'</span>     =&gt; <span class="text-var">'index'</span>
+                <span class="text-str">'controller'</span> =&gt; <span class="text-type">IndexController</span>::<span class="text-kw">class</span>,
+                <span class="text-str">'action'</span>     =&gt; <span class="text-str">'index'</span>
             ],
         ],
         <span class="text-str">'post'</span> =&gt; [
             <span class="text-str">'/users[/]'</span> =&gt; [
-                <span class="text-str">'controller'</span> =&gt; <span class="text-var">UsersController</span>::<span class="text-kw">class</span>,
-                <span class="text-str">'action'</span>     =&gt; <span class="text-var">'create'</span>
+                <span class="text-str">'controller'</span> =&gt; <span class="text-type">UsersController</span>::<span class="text-kw">class</span>,
+                <span class="text-str">'action'</span>     =&gt; <span class="text-str">'create'</span>
             ],
         ],
     ],
@@ -103,9 +103,9 @@
                         <span>Or, route it fluently and run</span>
 <?php $codeFile = 'index.php'; include __DIR__ . '/partials/copy-code.phtml'; ?>
                     </div>
-<pre class="p-5 text-[11.5px]/[1.75] lg:p-6 lg:text-[13.5px]/[1.8]"><span class="text-var">$app</span> = <span class="text-kw">new</span> <span class="text-var">Pop\Application</span>();
-<span class="text-var">$app</span>-&gt;get(<span class="text-str">'/hello[/:name]'</span>, <span class="text-var">'IndexController-&gt;index'</span>)
-    -&gt;post(<span class="text-str">'/users[/]'</span>, <span class="text-var">'UsersController-&gt;create'</span>);
+<pre class="p-5 text-[11.5px]/[1.75] lg:p-6 lg:text-[13.5px]/[1.8]"><span class="text-var">$app</span> = <span class="text-kw">new</span> <span class="text-type">Pop\Application</span>();
+<span class="text-var">$app</span>-&gt;get(<span class="text-str">'/hello[/:name]'</span>, <span class="text-str">'IndexController-&gt;index'</span>)
+    -&gt;post(<span class="text-str">'/users[/]'</span>, <span class="text-str">'UsersController-&gt;create'</span>);
 
 <span class="text-var">$app</span>-&gt;run();</pre>
                 </div>
@@ -120,9 +120,9 @@
                     </div>
 <pre class="p-5 text-[11.5px]/[1.75] lg:p-6 lg:text-[13.5px]/[1.8]"><span class="text-kw">use</span> Pop\Controller\AbstractController;
 
-<span class="text-kw">class</span> <span class="text-var">IndexController</span> <span class="text-kw">extends</span> AbstractController
+<span class="text-kw">class</span> <span class="text-type">IndexController</span> <span class="text-kw">extends</span> AbstractController
 {
-    <span class="text-kw">public function</span> <span class="text-var">index</span>(?<span class="text-kw">string</span> <span class="text-var">$name</span> = <span class="text-kw">null</span>): <span class="text-kw">void</span>
+    <span class="text-kw">public function</span> <span class="text-fn">index</span>(?<span class="text-type">string</span> <span class="text-var">$name</span> = <span class="text-num">null</span>): <span class="text-type">void</span>
     {
         <span class="text-var">$this</span>-&gt;response-&gt;setBody(
             <span class="text-str">'Hello '</span> . (<span class="text-var">$name</span> ?? <span class="text-str">'World'</span>)
